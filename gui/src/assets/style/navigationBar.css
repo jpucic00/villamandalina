@@ -62,6 +62,10 @@
   padding-top: 26px;
 }
 
+.withOverlay {
+  background: linear-gradient(180deg, #0a8fc9 0%, rgba(102, 208, 255, 0) 100%);
+}
+
 .NavBarWrapper.tablet {
   padding-top: 33.5px;
 }

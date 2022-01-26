@@ -12,12 +12,20 @@ export default function Layout({ children }) {
       {window.location.pathname === "/" ? (
         <Heading />
       ) : (
-        <div className={`NavBarWrapper ${deviceCheck(width)}`}>
+        <div className={`NavBarWrapper withOverlay ${deviceCheck(width)}`}>
           <div className={`logo ${deviceCheck(width)}`} />
           <NavigationBar />
         </div>
       )}
-      {children}
+      <div className={`landingPageContentContainer ${deviceCheck(width)}`}>
+        {children}
+      </div>
+      {window.location.pathname === "/" ? (
+        <>
+          <div className={`blueBackground ${deviceCheck(width)}`} />
+          <div className={`moreDetailsBlueBackground ${deviceCheck(width)}`} />
+        </>
+      ) : null}
     </div>
   );
 }
