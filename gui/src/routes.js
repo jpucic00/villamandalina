@@ -1,0 +1,17 @@
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import LandingPage from "./pages/landingPage";
+import Calendar from "./pages/calendar";
+import Gallery from "./pages/gallery";
+import Contact from "./pages/contact";
+
+export default function Routes() {
+  return (
+    <Switch>
+      <Route exact path="/" render={() => <LandingPage />} />
+      <Route exact path="/gallery" render={() => <Gallery />} />
+      <Route exact path="/calendar" render={() => <Calendar />} />
+      <Route exact path="/contact" render={() => <Contact />} />
+    </Switch>
+  );
+}

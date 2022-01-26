@@ -12,9 +12,14 @@ export default function NavigationBar() {
     <div className={`navigationContainer ${deviceCheck(width)}`}>
       {width > 1500 ? (
         navigationMenuItems.map((item) => (
-          <div className={`navigationItem ${item.name} ${deviceCheck(width)}`}>
+          <a
+            href={item.link}
+            className={`navigationItem ${
+              window.location.pathname === item.link ? "active" : null
+            } ${deviceCheck(width)}`}
+          >
             {item.name}
-          </div>
+          </a>
         ))
       ) : (
         <div className={`mobileMenu  ${deviceCheck(width)}`} />

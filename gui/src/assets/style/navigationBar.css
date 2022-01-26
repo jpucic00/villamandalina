@@ -2,19 +2,17 @@
   position: relative;
   margin-right: 60px;
   display: flex;
-  margin-top: 26px;
+
   width: max-content;
   height: max-content;
 }
 
 .navigationContainer.tablet {
   margin-right: 60px;
-  margin-top: 33.5px;
 }
 
 .navigationContainer.mobile {
   margin-right: 30px;
-  margin-top: 26px;
 }
 
 .navigationItem {
@@ -27,9 +25,14 @@
   line-height: 23px;
   color: #ffffff;
   margin-right: 43px;
+  text-decoration: none;
 }
 
-.navigationItem.Contact {
+.navigationItem:hover {
+  text-decoration: underline;
+}
+
+.navigationItem.active {
   background: rgba(45, 170, 224, 0.1);
   border: 1px solid #2daae0;
   margin-top: -3px;
@@ -51,4 +54,18 @@
 .mobileMenu.mobile {
   width: 20px;
   height: 20px;
+}
+
+.NavBarWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 26px;
+}
+
+.NavBarWrapper.tablet {
+  padding-top: 33.5px;
+}
+
+.NavBarWrapper.mobile {
+  padding-top: 26px;
 }

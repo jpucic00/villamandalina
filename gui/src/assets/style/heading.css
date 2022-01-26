@@ -129,7 +129,7 @@
 .logo {
   position: relative;
   left: 60px;
-  top: 26px;
+
   background: url("../images/logo.png");
   height: 60px;
   z-index: 50;
@@ -141,12 +141,10 @@
   left: 30px;
   width: 220.5px;
   height: 45px;
-  top: 33.5px;
 }
 
 .logo.mobile {
   left: 30px;
   width: 147px;
   height: 30px;
-  top: 26px;
 }

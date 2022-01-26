@@ -1,10 +1,14 @@
 import React from "react";
-import LandingPage from "./pages/landingPage";
+import Layout from "./components/layout";
+
+import Router from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
+      <Layout>
+        <Router />
+      </Layout>
     </div>
   );
 }

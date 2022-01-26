@@ -10,7 +10,7 @@ export default function Heading() {
   return (
     <div className={`wrap-layer ${deviceCheck(width)}`}>
       <div className={`overlay ${deviceCheck(width)}`} />
-      <div style={{ display: "flex", justifyContent: "space-between " }}>
+      <div className={`NavBarWrapper ${deviceCheck(width)}`}>
         <div className={`logo ${deviceCheck(width)}`} />
         <NavigationBar />
       </div>
