@@ -1,0 +1,152 @@
+.wrap-layer {
+  position: relative;
+  top: 0;
+  width: 100%;
+  max-width: 1920px;
+  height: 90vh;
+  max-height: 1080px;
+  min-height: 720px;
+  padding: 0;
+  z-index: 1;
+  background-image: url("../images/landingImage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+}
+
+.wrap-layer.mobile,
+.wrap-layer.tablet {
+  height: 75vh;
+  min-height: 500px;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+.headerButtonContainer {
+  display: flex;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  margin: auto;
+  margin-top: 15px;
+  width: 30%;
+}
+
+.headerButtonContainer.tablet {
+  width: 55%;
+  max-width: 566px;
+}
+
+.headerButtonContainer.mobile {
+  width: 80%;
+  max-width: 300px;
+}
+
+.reservationButtonHeader {
+  width: calc(50% - 15px);
+  height: 75px;
+  background: rgba(45, 170, 224, 0.65);
+  border-radius: 10px;
+  font-family: MerriweatherSans-Bold;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  outline: none;
+  border: none;
+}
+
+.contactButtonHeader {
+  width: calc(50% - 15px);
+  height: 75px;
+  border: 2px solid #2daae0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-left: 30px;
+  outline: none;
+}
+
+.reservationButtonHeader.mobile,
+.contactButtonHeader.mobile {
+  width: calc(50% - 5px);
+  height: 45px;
+  font-size: 12px;
+  line-height: 13px;
+  margin-left: 10px;
+}
+
+.headerTitle {
+  position: relative;
+  width: 68%;
+  height: 210px;
+  font-family: Merriweather-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 70px;
+  line-height: 74px;
+  text-align: center;
+  color: #ffffff;
+  margin: auto;
+  margin-top: 30vh;
+}
+
+.headerTitle.mobile {
+  font-size: 25px;
+  line-height: 26px;
+  height: max-content;
+  width: 85%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 30vh;
+}
+
+.headerTitle.tablet {
+  font-size: 40px;
+  line-height: 42px;
+  height: max-content;
+  width: 85%;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 30vh;
+}
+
+.logo {
+  position: relative;
+  left: 60px;
+  top: 26px;
+  background: url("../images/logo.png");
+  height: 60px;
+  z-index: 50;
+  width: 294px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.logo.tablet {
+  left: 30px;
+  width: 220.5px;
+  height: 45px;
+  top: 33.5px;
+}
+
+.logo.mobile {
+  left: 30px;
+  width: 147px;
+  height: 30px;
+  top: 26px;
+}

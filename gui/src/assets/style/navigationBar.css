@@ -1,0 +1,54 @@
+.navigationContainer {
+  position: relative;
+  margin-right: 60px;
+  display: flex;
+  margin-top: 26px;
+  width: max-content;
+  height: max-content;
+}
+
+.navigationContainer.tablet {
+  margin-right: 60px;
+  margin-top: 33.5px;
+}
+
+.navigationContainer.mobile {
+  margin-right: 30px;
+  margin-top: 26px;
+}
+
+.navigationItem {
+  width: max-content;
+  height: max-content;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  margin-right: 43px;
+}
+
+.navigationItem.Contact {
+  background: rgba(45, 170, 224, 0.1);
+  border: 1px solid #2daae0;
+  margin-top: -3px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 3px 11px 4px 11px;
+}
+
+.mobileMenu {
+  background: url("../images/mobileMenu.png");
+  width: 35px;
+  height: 35px;
+  filter: invert(100%) sepia(21%) saturate(19%) hue-rotate(315deg)
+    brightness(106%) contrast(106%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mobileMenu.mobile {
+  width: 20px;
+  height: 20px;
+}

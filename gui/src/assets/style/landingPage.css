@@ -1,0 +1,89 @@
+body,
+html {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #f7f2e6;
+}
+
+@font-face {
+  font-family: "MerriweatherSans-Regular";
+
+  src: local("MerriweatherSans-Regular"),
+    url(../fonts/MerriweatherSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Merriweather-Regular";
+
+  src: local("Merriweather-Regular"),
+    url(../fonts/Merriweather-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "MerriweatherSans-Bold";
+
+  src: local("MerriweatherSans-bold"),
+    url(../fonts/MerriweatherSans-Bold.ttf) format("truetype");
+}
+
+.landingPageContainer {
+  position: relative;
+  margin: auto;
+  z-index: 0;
+  max-width: 1920px;
+  height: max-content;
+  overflow: hidden;
+}
+
+.landingPageContainer.mobile {
+  width: 100vw;
+}
+
+.landingPageContentContainer {
+  position: relative;
+  height: max-content;
+  min-height: 1000px;
+  width: calc(100% - 280px);
+  z-index: 2;
+  padding: 80px 140px 80px 140px;
+}
+
+.landingPageContentContainer.mobile {
+  padding: 0px 40px 20px 40px;
+  width: calc(100% - 80px);
+}
+
+.landingPageContentContainer.tablet {
+  width: calc(100% - 140px);
+  padding: 0px 70px 20px 70px;
+}
+
+.blueBackground {
+  height: 900px;
+  width: 100%;
+  position: absolute;
+  bottom: 1400px;
+  z-index: -5;
+  margin-top: -350px;
+  border-bottom: 240px solid transparent;
+  border-left: 3020px solid #66d0ff;
+  border-top: 240px solid transparent;
+}
+
+.blueBackground.tablet {
+  margin-top: -200px;
+  height: 600px;
+  bottom: 1200px;
+  border-bottom: 240px solid transparent;
+  border-left: 600 solid #66d0ff;
+  border-top: 240px solid transparent;
+}
+
+.blueBackground.mobile {
+  margin-top: -200px;
+  bottom: 1450px;
+  border-bottom: 150px solid transparent;
+  border-left: 600px solid #66d0ff;
+  border-top: 150px solid transparent;
+  height: 600px;
+}
