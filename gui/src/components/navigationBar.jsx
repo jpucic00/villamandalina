@@ -5,12 +5,13 @@ import useWindowDimensions from "../util/useWindowDimensions";
 import "../assets/style/navigationBar.css";
 
 import { navigationMenuItems } from "../constants/menuItems";
+import MobileMenu from "./mobileMenu";
 
 export default function NavigationBar() {
   const { width } = useWindowDimensions();
   return (
     <div className={`navigationContainer ${deviceCheck(width)}`}>
-      {width > 1500 ? (
+      {width > 850 ? (
         navigationMenuItems.map((item) => (
           <a
             href={item.link}
@@ -22,7 +23,7 @@ export default function NavigationBar() {
           </a>
         ))
       ) : (
-        <div className={`mobileMenu  ${deviceCheck(width)}`} />
+        <MobileMenu />
       )}
     </div>
   );
