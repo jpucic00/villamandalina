@@ -1,0 +1,90 @@
+.galleryWideWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 64%;
+  justify-content: space-between;
+  height: 800px;
+  margin-top: 1%;
+}
+
+.galleryWideWrapper.tablet {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 64%;
+  justify-content: space-between;
+  height: 500px;
+  margin-top: 1%;
+}
+
+.galleryWideWrapper.mobile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 64%;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 1%;
+}
+
+.galleryNarrowWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 34%;
+  justify-content: space-between;
+  height: 800px;
+  margin-top: 1%;
+}
+
+.galleryNarrowWrapper.tablet {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 34%;
+  justify-content: space-between;
+  height: 500px;
+  margin-top: 1%;
+}
+.galleryNarrowWrapper.mobile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 34%;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 1%;
+}
+
+.galleryItemImageNarrow1 {
+  height: 35.5%;
+  width: 100%;
+}
+
+.galleryItemImageNarrow2 {
+  height: 60.5%;
+  width: 100%;
+}
+
+.galleryItemImageWide1 {
+  height: 54.25%;
+  width: 100%;
+}
+
+.galleryItemImageWide2 {
+  height: 41.75%;
+  width: 64%;
+}
+
+.galleryItemImageWide3 {
+  height: 41.75%;
+  width: 34%;
+}
+
+.galleryItemInnerImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
