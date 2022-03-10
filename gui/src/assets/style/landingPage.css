@@ -62,7 +62,7 @@ html {
   height: 900px;
   width: 100%;
   position: absolute;
-  bottom: 1400px;
+  bottom: 2450px;
   z-index: -5;
   margin-top: -350px;
   border-bottom: 240px solid transparent;
@@ -73,17 +73,17 @@ html {
 .blueBackground.tablet {
   margin-top: -200px;
   height: 600px;
-  bottom: 1200px;
-  border-bottom: 240px solid transparent;
-  border-left: 600 solid #66d0ff;
-  border-top: 240px solid transparent;
+  bottom: 1900px;
+  border-bottom: 300px solid transparent;
+  border-left: 2050px solid #66d0ff;
+  border-top: 420px solid transparent;
 }
 
 .blueBackground.mobile {
   margin-top: -200px;
-  bottom: 1450px;
+  bottom: 2050px;
   border-bottom: 150px solid transparent;
-  border-left: 600px solid #66d0ff;
+  border-left: 700px solid #66d0ff;
   border-top: 150px solid transparent;
   height: 600px;
 }

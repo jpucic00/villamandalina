@@ -148,3 +148,13 @@
   width: 147px;
   height: 30px;
 }
+
+.blueBackgroundHeading {
+  height: 900px;
+  width: 100%;
+  position: absolute;
+  z-index: -5;
+  margin-top: -500px;
+  border-bottom: 240px solid transparent;
+  border-left: 3020px solid #66d0ff;
+}

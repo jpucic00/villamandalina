@@ -3,4 +3,5 @@ export const navigationMenuItems = [
   { name: "Gallery", link: "/gallery" },
   { name: "Calendar", link: "/calendar" },
   { name: "Contact", link: "/contact" },
+  { name: "Log in", link: "/login" },
 ];

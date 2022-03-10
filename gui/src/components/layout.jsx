@@ -3,16 +3,21 @@ import NavigationBar from "./navigationBar";
 import useWindowDimensions from "../util/useWindowDimensions";
 import deviceCheck from "../util/deviceCheck";
 import Heading from "./heading";
+import { auth } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Layout({ children }) {
   const { width } = useWindowDimensions();
+  const [user, loading, error] = useAuthState(auth); //eslint-disable-line
 
   return (
     <div className={`landingPageContainer ${deviceCheck(width)}`}>
       {window.location.pathname === "/" ? (
         <Heading />
       ) : (
-        <div className={`NavBarWrapper withOverlay ${deviceCheck(width)}`}>
+        <div className={`NavBarWrapper  ${deviceCheck(width)}`}>
+          <div className={`blueBackgroundHeading ${deviceCheck(width)}`} />
+          <div className="withOverlay" />
           <div className={`logo ${deviceCheck(width)}`} />
           <NavigationBar />
         </div>

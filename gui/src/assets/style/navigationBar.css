@@ -34,7 +34,7 @@
 
 .navigationItem.active {
   background: rgba(45, 170, 224, 0.1);
-  border: 1px solid #2daae0;
+  border: 1px solid white;
   margin-top: -3px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -60,9 +60,14 @@
   display: flex;
   justify-content: space-between;
   padding-top: 26px;
+  margin-bottom: 64px;
 }
 
 .withOverlay {
+  position: absolute;
+  height: 300px;
+  width: 100vw;
+  top: -32px;
   background: linear-gradient(180deg, #0a8fc9 0%, rgba(102, 208, 255, 0) 100%);
 }
 
