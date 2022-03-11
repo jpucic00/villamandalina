@@ -288,10 +288,10 @@
 }
 
 .blueBackgroundPLACEHOLDER_WARNING.tablet {
-  height: 300px;
+  height: 200px;
   width: 100%;
   position: absolute;
-  bottom: -50px;
+  bottom: 50px;
   left: 0px;
   z-index: -5;
   margin-top: -350px;
@@ -301,10 +301,10 @@
 }
 
 .blueBackgroundPLACEHOLDER_WARNING.mobile {
-  margin-top: -200px;
-  bottom: 2050px;
-  border-bottom: 150px solid transparent;
+  margin-top: -350px;
+  bottom: 200px;
+  border-bottom: 50px solid transparent;
   border-left: 700px solid #66d0ff;
-  border-top: 150px solid transparent;
-  height: 600px;
+  border-top: 50px solid transparent;
+  height: 300px;
 }
