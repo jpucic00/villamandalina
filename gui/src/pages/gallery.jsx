@@ -2,8 +2,7 @@ import React from "react";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import galleryImages from "../constants/galleryImages";
-import GalleryNarrowComp from "../components/galleryNarrowComp";
-import GalleryWideComp from "../components/galleryWideComp";
+import GalleryElementComp from "../components/galleryElementComp";
 import "../assets/style/gallery.css";
 
 import { SRLWrapper } from "simple-react-lightbox";
@@ -11,31 +10,33 @@ import { SRLWrapper } from "simple-react-lightbox";
 export default function Gallery() {
   const { width } = useWindowDimensions();
   return (
-    <SRLWrapper>
-      <div className={`galleryContainer ${deviceCheck(width)}`}>
-        <GalleryNarrowComp
-          device={deviceCheck(width)}
-          image1={galleryImages.image100}
-          image2={galleryImages.image141}
-        />
-        <GalleryWideComp
-          device={deviceCheck(width)}
-          image1={galleryImages.image102}
-          image2={galleryImages.image103}
-          image3={galleryImages.image104}
-        />
-        <GalleryWideComp
-          device={deviceCheck(width)}
-          image1={galleryImages.image105}
-          image2={galleryImages.image115}
-          image3={galleryImages.image119}
-        />
-        <GalleryNarrowComp
-          device={deviceCheck(width)}
-          image1={galleryImages.image107}
-          image2={galleryImages.image108}
-        />
-      </div>
-    </SRLWrapper>
+    <React.Fragment>
+      <div
+        className={`blueBackgroundPLACEHOLDER_WARNING ${deviceCheck(width)}`}
+      />
+      <SRLWrapper>
+        <div className={`galleryContainer ${deviceCheck(width)}`}>
+          <GalleryElementComp
+            device={deviceCheck(width)}
+            title={"Livingroom"}
+            image1={galleryImages.image112}
+            image2={galleryImages.image114}
+            image3={galleryImages.image108}
+            image4={galleryImages.image107}
+            image5={galleryImages.image106}
+          />
+
+          <GalleryElementComp
+            device={deviceCheck(width)}
+            title={"Bedrooms"}
+            image1={galleryImages.image100}
+            image2={galleryImages.image101}
+            image3={galleryImages.image104}
+            image4={galleryImages.image146}
+            image5={galleryImages.image149}
+          />
+        </div>
+      </SRLWrapper>
+    </React.Fragment>
   );
 }
