@@ -75,7 +75,9 @@
   height: 3px;
 }
 
-.galleryItemImage1 {
+/* 5 picture gallery items */
+
+.gallery5ItemImage_1 {
   min-width: 0%;
   min-height: 0%;
 
@@ -85,7 +87,7 @@
   grid-column-end: 5;
 }
 
-.galleryItemImage2 {
+.gallery5ItemImage_2 {
   min-width: 0%;
   min-height: 0%;
 
@@ -95,17 +97,7 @@
   grid-column-end: 5;
 }
 
-.galleryItemImage2 {
-  min-width: 0%;
-  min-height: 0%;
-
-  grid-row-start: 6;
-  grid-row-end: 13;
-  grid-column-start: 1;
-  grid-column-end: 5;
-}
-
-.galleryItemImage3 {
+.gallery5ItemImage_3 {
   min-width: 0%;
   min-height: 0%;
 
@@ -115,7 +107,7 @@
   grid-column-end: 13;
 }
 
-.galleryItemImage4 {
+.gallery5ItemImage_4 {
   min-width: 0%;
   min-height: 0%;
 
@@ -125,7 +117,7 @@
   grid-column-end: 10;
 }
 
-.galleryItemImage5 {
+.gallery5ItemImage_5 {
   min-width: 0%;
   min-height: 0%;
 
@@ -134,6 +126,142 @@
   grid-column-start: 10;
   grid-column-end: 13;
 }
+
+/* 6 picture gallery items */
+
+.gallery6ItemImage_1 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery6ItemImage_2 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 6;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery6ItemImage_3 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 10;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery6ItemImage_4 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 2;
+  grid-row-end: 8;
+  grid-column-start: 5;
+  grid-column-end: 13;
+}
+
+.gallery6ItemImage_5 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 8;
+  grid-row-end: 13;
+  grid-column-start: 5;
+  grid-column-end: 10;
+}
+
+.gallery6ItemImage_6 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 8;
+  grid-row-end: 13;
+  grid-column-start: 10;
+  grid-column-end: 13;
+}
+
+/* 7 picture gallery items */
+
+.gallery7ItemImage_1 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery7ItemImage_2 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 6;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery7ItemImage_3 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 10;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.gallery7ItemImage_4 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 2;
+  grid-row-end: 8;
+  grid-column-start: 5;
+  grid-column-end: 8;
+}
+
+.gallery7ItemImage_5 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 2;
+  grid-row-end: 8;
+  grid-column-start: 8;
+  grid-column-end: 13;
+}
+
+.gallery7ItemImage_6 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 8;
+  grid-row-end: 13;
+  grid-column-start: 5;
+  grid-column-end: 10;
+}
+
+.gallery7ItemImage_7 {
+  min-width: 0%;
+  min-height: 0%;
+
+  grid-row-start: 8;
+  grid-row-end: 13;
+  grid-column-start: 10;
+  grid-column-end: 13;
+}
+
+/* ----------- */
 
 .galleryItemInnerImage {
   min-width: 0%;
@@ -180,65 +308,3 @@
   border-top: 150px solid transparent;
   height: 600px;
 }
-
-/* .galleryNarrowWrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 34%;
-  justify-content: space-between;
-  height: 800px;
-  margin-top: 1%;
-}
-
-.galleryNarrowWrapper.tablet {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 34%;
-  justify-content: space-between;
-  height: 500px;
-  margin-top: 1%;
-}
-.galleryNarrowWrapper.mobile {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 34%;
-  justify-content: space-between;
-  height: 300px;
-  margin-top: 1%;
-}
-
-.galleryItemImageNarrow1 {
-  height: 35.5%;
-  width: 100%;
-}
-
-.galleryItemImageNarrow2 {
-  height: 60.5%;
-  width: 100%;
-}
-
-.galleryItemImageWide1 {
-  height: 54.25%;
-  width: 100%;
-}
-
-.galleryItemImageWide2 {
-  height: 41.75%;
-  width: 64%;
-}
-
-.galleryItemImageWide3 {
-  height: 41.75%;
-  width: 34%;
-}
-
-.galleryItemInnerImage {
-  
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-} */
