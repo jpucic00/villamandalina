@@ -42,7 +42,6 @@ html {
 .landingPageContentContainer {
   position: relative;
   height: max-content;
-  min-height: 1000px;
   width: calc(100% - 280px);
   z-index: 2;
   padding: 80px 140px 80px 140px;

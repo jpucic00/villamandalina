@@ -1,51 +1,70 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, getDates, logout } from "../firebase";
+import { auth, logInWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../assets/style/login.css";
+
+import deviceCheck from "../util/deviceCheck";
+import useWindowDimensions from "../util/useWindowDimensions";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+  const [loginError, setLoginError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
 
+  const { width } = useWindowDimensions();
+
   useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
     if (user) history.push("/");
-  }, [user, loading]);
+  }, [user]); //eslint-disable-line
   return (
     <div className="login">
-      <div className="login__container">
+      <div className={`login__container ${deviceCheck(width)}`}>
+        {loading ? (
+          <div className="spinnerMask">
+            <div className="spinner"></div>
+          </div>
+        ) : null}
+        <h3 className="loginTitle">Login</h3>
         <input
           type="text"
-          className="login__textBox"
+          className="login__textBox email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <input
           type="password"
-          className="login__textBox"
+          className="login__textBox password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        {!user ? (
-          <button
-            className="login__btn"
-            onClick={() => logInWithEmailAndPassword(email, password)}
-          >
-            Login
-          </button>
-        ) : (
-          <button className="login__btn" onClick={() => logout()}>
-            Logout
-          </button>
-        )}
+        <div className="errorMessage">
+          {loginError ? "Wrong email or password" : ""}
+        </div>
+        <button
+          className={`login__btn ${deviceCheck(width)}`}
+          type="submit"
+          onClick={() => {
+            setLoading(true);
+            logInWithEmailAndPassword(email, password)
+              .then(() => {
+                setLoginError(false);
+                setLoading(false);
+              })
+              .catch(() => {
+                setLoginError(true);
+                setLoading(false);
+              });
+          }}
+        >
+          Login
+        </button>
       </div>
     </div>
   );
