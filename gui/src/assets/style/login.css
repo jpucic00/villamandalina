@@ -11,7 +11,7 @@
 }
 
 .login__container.mobile {
-  width: calc(100% - 140px);
+  width: calc(100% - 100px);
 }
 
 .loginTitle {
