@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import "../assets/style/CalendarElement.css";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval } from "date-fns";
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  eachDayOfInterval,
+  addMonths,
+} from "date-fns";
+
+import ArrowSVG from "./svgElements/ArrowSVG";
 
 const CalendarElement = (props) => {
   const todayUnfiltered = new Date();
-  const currentDay = todayUnfiltered.getDay();
-  const currentMonth = todayUnfiltered.getMonth();
-  const currentYear = todayUnfiltered.getFullYear();
 
   const [currentSelectedDate, setCurrentSelectedDate] =
     useState(todayUnfiltered);
-  const [selectedMonth, setSelectedMonth] = useState(currentMonth);
-  const [selectedYear, setSelectedYear] = useState(currentYear);
 
   const monthNames = [
     "January",
@@ -28,15 +31,17 @@ const CalendarElement = (props) => {
     "December",
   ];
 
-  const dayNames = [
-    "Sunday",
-    "Monday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+  const prevMonthSelectorHandler = () => {
+    setCurrentSelectedDate((prevState) => {
+      return addMonths(prevState, -1);
+    });
+  };
+
+  const nextMonthSelectorHandler = () => {
+    setCurrentSelectedDate((prevState) => {
+      return addMonths(prevState, 1);
+    });
+  };
 
   const monthRange = eachDayOfInterval({
     start: startOfMonth(currentSelectedDate),
@@ -85,8 +90,12 @@ const CalendarElement = (props) => {
         <button className="CalendarElement__ContactUsButton">Contact Us</button>
       </form>
       <div className="CalendarElement__DatePickerWrapper">
-        <h1>{currentYear}</h1>
-        <h2>{monthNames[currentMonth]}</h2>
+        <h1>{currentSelectedDate.getFullYear()}</h1>
+        <h2 className="CalendarElement__MonthWrapper">
+          <ArrowSVG direction="left" onClick={prevMonthSelectorHandler} />
+          {monthNames[currentSelectedDate.getMonth()]}
+          <ArrowSVG direction="right" onClick={nextMonthSelectorHandler} />
+        </h2>
 
         <div className="CalendarElement__DateWrapper">
           <p className="CalendarElement__DayOfTheWeek">Mon</p>

@@ -108,6 +108,12 @@
   border-radius: 0px 10px 10px 0px;
 }
 
+.CalendarElement__MonthWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
 .CalendarElement__DateWrapper {
   display: grid;
   width: 80%;
