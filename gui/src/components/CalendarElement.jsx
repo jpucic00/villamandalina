@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/style/CalendarElement.css";
+import { format, startOfMonth, endOfMonth, eachDayOfInterval } from "date-fns";
 
 const CalendarElement = (props) => {
+  const todayUnfiltered = new Date();
+  const currentDay = todayUnfiltered.getDay();
+  const currentMonth = todayUnfiltered.getMonth();
+  const currentYear = todayUnfiltered.getFullYear();
+
+  const [currentSelectedDate, setCurrentSelectedDate] =
+    useState(todayUnfiltered);
+  const [selectedMonth, setSelectedMonth] = useState(currentMonth);
+  const [selectedYear, setSelectedYear] = useState(currentYear);
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  const monthRange = eachDayOfInterval({
+    start: startOfMonth(currentSelectedDate),
+    end: endOfMonth(currentSelectedDate),
+  });
+
   return (
     <div className="CalendarElement__MainWrapper">
       <form className="CalendarElement__FormWrapper">
@@ -44,8 +85,9 @@ const CalendarElement = (props) => {
         <button className="CalendarElement__ContactUsButton">Contact Us</button>
       </form>
       <div className="CalendarElement__DatePickerWrapper">
-        <h1>YEAR</h1>
-        <h2>MONTH</h2>
+        <h1>{currentYear}</h1>
+        <h2>{monthNames[currentMonth]}</h2>
+
         <div className="CalendarElement__DateWrapper">
           <p className="CalendarElement__DayOfTheWeek">Mon</p>
           <p className="CalendarElement__DayOfTheWeek">Tue</p>
@@ -55,6 +97,14 @@ const CalendarElement = (props) => {
           <p className="CalendarElement__DayOfTheWeek">Sat</p>
           <p className="CalendarElement__DayOfTheWeek">Sun</p>
           <div className="CalendarElement__DividerLine"></div>
+          {monthRange.map((day) => {
+            const dayString = format(day, `EEEE`);
+            const dayNumber = format(day, `d`);
+
+            return (
+              <p className={`CalendarElement__${dayString}`}>{dayNumber}</p>
+            );
+          })}
         </div>
       </div>
     </div>
