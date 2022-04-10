@@ -1,0 +1,143 @@
+.CalendarElement__MainWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  height: 700px;
+
+  font-family: MerriweatherSans-Bold;
+}
+
+.TopMinusFive {
+  position: relative;
+  top: 1%;
+}
+
+/* FORM ELEMENTS  -START  */
+
+.CalendarElement__FormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  box-sizing: border-box;
+  padding-top: 1%;
+  padding-bottom: 2%;
+
+  height: 100%;
+  width: 25%;
+  color: #595450;
+  font-size: 20px;
+
+  background: #b0e7ff;
+  opacity: 0.95;
+  border-radius: 10px;
+}
+
+.CalendarElement__FormElementHeader {
+  margin: 0;
+  padding: 0;
+}
+
+.CalendarElement__Date_Input {
+  width: 40%;
+  height: 5%;
+
+  background: rgba(89, 84, 80, 0.1);
+  border: 1px solid rgba(89, 84, 80, 0.5);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.CalendarElement__Text_Input {
+  width: 70%;
+  height: 5%;
+
+  background: rgba(89, 84, 80, 0.25);
+  border: 1px solid rgba(89, 84, 80, 0.5);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.CalendarElement__MakeReservationButton {
+  width: 55%;
+  height: 7%;
+  font-size: 1.2rem;
+
+  color: white;
+  border: none;
+  background: rgba(110, 208, 115, 0.35);
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  margin-top: 5%;
+}
+
+.CalendarElement__ContactUsButton {
+  width: 55%;
+  height: 7%;
+  font-size: 1.2rem;
+
+  background: transparent;
+  border: none;
+  border: 1px solid rgba(89, 84, 80, 0.5);
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-family: inherit;
+}
+
+/* FORM ELEMENTS -END */
+
+/* DATEPICKER ELEMENTS -START  */
+
+.CalendarElement__DatePickerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  height: 90%;
+  width: 75%;
+
+  background: #66b3d4;
+  opacity: 0.95;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.CalendarElement__DateWrapper {
+  display: grid;
+  width: 80%;
+  height: 100%;
+
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.CalendarElement__DayOfTheWeek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CalendarElement__DividerLine {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 5%;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 8;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 48.96%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
