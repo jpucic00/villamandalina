@@ -9,9 +9,13 @@
   font-family: MerriweatherSans-Bold;
 }
 
-.TopMinusFive {
+.TopMinusOne {
   position: relative;
   top: 1%;
+}
+
+.CE {
+  opacity: 50%;
 }
 
 /* FORM ELEMENTS  -START  */
