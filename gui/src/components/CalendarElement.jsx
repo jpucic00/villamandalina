@@ -18,6 +18,9 @@ const CalendarElement = (props) => {
   const [currentSelectedDate, setCurrentSelectedDate] =
     useState(todayUnfiltered);
 
+  const [checkInDate_Formatted, setCheckInDate_Formatted] = useState();
+  const [checkOutDate_Formatted, setCheckOutDate_Formatted] = useState();
+
   const nextMonthDays = () => {
     const lastDayOfTheMonth = endOfMonth(currentSelectedDate);
     const nameOfLastDay = format(lastDayOfTheMonth, `EEEE`);
@@ -118,6 +121,10 @@ const CalendarElement = (props) => {
           </React.Fragment>
         );
     }
+  };
+
+  const dateClickHandler = (day, month, year) => {
+    setCheckInDate_Formatted(`${day} / ${month} / ${year}`);
   };
 
   const previousMonthDays = () => {
@@ -241,9 +248,11 @@ const CalendarElement = (props) => {
           Check-In Date
         </label>
         <input
-          type="date"
+          type="text"
+          value={checkInDate_Formatted}
           id="Check-In"
           className="CalendarElement__Date_Input"
+          readOnly
         />
         <label htmlFor="Check-Out" className="TopMinusFive">
           Check-Out Date
@@ -299,7 +308,18 @@ const CalendarElement = (props) => {
             const dayNumber = format(day, `d`);
 
             return (
-              <p className={`CalendarElement__${dayString}`}>{dayNumber}</p>
+              <p
+                className={`CalendarElement__${dayString}`}
+                onClick={() => {
+                  dateClickHandler(
+                    dayNumber,
+                    currentSelectedDate.getMonth(),
+                    currentSelectedDate.getFullYear()
+                  );
+                }}
+              >
+                {dayNumber}
+              </p>
             );
           })}
           {nextMonthDays()}
