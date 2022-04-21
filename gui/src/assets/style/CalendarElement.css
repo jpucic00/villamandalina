@@ -121,10 +121,19 @@
 .CalendarElement__DateWrapper {
   display: grid;
   width: 80%;
-  height: 100%;
+  height: 70%;
 
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(8, 1fr);
+
+  font-size: 1.5rem;
+}
+
+.CalendarElement__Year {
+  font-size: 4rem;
+  padding: 0;
+  padding-top: 1%;
+  margin: 0;
 }
 
 .CalendarElement__DayOfTheWeek {
@@ -137,7 +146,7 @@
   display: flex;
   align-self: center;
   width: 100%;
-  height: 5%;
+  height: 3px;
 
   grid-row-start: 2;
   grid-row-end: 3;
@@ -158,6 +167,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 5%;
+  margin: 0;
 }
 
 .CalendarElement__Tuesday {
@@ -166,6 +178,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .CalendarElement__Wednesday {
@@ -174,6 +189,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .CalendarElement__Thursday {
@@ -182,6 +200,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .CalendarElement__Friday {
@@ -190,6 +211,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .CalendarElement__Saturday {
@@ -198,6 +222,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }
 
 .CalendarElement__Sunday {
@@ -206,4 +233,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  margin: 0;
 }

@@ -95,7 +95,7 @@ const CalendarElement = (props) => {
             <p className={`CalendarElement__Thursday CE`}>{plusSixNumber}</p>
           </React.Fragment>
         );
-      case "Saturday":
+      case "Snaturday":
         return (
           <React.Fragment>
             <p className={`CalendarElement__Sunday CE`}>{plusOneNumber}</p>
@@ -275,7 +275,9 @@ const CalendarElement = (props) => {
         <button className="CalendarElement__ContactUsButton">Contact Us</button>
       </form>
       <div className="CalendarElement__DatePickerWrapper">
-        <h1>{currentSelectedDate.getFullYear()}</h1>
+        <h1 className="CalendarElement__Year">
+          {currentSelectedDate.getFullYear()}
+        </h1>
         <h2 className="CalendarElement__MonthWrapper">
           <ArrowSVG direction="left" onClick={prevMonthSelectorHandler} />
           {monthNames[currentSelectedDate.getMonth()]}
