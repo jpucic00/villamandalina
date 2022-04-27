@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../assets/style/CalendarElement.css";
 import {
   format,
@@ -6,8 +6,10 @@ import {
   endOfMonth,
   eachDayOfInterval,
   addMonths,
+  addDays,
   sub,
   add,
+  getDaysInMonth,
 } from "date-fns";
 
 import ArrowSVG from "./svgElements/ArrowSVG";
@@ -20,6 +22,9 @@ const CalendarElement = (props) => {
 
   const [checkInDate_Formatted, setCheckInDate_Formatted] = useState();
   const [checkOutDate_Formatted, setCheckOutDate_Formatted] = useState();
+
+  let daysLeftToRender = 0;
+  const nextMonth = addMonths(currentSelectedDate, 1);
 
   const nextMonthDays = () => {
     const lastDayOfTheMonth = endOfMonth(currentSelectedDate);
@@ -98,7 +103,7 @@ const CalendarElement = (props) => {
             <p className={`CalendarElement__Thursday CE`}>{plusSixNumber}</p>
           </React.Fragment>
         );
-      case "Snaturday":
+      case "Saturday":
         return (
           <React.Fragment>
             <p className={`CalendarElement__Sunday CE`}>{plusOneNumber}</p>
@@ -124,7 +129,7 @@ const CalendarElement = (props) => {
   };
 
   const dateClickHandler = (day, month, year) => {
-    setCheckInDate_Formatted(`${day} / ${month} / ${year}`);
+    setCheckInDate_Formatted(`${day} / ${month + 1} / ${year}`);
   };
 
   const previousMonthDays = () => {
@@ -151,10 +156,13 @@ const CalendarElement = (props) => {
 
     switch (nameOfFirstDay) {
       case "Monday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 1);
         return null;
       case "Tuesday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 2);
         return <p className={`CalendarElement__Monday CE`}>{minusOneNumber}</p>;
       case "Wednesday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 3);
         return (
           <React.Fragment>
             <p className={`CalendarElement__Monday CE`}>{minusTwoNumber}</p>
@@ -162,6 +170,7 @@ const CalendarElement = (props) => {
           </React.Fragment>
         );
       case "Thursday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 4);
         return (
           <React.Fragment>
             <p className={`CalendarElement__Monday CE`}>{minusThreeNumber}</p>
@@ -170,6 +179,7 @@ const CalendarElement = (props) => {
           </React.Fragment>
         );
       case "Friday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 5);
         return (
           <React.Fragment>
             <p className={`CalendarElement__Monday CE`}>{minusFourNumber}</p>
@@ -179,6 +189,7 @@ const CalendarElement = (props) => {
           </React.Fragment>
         );
       case "Saturday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 6);
         return (
           <React.Fragment>
             <p className={`CalendarElement__Monday CE`}>{minusFiveNumber}</p>
@@ -191,6 +202,7 @@ const CalendarElement = (props) => {
           </React.Fragment>
         );
       case "Sunday":
+        daysLeftToRender = 42 - (getDaysInMonth(currentSelectedDate) + 7);
         return (
           <React.Fragment>
             <p className={`CalendarElement__Monday CE`}>{minusSixNumber}</p>
@@ -205,8 +217,6 @@ const CalendarElement = (props) => {
         return null;
     }
   };
-
-  previousMonthDays();
 
   const monthNames = [
     "January",
@@ -239,6 +249,13 @@ const CalendarElement = (props) => {
     start: startOfMonth(currentSelectedDate),
     end: endOfMonth(currentSelectedDate),
   });
+
+  const nextMonthRange = () => {
+    return eachDayOfInterval({
+      start: startOfMonth(nextMonth),
+      end: addDays(startOfMonth(nextMonth), daysLeftToRender),
+    });
+  };
 
   return (
     <div className="CalendarElement__MainWrapper">
@@ -322,7 +339,26 @@ const CalendarElement = (props) => {
               </p>
             );
           })}
-          {nextMonthDays()}
+          {nextMonthRange().map((day) => {
+            const dayString = format(day, `EEEE`);
+            const dayNumber = format(day, `d`);
+
+            return (
+              <p
+                className={`CalendarElement__${dayString} CE`}
+                onClick={() => {
+                  dateClickHandler(
+                    dayNumber,
+                    nextMonth.getMonth(),
+                    nextMonth.getFullYear()
+                  );
+                }}
+              >
+                {dayNumber}
+              </p>
+            );
+          })}
+          {/* {nextMonthDays()} */}
         </div>
       </div>
     </div>
