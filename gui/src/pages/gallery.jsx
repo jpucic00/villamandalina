@@ -12,10 +12,9 @@ import { SRLWrapper } from "simple-react-lightbox";
 export default function Gallery() {
   const { width } = useWindowDimensions();
   return (
-    <React.Fragment>
-      <div
-        className={`blueBackgroundPLACEHOLDER_WARNING ${deviceCheck(width)}`}
-      />
+    <>
+      <div className={`blueBackgroundSurroundings ${deviceCheck(width)}`} />
+      <div className={`blueBackgroundBedrooms ${deviceCheck(width)}`} />
       <SRLWrapper>
         <div className={`galleryContainer ${deviceCheck(width)}`}>
           <GalleryElementComp5
@@ -60,6 +59,6 @@ export default function Gallery() {
           />
         </div>
       </SRLWrapper>
-    </React.Fragment>
+    </>
   );
 }

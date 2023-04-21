@@ -12,6 +12,7 @@
 
 .login__container.mobile {
   width: calc(100% - 100px);
+  height: 412px;
 }
 
 .loginTitle {
@@ -19,6 +20,13 @@
   font-style: normal;
   font-size: 24px;
   line-height: 30px;
+}
+
+.loginTitle.mobile {
+  font-family: "MerriweatherSans-Bold";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .login__textBox {
@@ -36,6 +44,11 @@
   line-height: 20px;
 
   color: #595450;
+}
+
+.login__textBox.mobile {
+  height: 35px;
+  font-size: 11px;
 }
 
 .login__textBox.email {
@@ -68,6 +81,7 @@
 }
 .login__btn.mobile {
   width: 100%;
+  font-size: 11px;
 }
 
 .login__google {

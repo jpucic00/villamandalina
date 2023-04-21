@@ -22,7 +22,13 @@ export default function Layout({ children }) {
           <NavigationBar />
         </div>
       )}
-      <div className={`landingPageContentContainer ${deviceCheck(width)}`}>
+      <div
+        className={`${
+          window.location.pathname === "/"
+            ? "landingPageContentContainer"
+            : "PageContentContainer"
+        } ${deviceCheck(width)}`}
+      >
         {children}
       </div>
       {window.location.pathname === "/" ? (

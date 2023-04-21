@@ -1,0 +1,282 @@
+.contactPageWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.contactPageWrapper.tablet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contactPageWrapper.mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactForm {
+  position: relative;
+  width: 367px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+}
+
+.contactForm.mobile {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.contactInput {
+  background: white;
+  height: 30px;
+  width: calc(100% - 16px);
+  outline: none;
+  border: none;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  padding: 0px 8px;
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 5px;
+}
+
+.contactInput.tablet,
+.contactText.tablet {
+  background: #7dd6fd;
+  color: white;
+}
+
+.contactInput.mobile,
+.contactText.mobile {
+  background: #7dd6fd;
+  color: white;
+}
+
+.contactInput::placeholder,
+.contactText::placeholder {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(45, 170, 224, 0.55);
+}
+
+.contactInput.mobile::placeholder,
+.contactText.mobile::placeholder {
+  color: white;
+}
+
+.contactInput.tablet::placeholder,
+.contactText.tablet::placeholder {
+  color: white;
+}
+
+.contactText {
+  background: white;
+  border-radius: 0px 0px 10px 0px;
+  height: 184px;
+  width: calc(100% - 16px);
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 8px 8px;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.contactSubmit {
+  border: none;
+  outline: none;
+  background: white;
+  border-radius: 5px;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  width: max-content;
+  padding: 5px 17px;
+
+  color: rgba(0, 137, 197, 0.8);
+}
+
+.contactSubmit.mobile,
+.contactSubmit.tablet {
+  background: #7dd6fd;
+  color: white;
+}
+
+.contactInfoWrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 367px;
+  text-align: center;
+  padding: 74px 9px;
+
+  margin-top: 72px;
+}
+
+.contactInfoWrapper.tablet {
+  margin: auto;
+  margin-top: 20px;
+  padding: 34px 9px;
+}
+
+.contactInfoWrapper.mobile {
+  margin: auto;
+  margin-top: 20px;
+  padding: 34px 25px;
+  width: max-content;
+}
+
+.contactInfoTitle {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+
+  color: #1880ad;
+}
+
+.contactInfoTitle.mobile {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.contactInfoText {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  color: #61cdfc;
+}
+
+.contactInfoText.mobile {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.contactHeadline1Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  margin-left: 50px;
+  margin-top: -75px;
+}
+
+.contactHeadline1Wrapper.tablet {
+  margin-top: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  align-self: flex-start;
+}
+
+.contactHeadline1Wrapper.mobile {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.contactHeadline1Title1 {
+  font-family: Merriweather-Bold;
+  font-style: normal;
+  font-size: 30px;
+
+  /* or 32px */
+  line-height: 31.86px;
+  margin-bottom: 0px;
+  color: #595450;
+}
+
+.contactHeadline1Title1.tablet {
+  font-size: 25px;
+  color: white;
+  line-height: 23px;
+}
+
+.contactHeadline1Title1.mobile {
+  font-size: 15px;
+  color: white;
+  line-height: 14px;
+}
+
+.contactHeadline1Title2 {
+  font-family: Merriweather-Bold;
+  font-style: normal;
+  font-size: 50px;
+  line-height: 53px;
+  color: #595450;
+  margin: 0;
+}
+
+.contactHeadline1Title2.tablet {
+  font-size: 35px;
+  color: white;
+  line-height: 33px;
+}
+
+.contactHeadline1Title2.mobile {
+  font-size: 25px;
+  color: white;
+  line-height: 23px;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.contactHeadline2Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  margin-left: 50px;
+  width: 500px;
+  margin-top: 30px;
+}
+
+.contactHeadline2Wrapper.mobile {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.contactHeadline2Title1 {
+  font-family: Merriweather-Bold;
+  font-style: normal;
+  font-size: 25px;
+
+  /* or 32px */
+  line-height: 30px;
+  color: #595450;
+}
+
+.contactHeadline2Title2 {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+  /* or 28px */
+
+  letter-spacing: 0.03em;
+
+  color: #595450;
+}
+
+.formErrorMessage {
+  color: red;
+  font-family: "MerriweatherSans-Bold";
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 20px;
+  margin-top: 4px;
+}

@@ -274,7 +274,7 @@
   object-fit: cover;
 }
 
-.blueBackgroundPLACEHOLDER_WARNING {
+.blueBackgroundSurroundings {
   height: 500px;
   width: 100%;
   position: absolute;
@@ -287,7 +287,7 @@
   border-top: 240px solid transparent;
 }
 
-.blueBackgroundPLACEHOLDER_WARNING.tablet {
+.blueBackgroundSurroundings.tablet {
   height: 200px;
   width: 100%;
   position: absolute;
@@ -300,11 +300,46 @@
   border-top: 240px solid transparent;
 }
 
-.blueBackgroundPLACEHOLDER_WARNING.mobile {
+.blueBackgroundSurroundings.mobile {
   margin-top: -350px;
   bottom: 200px;
   border-bottom: 50px solid transparent;
   border-left: 700px solid #66d0ff;
   border-top: 50px solid transparent;
   height: 300px;
+}
+
+.blueBackgroundBedrooms {
+  height: 1000px;
+  width: 100%;
+  position: absolute;
+  bottom: 1500px;
+  left: 0px;
+  z-index: -5;
+  margin-top: -350px;
+  border-bottom: 240px solid transparent;
+  border-left: 3020px solid #66d0ff;
+  border-top: 240px solid transparent;
+}
+
+.blueBackgroundBedrooms.tablet {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  bottom: 1100px;
+  left: 0px;
+  z-index: -5;
+  margin-top: -350px;
+  border-bottom: 240px solid transparent;
+  border-left: 3020px solid #66d0ff;
+  border-top: 240px solid transparent;
+}
+
+.blueBackgroundBedrooms.mobile {
+  margin-top: -350px;
+  bottom: 800px;
+  border-bottom: 50px solid transparent;
+  border-left: 700px solid #66d0ff;
+  border-top: 50px solid transparent;
+  height: 500px;
 }

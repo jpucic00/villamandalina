@@ -2,7 +2,7 @@ body,
 html {
   padding: 0 !important;
   margin: 0 !important;
-  background-color: #f7f2e6;
+  background-color: white;
 }
 
 @font-face {
@@ -53,6 +53,24 @@ html {
 }
 
 .landingPageContentContainer.tablet {
+  width: calc(100% - 140px);
+  padding: 0px 70px 20px 70px;
+}
+
+.PageContentContainer {
+  position: relative;
+  height: max-content;
+  width: calc(100% - 280px);
+  z-index: 2;
+  padding: 0px 140px 80px 140px;
+}
+
+.PageContentContainer.mobile {
+  padding: 0px 20px 20px 20px;
+  width: calc(100% - 40px);
+}
+
+.PageContentContainer.tablet {
   width: calc(100% - 140px);
   padding: 0px 70px 20px 70px;
 }

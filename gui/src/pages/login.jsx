@@ -29,17 +29,17 @@ function Login() {
             <div className="spinner"></div>
           </div>
         ) : null}
-        <h3 className="loginTitle">Login</h3>
+        <h3 className={`loginTitle ${deviceCheck(width)}`}>Login</h3>
         <input
           type="text"
-          className="login__textBox email"
+          className={`login__textBox email ${deviceCheck(width)}`}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <input
           type="password"
-          className="login__textBox password"
+          className={`login__textBox password ${deviceCheck(width)}`}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
