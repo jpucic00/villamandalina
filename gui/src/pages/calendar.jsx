@@ -12,7 +12,9 @@ export default function CalendarComp() {
   const [checkOut, setCheckOut] = useState();
 
   const [disabledDates, setDisabledDates] = useState([
+    { startDate: "2023-04-22", endDate: "2023-04-23" },
     { startDate: "2023-04-23", endDate: "2023-04-25" },
+    { startDate: "2023-04-25", endDate: "2023-04-28" },
   ]);
 
   const formatDate = (e) => {
@@ -128,6 +130,21 @@ export default function CalendarComp() {
               (disabledDate) =>
                 date.toLocaleDateString(
                   window.navigator.userLanguage || window.navigator.language
+                ) >
+                  new Date(disabledDate.startDate).toLocaleDateString(
+                    window.navigator.userLanguage || window.navigator.language
+                  ) &&
+                date.toLocaleDateString(
+                  window.navigator.userLanguage || window.navigator.language
+                ) <
+                  new Date(disabledDate.endDate).toLocaleDateString(
+                    window.navigator.userLanguage || window.navigator.language
+                  )
+            ).length > 0 ||
+            disabledDates.filter(
+              (disabledDate) =>
+                date.toLocaleDateString(
+                  window.navigator.userLanguage || window.navigator.language
                 ) >=
                   new Date(disabledDate.startDate).toLocaleDateString(
                     window.navigator.userLanguage || window.navigator.language
@@ -138,7 +155,7 @@ export default function CalendarComp() {
                   new Date(disabledDate.endDate).toLocaleDateString(
                     window.navigator.userLanguage || window.navigator.language
                   )
-            ).length > 0
+            ).length > 1
           }
           selectRange={true}
           locale={window.navigator.userLanguage || window.navigator.language}
