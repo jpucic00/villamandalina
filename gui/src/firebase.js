@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBPOBXysy30xyIt4k3m7PwqF0IRLy3dWOY",
@@ -23,21 +23,8 @@ const logout = () => {
   signOut(auth);
 };
 
-const getDates = async () => {
-  console.log(db);
-  try {
-    const refrence = ref(db, "/bookedDates/");
-    onValue(refrence, (snapshot) => {
-      const data = snapshot.val();
-      console.log(data);
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 const logInWithEmailAndPassword = async (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
 
-export { auth, db, logInWithEmailAndPassword, logout, getDates };
+export { auth, db, logInWithEmailAndPassword, logout };

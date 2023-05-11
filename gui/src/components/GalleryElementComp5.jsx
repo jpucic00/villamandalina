@@ -10,19 +10,19 @@ const GalleryElementComp5 = (props) => {
       </div>
 
       <a href={props.image1} className="gallery5ItemImage_1">
-        <img src={props.image1} className="galleryItemInnerImage"></img>
+        <img alt="" src={props.image1} className="galleryItemInnerImage"></img>
       </a>
       <a href={props.image2} className="gallery5ItemImage_2">
-        <img src={props.image2} className="galleryItemInnerImage"></img>
+        <img alt="" src={props.image2} className="galleryItemInnerImage"></img>
       </a>
       <a href={props.image3} className="gallery5ItemImage_3">
-        <img src={props.image3} className="galleryItemInnerImage"></img>
+        <img alt="" src={props.image3} className="galleryItemInnerImage"></img>
       </a>
       <a href={props.image4} className="gallery5ItemImage_4">
-        <img src={props.image4} className="galleryItemInnerImage"></img>
+        <img alt="" src={props.image4} className="galleryItemInnerImage"></img>
       </a>
       <a href={props.image5} className="gallery5ItemImage_5">
-        <img src={props.image5} className="galleryItemInnerImage"></img>
+        <img alt="" src={props.image5} className="galleryItemInnerImage"></img>
       </a>
     </div>
   );

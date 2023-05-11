@@ -61,6 +61,7 @@
   color: #ffffff;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .contactButtonHeader {
@@ -80,6 +81,7 @@
   opacity: 0.8;
   margin-left: 30px;
   outline: none;
+  cursor: pointer;
 }
 
 .reservationButtonHeader.mobile,
@@ -98,12 +100,12 @@
   font-family: Merriweather-Regular;
   font-style: normal;
   font-weight: normal;
-  font-size: 70px;
-  line-height: 74px;
+  font-size: 40px;
+  line-height: 42px;
   text-align: center;
   color: #ffffff;
   margin: auto;
-  margin-top: 30vh;
+  margin-top: 300px;
 }
 
 .headerTitle.mobile {

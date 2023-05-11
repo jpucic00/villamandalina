@@ -11,7 +11,7 @@ export default function Reviews() {
   const { width } = useWindowDimensions();
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow:
       deviceCheck(width) === "mobile"
@@ -21,6 +21,8 @@ export default function Reviews() {
         : 3,
     slidesToScroll: 1,
     rows: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
   return (
     <div className={`reviewContainer ${deviceCheck(width)}`}>

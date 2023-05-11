@@ -280,6 +280,7 @@
   position: absolute;
   bottom: 100px;
   left: 0px;
+  left: -200px;
   z-index: -5;
   margin-top: -350px;
   border-bottom: 240px solid transparent;
@@ -293,6 +294,7 @@
   position: absolute;
   bottom: 50px;
   left: 0px;
+  left: 0px;
   z-index: -5;
   margin-top: -350px;
   border-bottom: 240px solid transparent;
@@ -303,6 +305,7 @@
 .blueBackgroundSurroundings.mobile {
   margin-top: -350px;
   bottom: 200px;
+  left: 0px;
   border-bottom: 50px solid transparent;
   border-left: 700px solid #66d0ff;
   border-top: 50px solid transparent;
@@ -314,7 +317,7 @@
   width: 100%;
   position: absolute;
   bottom: 1500px;
-  left: 0px;
+  left: -200px;
   z-index: -5;
   margin-top: -350px;
   border-bottom: 240px solid transparent;
@@ -338,6 +341,7 @@
 .blueBackgroundBedrooms.mobile {
   margin-top: -350px;
   bottom: 800px;
+  left: 0px;
   border-bottom: 50px solid transparent;
   border-left: 700px solid #66d0ff;
   border-top: 50px solid transparent;

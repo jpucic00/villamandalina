@@ -166,3 +166,23 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+.blockedDatesContainer {
+  display: flex;
+  width: 100%;
+  font-family: MerriweatherSans-bold;
+  height: max-content;
+  color: #595450;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.blockedDatesWrapper {
+  display: flex;
+  width: calc(50% - 34px);
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid white;
+  background-color: #b0e7ff;
+  border-radius: 5px;
+}

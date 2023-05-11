@@ -6,12 +6,14 @@ import "../assets/style/login.css";
 
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user] = useAuthState(auth);
-  const [loginError, setLoginError] = useState(false);
+
   const [loading, setLoading] = useState(false);
 
   const history = useHistory();
@@ -22,51 +24,55 @@ function Login() {
     if (user) history.push("/");
   }, [user]); //eslint-disable-line
   return (
-    <div className="login">
-      <div className={`login__container ${deviceCheck(width)}`}>
-        {loading ? (
-          <div className="spinnerMask">
-            <div className="spinner"></div>
-          </div>
-        ) : null}
-        <h3 className={`loginTitle ${deviceCheck(width)}`}>Login</h3>
-        <input
-          type="text"
-          className={`login__textBox email ${deviceCheck(width)}`}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className={`login__textBox password ${deviceCheck(width)}`}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <div className="errorMessage">
-          {loginError ? "Wrong email or password" : ""}
+    <>
+      <ToastContainer />
+      <form
+        className="login"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setLoading(true);
+          logInWithEmailAndPassword(email, password)
+            .then(() => {
+              setLoading(false);
+              toast.success("Logged in successfully");
+            })
+            .catch(() => {
+              setLoading(false);
+              console.log("error");
+              toast.error(
+                "Log in failed, please check your email and password"
+              );
+            });
+        }}
+      >
+        <div className={`login__container ${deviceCheck(width)}`}>
+          {loading ? (
+            <div className="spinnerMask">
+              <div className="spinner"></div>
+            </div>
+          ) : null}
+          <h3 className={`loginTitle ${deviceCheck(width)}`}>Login</h3>
+          <input
+            type="text"
+            className={`login__textBox email ${deviceCheck(width)}`}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail Address"
+          />
+          <input
+            type="password"
+            className={`login__textBox password ${deviceCheck(width)}`}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+
+          <button className={`login__btn ${deviceCheck(width)}`} type="submit">
+            Login
+          </button>
         </div>
-        <button
-          className={`login__btn ${deviceCheck(width)}`}
-          type="submit"
-          onClick={() => {
-            setLoading(true);
-            logInWithEmailAndPassword(email, password)
-              .then(() => {
-                setLoginError(false);
-                setLoading(false);
-              })
-              .catch(() => {
-                setLoginError(true);
-                setLoading(false);
-              });
-          }}
-        >
-          Login
-        </button>
-      </div>
-    </div>
+      </form>
+    </>
   );
 }
 export default Login;

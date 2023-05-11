@@ -7,20 +7,25 @@ import { attractions } from "../constants/attractions";
 import "../assets/style/moreAttractions.css";
 import Krka from "../assets/images/krka.jpg";
 import Katedrala from "../assets/images/katedrala.png";
+import Kornati from "../assets/images/kornati.jpg";
+import SvNikola from "../assets/images/svnikola.jpeg";
+import Kanal from "../assets/images/kanal.jpg";
 
 export default function MoreAttractions() {
   const { width } = useWindowDimensions();
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     rows: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
-  const images = [Katedrala, Krka];
+  const images = [Katedrala, Krka, Kornati, SvNikola, Kanal];
 
   return (
     <div className={`attractionsContainer ${deviceCheck(width)}`}>
@@ -36,6 +41,7 @@ export default function MoreAttractions() {
                   {attraction.title}
                 </div>
                 <img
+                  alt=""
                   src={images[index]}
                   className={`attractionImage ${deviceCheck(width)}`}
                 ></img>

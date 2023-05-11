@@ -11,7 +11,7 @@ import { auth, logout } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function NavigationBar() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const { width } = useWindowDimensions();
   return (
     <div className={`navigationContainer ${deviceCheck(width)}`}>
@@ -24,7 +24,11 @@ export default function NavigationBar() {
               window.location.pathname === item.link ? "active" : null
             } ${deviceCheck(width)}`}
           >
-            {user && item.name === "Log in" ? "Log out" : item.name}
+            {item.name === "Log in"
+              ? user && !loading
+                ? "Log out"
+                : !loading && item.name
+              : item.name}
           </a>
         ))
       ) : (
