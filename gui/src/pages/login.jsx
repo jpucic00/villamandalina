@@ -6,7 +6,7 @@ import "../assets/style/login.css";
 
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -25,7 +25,6 @@ function Login() {
   }, [user]); //eslint-disable-line
   return (
     <>
-      <ToastContainer />
       <form
         className="login"
         onSubmit={(e) => {
@@ -53,13 +52,15 @@ function Login() {
           ) : null}
           <h3 className={`loginTitle ${deviceCheck(width)}`}>Login</h3>
           <input
-            type="text"
+            type="email"
+            name="e-mail"
             className={`login__textBox email ${deviceCheck(width)}`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail Address"
           />
           <input
+            name="password"
             type="password"
             className={`login__textBox password ${deviceCheck(width)}`}
             value={password}

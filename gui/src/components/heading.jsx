@@ -4,17 +4,15 @@ import deviceCheck from "../util/deviceCheck";
 import "../assets/style/heading.css";
 import NavigationBar from "./navigationBar";
 import useWindowDimensions from "../util/useWindowDimensions";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { motion } from "framer-motion";
 
 export default function Heading() {
   const { width } = useWindowDimensions();
-  const history = useHistory();
   return (
     <div className={`wrap-layer ${deviceCheck(width)}`}>
       <div className={`overlay ${deviceCheck(width)}`} />
       <div className={`NavBarWrapper ${deviceCheck(width)}`}>
-        <div className={`logo ${deviceCheck(width)}`} />
+        <a href="/" className={`logo ${deviceCheck(width)}`} />
         <NavigationBar />
       </div>
       <motion.div
@@ -27,22 +25,22 @@ export default function Heading() {
         View
       </motion.div>
       <div className={`headerButtonContainer ${deviceCheck(width)}`}>
-        <motion.button
+        <motion.a
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.1 }}
-          onClick={() => history.push("/calendar")}
+          href={"/calendar"}
           className={`reservationButtonHeader ${deviceCheck(width)}`}
         >
           Make a reservation
-        </motion.button>
-        <motion.button
+        </motion.a>
+        <motion.a
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.1 }}
-          onClick={() => history.push("/contact")}
+          href={"/contact"}
           className={`contactButtonHeader ${deviceCheck(width)}`}
         >
           Contact us
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   );

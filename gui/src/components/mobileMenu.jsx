@@ -2,9 +2,13 @@ import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import { useState, useEffect, useRef } from "react";
 import { navigationMenuItems } from "../constants/menuItems";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, logout } from "../firebase";
+import { toast } from "react-toastify";
 
 export default function MobileMenu() {
   const { width } = useWindowDimensions();
+  const [user, loading] = useAuthState(auth);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const container = useRef();
 
@@ -22,6 +26,16 @@ export default function MobileMenu() {
     }
   };
 
+  const doLogout = () => {
+    try {
+      logout();
+      setMobileMenuOpen(false);
+      toast.success("Logged out");
+    } catch {
+      toast.error("Failed to logout");
+    }
+  };
+
   return (
     <div>
       {mobileMenuOpen ? (
@@ -30,6 +44,7 @@ export default function MobileMenu() {
           className={`mobileMenuWrapper  ${deviceCheck(width)}`}
         >
           <div className={`mobileMenuClose  ${deviceCheck(width)}`}>
+            <a href="/" className={`logo ${deviceCheck(width)}`} />
             <div
               onClick={() => setMobileMenuOpen(false)}
               className={`mobileMenuCloseIcon  ${deviceCheck(width)}`}
@@ -38,12 +53,17 @@ export default function MobileMenu() {
           <div className={`mobileMenuItemsWrapper ${deviceCheck(width)}`}>
             {navigationMenuItems.map((item) => (
               <a
-                href={item.link}
+                href={user && item.name === "Log in" ? null : item.link}
+                onClick={user && item.name === "Log in" ? doLogout : null}
                 className={`mobileMenuItems ${
                   window.location.pathname === item.link ? "active" : null
                 } ${deviceCheck(width)}`}
               >
-                {item.name}
+                {item.name === "Log in"
+                  ? user && !loading
+                    ? "Log out"
+                    : !loading && item.name
+                  : item.name}
               </a>
             ))}
           </div>

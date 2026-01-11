@@ -167,6 +167,7 @@
   color: #736b67;
   cursor: pointer;
   padding: 17px 67px 17px 67px;
+  text-decoration: none;
 }
 
 .galleryButton.mobile {

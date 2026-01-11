@@ -10,8 +10,7 @@ export default function ContactHeadline2() {
         Hey! We are looking foward to your message.
       </h1>
       <p className={`contactHeadline2Title2 ${deviceCheck(width)}`}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo
-        maecenas lectus sed et.
+        Write us your questions and concerns. We will reply as soon as we can!
       </p>
     </div>
   );

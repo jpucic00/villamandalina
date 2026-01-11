@@ -6,7 +6,7 @@ import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { ref, get, set, remove } from "firebase/database";
 import emailjs from "@emailjs/browser";
 
@@ -19,9 +19,11 @@ export default function CalendarComp() {
   const [calendarValue, setCalendarValue] = useState([]);
 
   const [disabledDates, setDisabledDates] = useState([]);
+  const [prices, setPrices] = useState([]);
 
   useEffect(() => {
     getDisabledDates();
+    getPrices();
   }, []);
 
   const getDisabledDates = () => {
@@ -44,11 +46,31 @@ export default function CalendarComp() {
       });
   };
 
+  const getPrices = () => {
+    const refrence = ref(db, "/Prices");
+    get(refrence)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setPrices(
+            Object.keys(snapshot.val()).map((key) => {
+              return { ...snapshot.val()[key], key: key };
+            })
+          );
+        } else {
+          setPrices([]);
+        }
+      })
+      .catch(() => {
+        setPrices([]);
+        toast.error("Something went wrong fetching calendar booked dates");
+      });
+  };
+
   const sortDisableDates = () => {
     return disabledDates.sort(function (a, b) {
       // Turn your strings into dates, and then subtract them
       // to get a value that is either negative, positive, or zero.
-      return new Date(b.startDate) - new Date(a.startDate);
+      return new Date(a.startDate) - new Date(b.startDate);
     });
   };
 
@@ -65,29 +87,48 @@ export default function CalendarComp() {
     setCheckOut(formatDate(e[1]));
   };
 
+  const onCheckInSelect = (e) => {
+    setCalendarValue([e.target.value, checkOut ? checkOut : null]);
+    setCheckIn(e.target.value);
+  };
+
+  const onCheckOutSelect = (e) => {
+    setCalendarValue([checkIn ? checkIn : null, e.target.value]);
+    setCheckOut(e.target.value);
+  };
+
   const submitBlock = (e) => {
     e.preventDefault();
-    set(ref(db, `/bookedDates/${disabledDates.length + 1}`), {
-      startDate: `${checkIn}`,
-      endDate: `${checkOut}`,
-    })
-      .then(() => {
-        setCheckIn("");
-        setCheckOut("");
-        setCalendarValue([]);
-        getDisabledDates();
+    if (checkIn && checkOut)
+      set(ref(db, `/bookedDates/${disabledDates.length + 1}`), {
+        startDate: `${checkIn}`,
+        endDate: `${checkOut}`,
       })
-      .catch(() => {
-        toast.error("Not possible to block these dates, try again");
-      });
+        .then(() => {
+          setCheckIn();
+          setCheckOut();
+          setCalendarValue([]);
+          getDisabledDates();
+          document.getElementById("reservationForm").reset();
+          toast.success(
+            `Block for dates between ${checkIn} and ${checkOut} added`
+          );
+        })
+        .catch(() => {
+          toast.error("Not possible to block these dates, try again");
+        });
   };
   const removeBlock = (e) => {
     remove(ref(db, `/bookedDates/${e.key}`))
       .then(() => {
-        setCheckIn("");
-        setCheckOut("");
+        setCheckIn();
+        setCheckOut();
         setCalendarValue([]);
         getDisabledDates();
+        document.getElementById("reservationForm").reset();
+      })
+      .then(() => {
+        toast.success(`Block removed successfully`);
       })
       .catch(() => {
         toast.error("Not possible to block these dates, try again");
@@ -105,8 +146,8 @@ export default function CalendarComp() {
         )
         .then(() => {
           document.getElementById("reservationForm").reset();
-          setCheckIn("");
-          setCheckOut("");
+          setCheckIn();
+          setCheckOut();
           setCalendarValue([]);
           resolve();
         })
@@ -136,9 +177,12 @@ export default function CalendarComp() {
 
   return (
     <>
-      <ToastContainer />
-      <h1 className="calendarPageTitle">Calendar</h1>
-      <div className={`CalendarElement__MainWrapper ${deviceCheck(width)}`}>
+      <h1 className="calendarPageTitle">Select dates</h1>
+      <div
+        className={`CalendarElement__MainWrapper ${
+          user && "loggedIn"
+        } ${deviceCheck(width)}`}
+      >
         <form
           id="reservationForm"
           onSubmit={user ? submitBlock : submitReservation}
@@ -151,12 +195,13 @@ export default function CalendarComp() {
               </label>
               <input
                 required
+                onChange={onCheckInSelect}
                 type="date"
                 id="Check-In"
-                disabled
+                min={formatDate(new Date())}
+                max={checkOut}
                 value={checkIn && checkIn}
                 className="CalendarElement__Date_Input"
-                readOnly
               />
               <label htmlFor="Check-Out" className="TopMinusFive">
                 Select Check-Out Date
@@ -164,11 +209,11 @@ export default function CalendarComp() {
               <input
                 required
                 type="date"
-                disabled
+                onChange={onCheckOutSelect}
                 value={checkOut && checkOut}
+                min={checkIn ? checkIn : formatDate(new Date())}
                 id="Check-Out"
                 className="CalendarElement__Date_Input"
-                readOnly
               />
               <label htmlFor="Name" className="TopMinusFive">
                 Name
@@ -185,7 +230,7 @@ export default function CalendarComp() {
               </label>
               <input
                 required
-                type="text"
+                type="email"
                 id="Email"
                 placeholder="Enter your email"
                 className="CalendarElement__Text_Input"
@@ -215,12 +260,6 @@ export default function CalendarComp() {
               >
                 Make a Reservation
               </button>
-              <button
-                type="button"
-                className="CalendarElement__ContactUsButton calendarButton"
-              >
-                Contact Us
-              </button>
             </>
           ) : (
             <>
@@ -229,24 +268,25 @@ export default function CalendarComp() {
               </label>
               <input
                 required
+                onChange={onCheckInSelect}
                 type="date"
                 id="Check-In"
-                disabled
+                min={formatDate(new Date())}
+                max={checkOut}
                 value={checkIn && checkIn}
                 className="CalendarElement__Date_Input"
-                readOnly
               />
               <label htmlFor="Check-Out" className="TopMinusFive">
                 Select Check-Out Date
               </label>
               <input
                 required
+                onChange={onCheckOutSelect}
                 type="date"
-                disabled
+                min={checkIn ? checkIn : formatDate(new Date())}
                 value={checkOut && checkOut}
                 id="Check-Out"
                 className="CalendarElement__Date_Input"
-                readOnly
               />
               <button
                 type="submit"
@@ -262,43 +302,88 @@ export default function CalendarComp() {
             new Date(new Date().setFullYear(new Date().getFullYear() + 1))
           }
           returnValue="range"
-          tileDisabled={({ activeStartDate, date, view }) =>
-            disabledDates.filter(
-              (disabledDate) =>
-                date.toLocaleDateString(
-                  window.navigator.userLanguage || window.navigator.language
-                ) >
-                  new Date(disabledDate.startDate).toLocaleDateString(
-                    window.navigator.userLanguage || window.navigator.language
-                  ) &&
-                date.toLocaleDateString(
-                  window.navigator.userLanguage || window.navigator.language
-                ) <
-                  new Date(disabledDate.endDate).toLocaleDateString(
-                    window.navigator.userLanguage || window.navigator.language
-                  )
-            ).length > 0 ||
-            disabledDates.filter(
-              (disabledDate) =>
-                date.toLocaleDateString(
-                  window.navigator.userLanguage || window.navigator.language
-                ) >=
-                  new Date(disabledDate.startDate).toLocaleDateString(
-                    window.navigator.userLanguage || window.navigator.language
-                  ) &&
-                date.toLocaleDateString(
-                  window.navigator.userLanguage || window.navigator.language
-                ) <=
-                  new Date(disabledDate.endDate).toLocaleDateString(
-                    window.navigator.userLanguage || window.navigator.language
-                  )
-            ).length > 1
-          }
+          tileDisabled={({ activeStartDate, date, view }) => {
+            return (
+              disabledDates.filter((disabledDate) => {
+                return (
+                  Math.floor(
+                    new Date(date.toLocaleDateString("en")).getTime() / 1000
+                  ) >
+                    Math.floor(
+                      new Date(
+                        new Date(disabledDate.startDate).toLocaleDateString(
+                          "en"
+                        )
+                      ).getTime() / 1000
+                    ) &&
+                  Math.floor(
+                    new Date(date.toLocaleDateString("en")).getTime() / 1000
+                  ) <
+                    Math.floor(
+                      new Date(
+                        new Date(disabledDate.endDate).toLocaleDateString("en")
+                      ).getTime() / 1000
+                    )
+                );
+              }).length > 0 ||
+              disabledDates.filter(
+                (disabledDate) =>
+                  Math.floor(
+                    new Date(date.toLocaleDateString("en")).getTime() / 1000
+                  ) ===
+                    Math.floor(
+                      new Date(
+                        new Date(disabledDate.startDate).toLocaleDateString(
+                          "en"
+                        )
+                      ).getTime() / 1000
+                    ) ||
+                  Math.floor(
+                    new Date(date.toLocaleDateString("en")).getTime() / 1000
+                  ) ===
+                    Math.floor(
+                      new Date(
+                        new Date(disabledDate.endDate).toLocaleDateString("en")
+                      ).getTime() / 1000
+                    )
+              ).length > 1
+            );
+          }}
           selectRange={true}
-          locale={window.navigator.userLanguage || window.navigator.language}
+          locale={"en"}
           onChange={onDateSelect}
           value={calendarValue}
           minDate={new Date()}
+          tileContent={({ activeStartDate, date, view }) =>
+            view === "month" && (
+              <p className="calendarPrice">
+                {prices.filter(
+                  (price) =>
+                    Math.floor(
+                      new Date(date.toLocaleDateString("en")).getTime() / 1000
+                    ) >=
+                      Math.floor(
+                        new Date(
+                          new Date(
+                            date.getFullYear() + "-" + price.startDate
+                          ).toLocaleDateString("en")
+                        ).getTime() / 1000
+                      ) &&
+                    Math.floor(
+                      new Date(date.toLocaleDateString("en")).getTime() / 1000
+                    ) <=
+                      Math.floor(
+                        new Date(
+                          new Date(
+                            date.getFullYear() + "-" + price.endDate
+                          ).toLocaleDateString("en")
+                        ).getTime() / 1000
+                      )
+                )[0]?.price || "-"}
+                €
+              </p>
+            )
+          }
         />
       </div>
       <div className="blockedDatesContainer">
@@ -306,11 +391,15 @@ export default function CalendarComp() {
           user &&
           sortDisableDates().map((date) => (
             <div className="blockedDatesWrapper">
-              <div className="blockedDate">From: {date.startDate}</div>
-              <div className="blockedDate">To: {date.endDate}</div>
+              <div className="blockedDate">
+                <span>From:</span> {date.startDate}
+              </div>
+              <div className="blockedDate">
+                <span>To:</span> {date.endDate}
+              </div>
               <button
                 onClick={() => removeBlock(date)}
-                className="CalendarElement__MakeReservationButton"
+                className="CalendarElement__BlockReservationButton"
               >
                 Remove block
               </button>

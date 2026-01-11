@@ -100,10 +100,6 @@
   font-weight: bold;
 }
 
-.react-calendar__month-view__days {
-  height: calc(86%);
-}
-
 .react-calendar__month-view__days__day--weekend {
   color: #d10000;
 }
@@ -146,21 +142,24 @@
 
 .react-calendar__tile--hasActive {
   background: #76baff;
+  color: white !important;
 }
 
 .react-calendar__tile--hasActive:enabled:hover,
 .react-calendar__tile--hasActive:enabled:focus {
   background: #a9d4ff;
+  color: white !important;
 }
 
 .react-calendar__tile--active {
-  background: #006edc;
-  color: white;
+  background: #66d0ff;
+  opacity: 0.8;
+  color: white !important;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #1087ff;
+  background: #a9d4ff;
 }
 
 .react-calendar--selectRange .react-calendar__tile--hover {
@@ -179,10 +178,34 @@
 
 .blockedDatesWrapper {
   display: flex;
-  width: calc(50% - 34px);
+  width: calc(33% - 34px);
   justify-content: space-between;
   padding: 16px;
+  font-size: 12px;
   border: 1px solid white;
   background-color: #b0e7ff;
-  border-radius: 5px;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.mobile .blockedDatesContainer {
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobile .blockedDatesWrapper {
+  width: calc(100% - 34px);
+}
+
+.mobile .blockedDate {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarPrice {
+  font-size: 12px !important;
+}
+
+.react-calendar__tile {
+  height: max-content;
 }

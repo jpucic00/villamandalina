@@ -18,7 +18,7 @@ export default function Layout({ children }) {
         <div className={`NavBarWrapper  ${deviceCheck(width)}`}>
           <div className={`blueBackgroundHeading ${deviceCheck(width)}`} />
           <div className="withOverlay" />
-          <div className={`logo ${deviceCheck(width)}`} />
+          <a href="/" className={`logo ${deviceCheck(width)}`} />
           <NavigationBar />
         </div>
       )}

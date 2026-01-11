@@ -20,16 +20,17 @@
   height: max-content;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 18px;
   line-height: 23px;
   color: #ffffff;
   margin-right: 43px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .navigationItem:hover {
-  text-decoration: underline;
+  transform: scale(1.05);
 }
 
 .navigationItem.active {
@@ -89,6 +90,7 @@
   width: 45vw;
   min-height: 200px;
   min-width: 150px;
+  width: 100vw;
   background: rgba(102, 208, 255, 0.85);
 }
 
@@ -98,21 +100,27 @@
 }
 
 .mobileMenuClose {
-  height: 51px;
+  display: flex;
+  height: 70px;
   width: 100%;
+  padding-top: 26px;
   margin-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.mobileMenuClose.tablet {
+  padding-top: 33.5px;
 }
 
 .mobileMenuCloseIcon {
   position: absolute;
   background: url("../images/mobileMenuClose.svg");
-  width: 19px;
+  width: 17px;
   height: 17px;
   right: 30px;
-  top: 20px;
+  top: 30px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .mobileMenuCloseIcon.tablet {

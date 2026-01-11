@@ -9,17 +9,28 @@ import MobileMenu from "./mobileMenu";
 
 import { auth, logout } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 
 export default function NavigationBar() {
   const [user, loading] = useAuthState(auth);
   const { width } = useWindowDimensions();
+
+  const doLogout = () => {
+    try {
+      logout();
+
+      toast.success("Logged out");
+    } catch {
+      toast.error("Failed to logout");
+    }
+  };
   return (
     <div className={`navigationContainer ${deviceCheck(width)}`}>
       {width > 850 ? (
         navigationMenuItems.map((item) => (
           <a
             href={user && item.name === "Log in" ? null : item.link}
-            onClick={user && item.name === "Log in" ? logout : null}
+            onClick={user && item.name === "Log in" ? doLogout : null}
             className={`navigationItem ${
               window.location.pathname === item.link ? "active" : null
             } ${deviceCheck(width)}`}

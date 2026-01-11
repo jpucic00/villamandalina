@@ -21,6 +21,12 @@
   height: 1200px;
 }
 
+.CalendarElement__MainWrapper.mobile.loggedIn {
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 800px;
+}
+
 .CalendarElement__MainWrapper.tablet {
   width: 100%;
 }
@@ -103,6 +109,25 @@
   padding: 10px 20px;
 
   font-size: 1.2rem;
+
+  color: white;
+  border: none;
+  background: rgba(110, 208, 115, 0.35);
+  border-radius: 10px;
+
+  font-family: inherit;
+}
+
+.CalendarElement__MakeReservationButton:hover,
+.CalendarElement__BlockReservationButton:hover {
+  transform: scale(1.05);
+}
+
+.CalendarElement__BlockReservationButton {
+  width: max-content;
+  padding: 10px 20px;
+
+  font-size: 0.6rem;
 
   color: white;
   border: none;

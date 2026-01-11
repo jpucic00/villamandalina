@@ -76,22 +76,25 @@
 
 .attractionText {
   font-family: MerriweatherSans-Regular;
-  font-size: 20px;
   line-height: 157.18%;
   /* or 31px */
   margin-top: 60px;
-
+  padding: 8px;
+  text-align: justify;
+  text-justify: inter-character;
   letter-spacing: 0.03em;
-
   color: #595450;
+  font-size: 1em;
+  word-break: break-word;
+  white-space: pre-line;
 }
 
 .attractionText.tablet {
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 45px;
 }
 
 .attractionText.mobile {
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 30px;
 }

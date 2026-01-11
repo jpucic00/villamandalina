@@ -3,16 +3,14 @@ import { listOfHighlights } from "../constants/listOfHighlights";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import "../assets/style/highlighted.css";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { useInView } from "framer-motion";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function HighlightedParts() {
   const { width } = useWindowDimensions();
-  const history = useHistory();
   const animationRef1 = useRef(null);
   const isInView1 = useInView(animationRef1, {
     once: true,
@@ -46,7 +44,6 @@ export default function HighlightedParts() {
 
   return (
     <div className={`highlightedContainer ${deviceCheck(width)}`}>
-      {console.log(animationArray)}
       {listOfHighlights.map((item, index) => (
         <div
           ref={animationArray[index].animationRef}
@@ -79,14 +76,14 @@ export default function HighlightedParts() {
           />
         </div>
       ))}
-      <motion.div
+      <motion.a
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         className={`galleryButton ${deviceCheck(width)}`}
-        onClick={() => history.push("/gallery")}
+        href="/gallery"
       >
         Gallery
-      </motion.div>
+      </motion.a>
     </div>
   );
 }
