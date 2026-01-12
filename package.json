@@ -1,0 +1,11 @@
+{
+  "name": "villamandalina",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd gui && npm install && npm run build",
+    "start": "cd gui && npx serve -s build -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

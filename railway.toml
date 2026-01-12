@@ -1,8 +1,4 @@
-[build]
-builder = "nixpacks"
-buildCommand = "cd gui && npm install && npm run build"
-
 [deploy]
-startCommand = "cd gui && npx serve -s build -l $PORT"
+startCommand = "npm start"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
