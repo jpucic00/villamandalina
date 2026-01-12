@@ -5,6 +5,7 @@ import galleryImages from "../constants/galleryImages";
 import GalleryElementComp5 from "../components/GalleryElementComp5";
 import GalleryElementComp6 from "../components/GalleryElementComp6";
 import GalleryElementComp7 from "../components/GalleryElementComp7";
+import MoreDetails from "../components/moreDetails";
 import "../assets/style/gallery.css";
 
 import { SRLWrapper } from "simple-react-lightbox";
@@ -59,6 +60,7 @@ export default function Gallery() {
           />
         </div>
       </SRLWrapper>
+      <MoreDetails />
     </>
   );
 }

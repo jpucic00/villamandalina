@@ -9,6 +9,7 @@ import { auth, db } from "../firebase";
 import { toast } from "react-toastify";
 import { ref, get, set, remove } from "firebase/database";
 import emailjs from "@emailjs/browser";
+import MoreDetails from "../components/moreDetails";
 
 export default function CalendarComp() {
   const { width } = useWindowDimensions();
@@ -406,6 +407,7 @@ export default function CalendarComp() {
             </div>
           ))}
       </div>
+      <MoreDetails />
     </>
   );
 }

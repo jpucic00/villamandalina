@@ -1,0 +1,78 @@
+/* Custom styling for slick carousel to make controls more visible */
+
+.slick-prev,
+.slick-next {
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 100 !important;
+  transition: all 0.2s ease !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #1ba3e3 !important;
+  font-size: 24px !important;
+  opacity: 1 !important;
+  line-height: 1 !important;
+  position: relative !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+  border-radius: 50% !important;
+}
+
+.slick-prev {
+  left: -20px !important;
+}
+
+.slick-next {
+  right: -20px !important;
+}
+
+/* Dots styling */
+.slick-dots li button:before {
+  font-size: 12px !important;
+  color: #1ba3e3 !important;
+  opacity: 0.4 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1ba3e3 !important;
+  opacity: 1 !important;
+}
+
+.slick-dots li button:hover:before {
+  opacity: 0.7 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 20px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .slick-prev {
+    left: -5px !important;
+  }
+
+  .slick-next {
+    right: -5px !important;
+  }
+}

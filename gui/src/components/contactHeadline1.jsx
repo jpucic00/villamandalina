@@ -7,10 +7,10 @@ export default function ContactHeadline1() {
   return (
     <div className={`contactHeadline1Wrapper ${deviceCheck(width)}`}>
       <h1 className={`contactHeadline1Title1 ${deviceCheck(width)}`}>
-        Dont Hesitate To
+        Don't Hesitate To
       </h1>
       <h3 className={`contactHeadline1Title2 ${deviceCheck(width)}`}>
-        CONTACT US
+        Contact Us
       </h3>
     </div>
   );

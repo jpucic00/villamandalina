@@ -1,69 +1,126 @@
 .locationContainer {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+  width: 480px;
+  flex-shrink: 0;
+  margin: 0;
   height: max-content;
-  margin-top: 200px;
 }
 
 .locationContainer.mobile {
-  margin-top: 100px;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .locationContainer.tablet {
-  margin-top: 100px;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .locationTitle {
   font-family: Merriweather-Regular;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
-  line-height: 53px;
+  font-size: 35px;
+  line-height: 40px;
   text-align: center;
-  color: #ffffff;
+  color: #2c3e50;
+  margin-bottom: 40px;
 }
 
 .locationTitle.tablet {
-  font-size: 30px;
-  line-height: 33px;
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 30px;
 }
 
 .locationTitle.mobile {
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
+
+.locationContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.locationContentWrapper.tablet,
+.locationContentWrapper.mobile {
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
 .locationDescription {
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  width: 100%;
+  width: auto;
+  max-width: 400px;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 31px;
+  font-size: 16px;
+  line-height: 24px;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #595450;
+  color: #2c3e50;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: text;
+}
+
+.locationDescription:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  color: #1ba3e3;
 }
 
 .locationDescription.tablet {
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  width: 80%;
+  padding: 25px 30px;
 }
 
 .locationDescription.mobile {
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  width: calc(100% - 60px);
+  padding: 20px 25px;
 }
 
 .locationMaps {
-  width: 50%;
-  height: 500px;
-  margin: 60px auto 60px auto;
+  width: 400px;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
 }
 
 .locationMaps.tablet {
   width: 80%;
-  height: 350px;
+  height: 300px;
 }
 
 .locationMaps.mobile {

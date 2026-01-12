@@ -1,5 +1,11 @@
 .moreDetailsContainer {
-  margin: auto;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
+  padding: 80px 0;
+  margin: 0;
 }
 
 .moreDetailsTitle {
@@ -11,7 +17,8 @@
   text-align: center;
   color: #ffffff;
   margin: auto;
-  margin-top: 115px;
+  margin-top: 0;
+  margin-bottom: 40px;
   width: 100%;
   text-align: center;
 }
@@ -92,19 +99,5 @@
 }
 
 .moreDetailsBlueBackground {
-  height: 800px;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  z-index: -5;
-  border-left: 2020px solid #66d0ff;
-  border-top: 140px solid transparent;
-}
-
-.moreDetailsBlueBackground.mobile {
-  height: 1000px;
-}
-
-.moreDetailsBlueBackground.tablet {
-  height: 650px;
+  display: none;
 }

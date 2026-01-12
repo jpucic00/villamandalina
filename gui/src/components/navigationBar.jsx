@@ -26,7 +26,7 @@ export default function NavigationBar() {
   };
   return (
     <div className={`navigationContainer ${deviceCheck(width)}`}>
-      {width > 850 ? (
+      {width > 1024 ? (
         navigationMenuItems.map((item) => (
           <a
             href={user && item.name === "Log in" ? null : item.link}

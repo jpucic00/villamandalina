@@ -7,10 +7,10 @@ export default function ContactHeadline2() {
   return (
     <div className={`contactHeadline2Wrapper ${deviceCheck(width)}`}>
       <h1 className={`contactHeadline2Title1 ${deviceCheck(width)}`}>
-        Hey! We are looking foward to your message.
+        We're looking forward to hearing from you!
       </h1>
       <p className={`contactHeadline2Title2 ${deviceCheck(width)}`}>
-        Write us your questions and concerns. We will reply as soon as we can!
+        Have questions about Villa Mandalina? Send us a message and we'll get back to you as soon as possible.
       </p>
     </div>
   );

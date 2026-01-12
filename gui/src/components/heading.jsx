@@ -10,37 +10,57 @@ export default function Heading() {
   const { width } = useWindowDimensions();
   return (
     <div className={`wrap-layer ${deviceCheck(width)}`}>
-      <div className={`overlay ${deviceCheck(width)}`} />
-      <div className={`NavBarWrapper ${deviceCheck(width)}`}>
-        <a href="/" className={`logo ${deviceCheck(width)}`} />
+      <div className={`rightSection ${deviceCheck(width)}`}>
+        <div className={`overlay ${deviceCheck(width)}`} />
+      </div>
+      <div className={`leftSection ${deviceCheck(width)}`}>
+        <div className="decorativeCircles">
+          <div className="circle circle1"></div>
+          <div className="circle circle2"></div>
+          <div className="circle circle3"></div>
+          <div className="circle circle4"></div>
+          <div className="circle circle5"></div>
+          <div className="circle circle6"></div>
+        </div>
+        <div className={`contentWrapper ${deviceCheck(width)}`}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className={`headerTitle ${deviceCheck(width)}`}
+          >
+            Luxury Villa Just Outside The City Center With A Beautifull Panoramic
+            View
+          </motion.div>
+          <div className={`headerButtonContainer ${deviceCheck(width)}`}>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={"/calendar"}
+              className={`reservationButtonHeader ${deviceCheck(width)}`}
+            >
+              Make a Reservation
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={"/contact"}
+              className={`contactButtonHeader ${deviceCheck(width)}`}
+            >
+              Contact Us
+            </motion.a>
+          </div>
+        </div>
+      </div>
+      <a href="/" className={`headingLogo ${deviceCheck(width)}`} />
+      <div className={`headingNavBarWrapper ${deviceCheck(width)}`}>
         <NavigationBar />
       </div>
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5, type: "easeIn" }}
-        className={`headerTitle ${deviceCheck(width)}`}
+      <div
+        className={`scrollIndicator ${deviceCheck(width)}`}
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        Luxury Villa Just Outside The City Center With A Beautifull Panoramic
-        View
-      </motion.div>
-      <div className={`headerButtonContainer ${deviceCheck(width)}`}>
-        <motion.a
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 1.1 }}
-          href={"/calendar"}
-          className={`reservationButtonHeader ${deviceCheck(width)}`}
-        >
-          Make a reservation
-        </motion.a>
-        <motion.a
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 1.1 }}
-          href={"/contact"}
-          className={`contactButtonHeader ${deviceCheck(width)}`}
-        >
-          Contact us
-        </motion.a>
+        <span>SCROLL</span>
       </div>
     </div>
   );

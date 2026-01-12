@@ -45,7 +45,7 @@
   grid-column-end: 13;
 
   font: Merriweather;
-  color: white;
+  color: #2c3e50;
   font-size: 1em;
 
   min-width: 0%;
@@ -63,12 +63,11 @@
 }
 
 .galleryElementTitleLine {
-  background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 72%,
-    rgba(255, 255, 255, 0) 100%
+    #1ba3e3 0%,
+    #4dc4f5 72%,
+    rgba(77, 196, 245, 0) 100%
   );
 
   width: 100%;
@@ -275,75 +274,9 @@
 }
 
 .blueBackgroundSurroundings {
-  height: 500px;
-  width: 100%;
-  position: absolute;
-  bottom: 100px;
-  left: 0px;
-  left: -200px;
-  z-index: -5;
-  margin-top: -350px;
-  border-bottom: 240px solid transparent;
-  border-left: 3020px solid #66d0ff;
-  border-top: 240px solid transparent;
-}
-
-.blueBackgroundSurroundings.tablet {
-  height: 200px;
-  width: 100%;
-  position: absolute;
-  bottom: 50px;
-  left: 0px;
-  left: 0px;
-  z-index: -5;
-  margin-top: -350px;
-  border-bottom: 240px solid transparent;
-  border-left: 3020px solid #66d0ff;
-  border-top: 240px solid transparent;
-}
-
-.blueBackgroundSurroundings.mobile {
-  margin-top: -350px;
-  bottom: 200px;
-  left: 0px;
-  border-bottom: 50px solid transparent;
-  border-left: 700px solid #66d0ff;
-  border-top: 50px solid transparent;
-  height: 300px;
+  display: none;
 }
 
 .blueBackgroundBedrooms {
-  height: 1000px;
-  width: 100%;
-  position: absolute;
-  bottom: 1500px;
-  left: -200px;
-  z-index: -5;
-  margin-top: -350px;
-  border-bottom: 240px solid transparent;
-  border-left: 3020px solid #66d0ff;
-  border-top: 240px solid transparent;
-}
-
-.blueBackgroundBedrooms.tablet {
-  height: 400px;
-  width: 100%;
-  position: absolute;
-  bottom: 1100px;
-  left: 0px;
-  z-index: -5;
-  margin-top: -350px;
-  border-bottom: 240px solid transparent;
-  border-left: 3020px solid #66d0ff;
-  border-top: 240px solid transparent;
-}
-
-.blueBackgroundBedrooms.mobile {
-  margin-top: -350px;
-  bottom: 800px;
-  left: 0px;
-  border-bottom: 50px solid transparent;
-  border-left: 700px solid #66d0ff;
-  border-top: 50px solid transparent;
-  height: 500px;
+  display: none;
 }

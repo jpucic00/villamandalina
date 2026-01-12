@@ -2,9 +2,9 @@
   position: relative;
   margin-right: 60px;
   display: flex;
-
   width: max-content;
   height: max-content;
+  z-index: 1;
 }
 
 .navigationContainer.tablet {
@@ -20,47 +20,93 @@
   height: max-content;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
   line-height: 23px;
   color: #ffffff;
-  margin-right: 43px;
+  margin-right: 35px;
   text-decoration: none;
   cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .navigationItem:hover {
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .navigationItem.active {
-  background: rgba(45, 170, 224, 0.1);
-  border: 1px solid white;
-  margin-top: -3px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 3px 11px 4px 11px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navigationItem.active::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
 }
 
 .mobileMenu {
   background: url("../images/mobileMenu.png");
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   filter: invert(100%) sepia(21%) saturate(19%) hue-rotate(315deg)
     brightness(106%) contrast(106%);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.mobileMenu:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .mobileMenu.mobile {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+}
+
+.logo {
+  position: relative;
+  background: url("../images/logo.png");
+  height: 60px;
+  width: 294px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.logo.tablet {
+  width: 220.5px;
+  height: 45px;
+}
+
+.logo.mobile {
+  width: 147px;
+  height: 30px;
 }
 
 .NavBarWrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  padding-top: 26px;
+  padding-top: 30px;
+  padding-left: 60px;
+  padding-right: 0;
   margin-bottom: 64px;
 }
 
@@ -68,83 +114,180 @@
   position: absolute;
   height: 300px;
   width: 100vw;
-  top: -32px;
-  background: linear-gradient(180deg, #0a8fc9 0%, rgba(102, 208, 255, 0) 100%);
+  left: 0px;
+  top: -30px;
+  background: linear-gradient(180deg, #1ba3e3 0%, rgba(77, 196, 245, 0) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.withOverlay.tablet {
+  left: -30px;
+  top: -20px;
+}
+
+.withOverlay.mobile {
+  left: -30px;
+  top: -20px;
 }
 
 .NavBarWrapper.tablet {
-  padding-top: 33.5px;
+  padding-top: 20px;
+  padding-left: 30px;
 }
 
 .NavBarWrapper.mobile {
-  padding-top: 26px;
+  padding-top: 20px;
+  padding-left: 30px;
 }
 
 .mobileMenuWrapper {
-  position: absolute;
-  z-index: 1500;
-  right: -30px;
-  top: -26px;
-  border-radius: 0px 0px 0px 26px;
-  height: max-content;
-  width: 45vw;
-  min-height: 200px;
-  min-width: 150px;
+  position: fixed;
+  z-index: 999999;
+  right: 0;
+  top: 0;
+  height: 100vh;
   width: 100vw;
-  background: rgba(102, 208, 255, 0.85);
+  max-width: 320px;
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+}
+
+.mobileMenuWrapper.open {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.mobileMenuWrapper.closing {
+  animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .mobileMenuWrapper.tablet {
-  right: -60px;
-  top: -33.5px;
+  max-width: 280px;
+}
+
+.mobileMenuBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999998;
+  animation: fadeIn 0.3s ease;
+}
+
+.mobileMenuBackdrop.closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .mobileMenuClose {
   display: flex;
-  height: 70px;
+  height: 80px;
   width: 100%;
-  padding-top: 26px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 20px 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .mobileMenuClose.tablet {
-  padding-top: 33.5px;
+  padding: 20px 16px;
 }
 
 .mobileMenuCloseIcon {
-  position: absolute;
   background: url("../images/mobileMenuClose.svg");
-  width: 17px;
-  height: 17px;
-  right: 30px;
-  top: 30px;
+  width: 32px;
+  height: 32px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 20px 20px;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobileMenuCloseIcon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
 }
 
 .mobileMenuCloseIcon.tablet {
-  right: 60px;
+  width: 32px;
+  height: 32px;
+  background-size: 18px 18px;
 }
 
 .mobileMenuItemsWrapper {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  padding: 0 20px;
+  gap: 8px;
 }
 
 .mobileMenuItems {
-  width: max-content;
-  height: 30px;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-weight: normal;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  line-height: 23px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
   color: #ffffff;
-  margin-bottom: 16px;
-  margin-right: 43px;
   text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.mobileMenuItems:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.mobileMenuItems.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

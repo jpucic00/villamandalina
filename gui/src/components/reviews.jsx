@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import { reviews } from "../constants/reviews";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../assets/style/slick-custom.css";
 
 export default function Reviews() {
   const { width } = useWindowDimensions();

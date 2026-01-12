@@ -5,9 +5,10 @@
   flex-direction: row;
   justify-content: space-between;
   z-index: 0;
-  max-width: 1920px;
+  width: 100%;
   height: max-content;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
 .galleryContainer.tablet {
@@ -17,7 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   z-index: 0;
-  max-width: 1920px;
+  width: 100%;
   height: max-content;
   overflow: hidden;
 
@@ -32,7 +33,7 @@
   flex-direction: row;
   justify-content: space-between;
   z-index: 0;
-  max-width: 1920px;
+  width: 100%;
   height: max-content;
   overflow: hidden;
 }

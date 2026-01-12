@@ -153,7 +153,7 @@
 }
 
 .galleryButton {
-  background: rgba(247, 242, 230, 0.75);
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
   border-radius: 10px;
   width: max-content;
   height: max-content;
@@ -164,10 +164,17 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 25px;
-  color: #736b67;
+  color: #ffffff;
   cursor: pointer;
   padding: 17px 67px 17px 67px;
   text-decoration: none;
+  box-shadow: 0 4px 12px rgba(27, 163, 227, 0.3);
+  transition: all 0.3s ease;
+}
+
+.galleryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 163, 227, 0.4);
 }
 
 .galleryButton.mobile {

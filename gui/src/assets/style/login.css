@@ -2,86 +2,134 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 425px;
-  height: 512px;
-  padding: 30px;
+  width: 420px;
+  padding: 40px;
   background: #ffffff;
-  border-radius: 10px;
-  margin: auto;
+  border-radius: 16px;
+  margin: 80px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .login__container.mobile {
-  width: calc(100% - 100px);
-  height: 412px;
+  width: calc(100% - 80px);
+  padding: 30px;
+  margin: 50px auto;
+}
+
+.login__container.tablet {
+  width: calc(100% - 80px);
+  padding: 35px;
+  margin: 60px auto;
 }
 
 .loginTitle {
-  font-family: "MerriweatherSans-Bold";
+  font-family: "Merriweather-Bold";
   font-style: normal;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .loginTitle.mobile {
-  font-family: "MerriweatherSans-Bold";
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+.loginTitle.tablet {
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 28px;
 }
 
 .login__textBox {
-  background: rgba(89, 84, 80, 0.1);
-  border: 1px solid rgba(89, 84, 80, 0.5);
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 30px;
-  height: 50px;
-  font-family: "MerriweatherSans-Regular";
+  background: #fef3e8;
+  height: 48px;
+  width: calc(100% - 32px);
+  outline: none;
+  border: 2px solid rgba(27, 163, 227, 0.15);
+  font-family: MerriweatherSans-Regular;
   font-style: normal;
-  padding-left: 25px;
-  font-size: 16px;
+  padding: 0px 16px;
+  font-size: 14px;
   line-height: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
 
-  color: #595450;
+.login__textBox:focus {
+  border-color: #1ba3e3;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
+  background: #ffffff;
+}
+
+.login__textBox::placeholder {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(44, 62, 80, 0.4);
 }
 
 .login__textBox.mobile {
-  height: 35px;
-  font-size: 11px;
+  height: 44px;
+  font-size: 14px;
+  width: calc(100% - 32px);
+}
+
+.login__textBox.tablet {
+  height: 46px;
 }
 
 .login__textBox.email {
-  background-image: url("../images/email.svg");
-  background-repeat: no-repeat;
-  background-position-x: 3px;
-  background-position-y: 50%;
+  background-image: none;
 }
 
 .login__textBox.password {
-  background-image: url("../images/password.svg");
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 50%;
+  background-image: none;
 }
 
 .login__btn {
-  background: rgba(45, 170, 224, 0.65);
-  border-radius: 10px;
-  padding: 13px 0px;
   border: none;
   outline: none;
-  font-family: "MerriweatherSans-Bold";
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
+  border-radius: 10px;
+  font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-size: 20px;
-  line-height: 25px;
-  width: 268px;
-  margin: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  padding: 14px 24px;
   color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(27, 163, 227, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
+
+.login__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 163, 227, 0.4);
+}
+
+.login__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .login__btn.mobile {
   width: 100%;
-  font-size: 11px;
+  font-size: 16px;
+}
+
+.login__btn.tablet {
+  width: 100%;
 }
 
 .login__google {
@@ -92,19 +140,23 @@
 }
 
 .errorMessage {
-  color: red;
-  margin: 0 auto;
-  font-family: "MerriweatherSans-Bold";
+  color: #e74c3c;
+  font-family: "MerriweatherSans-Regular";
   font-style: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  margin-top: 4px;
 }
 
 .spinnerMask {
   position: absolute;
-  width: calc(100% - 60px);
-  height: calc(100% - 60px);
-  background-color: rgb(255, 255, 255, 0.6);
+  width: calc(100% - 80px);
+  height: calc(100% - 80px);
+  background-color: rgb(255, 255, 255, 0.8);
+  border-radius: 16px;
 }
 
 .spinner {

@@ -2,7 +2,7 @@ body,
 html {
   padding: 0 !important;
   margin: 0 !important;
-  background-color: white;
+  background-color: #fef3e8;
 }
 
 @font-face {
@@ -30,7 +30,7 @@ html {
   position: relative;
   margin: auto;
   z-index: 0;
-  max-width: 1920px;
+  width: 100%;
   height: max-content;
   overflow: hidden;
 }
@@ -44,13 +44,13 @@ html {
   height: max-content;
   width: calc(100% - 280px);
   z-index: 2;
-  padding: 80px 140px 80px 140px;
+  padding-top: 80px;
   max-width: 1280px;
   margin: auto;
 }
 
 .landingPageContentContainer.mobile {
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 0px 20px;
   width: calc(100% - 40px);
 }
 
@@ -66,11 +66,11 @@ html {
   z-index: 2;
   max-width: 1280px;
   margin: auto;
-  padding: 0px 140px 80px 140px;
+  padding: 0px 140px 0px 140px;
 }
 
 .PageContentContainer.mobile {
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 0px 20px;
   width: calc(100% - 40px);
 }
 
@@ -80,31 +80,5 @@ html {
 }
 
 .blueBackground {
-  height: 900px;
-  width: 100%;
-  position: absolute;
-  bottom: 2450px;
-  z-index: -5;
-  margin-top: -350px;
-  border-bottom: 240px solid transparent;
-  border-left: 3020px solid #66d0ff;
-  border-top: 240px solid transparent;
-}
-
-.blueBackground.tablet {
-  margin-top: -200px;
-  height: 600px;
-  bottom: 1900px;
-  border-bottom: 300px solid transparent;
-  border-left: 2050px solid #66d0ff;
-  border-top: 420px solid transparent;
-}
-
-.blueBackground.mobile {
-  margin-top: -200px;
-  bottom: 2280px;
-  border-bottom: 150px solid transparent;
-  border-left: 700px solid #66d0ff;
-  border-top: 150px solid transparent;
-  height: 600px;
+  display: none;
 }

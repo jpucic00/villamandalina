@@ -17,7 +17,7 @@
   line-height: 53px;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #ffffff;
+  color: #2c3e50;
 }
 
 .reviewTitle.tablet {
@@ -45,7 +45,7 @@
 }
 
 .reviewItem {
-  background: rgba(247, 242, 230, 0.65);
+  background: #ffffff;
   border-radius: 10px;
   display: flex;
   margin: auto;
@@ -58,20 +58,30 @@
   font-size: 20px;
   line-height: 31px;
   letter-spacing: 0.03em;
-  padding: 10px;
+  padding: 30px;
   color: #595450;
   flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reviewItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .reviewItem.tablet {
   font-size: 15px;
   line-height: 20px;
+  padding: 24px;
 }
 
 .reviewItem.mobile {
   font-size: 15px;
   line-height: 20px;
   min-height: 305px;
+  padding: 20px;
 }
 
 .starsContainer {
