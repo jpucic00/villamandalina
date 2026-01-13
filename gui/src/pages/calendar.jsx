@@ -24,7 +24,7 @@ export default function CalendarComp() {
 
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
-  const [calendarValue, setCalendarValue] = useState([]);
+  const [calendarValue, setCalendarValue] = useState(null);
 
   const [disabledDates, setDisabledDates] = useState([]);
   const [prices, setPrices] = useState([]);
@@ -157,7 +157,7 @@ export default function CalendarComp() {
         await createBookedDate(checkIn, checkOut);
         setCheckIn();
         setCheckOut();
-        setCalendarValue([]);
+        setCalendarValue(null);
         fetchDisabledDates();
         document.getElementById("reservationForm").reset();
         toast.success(
@@ -174,7 +174,7 @@ export default function CalendarComp() {
       await deleteBookedDate(date.id);
       setCheckIn();
       setCheckOut();
-      setCalendarValue([]);
+      setCalendarValue(null);
       fetchDisabledDates();
       document.getElementById("reservationForm").reset();
       toast.success(`Block removed successfully`);
@@ -222,7 +222,7 @@ export default function CalendarComp() {
           document.getElementById("reservationForm").reset();
           setCheckIn();
           setCheckOut();
-          setCalendarValue([]);
+          setCalendarValue(null);
           resolve();
         })
         .catch(() => {
@@ -253,9 +253,8 @@ export default function CalendarComp() {
     <>
       <h1 className="calendarPageTitle">Select dates</h1>
       <div
-        className={`CalendarElement__MainWrapper ${
-          user && "loggedIn"
-        } ${deviceCheck(width)}`}
+        className={`CalendarElement__MainWrapper ${user && "loggedIn"
+          } ${deviceCheck(width)}`}
       >
         <form
           id="reservationForm"
@@ -386,21 +385,21 @@ export default function CalendarComp() {
                   Math.floor(
                     new Date(date.toLocaleDateString("en")).getTime() / 1000
                   ) >
-                    Math.floor(
-                      new Date(
-                        new Date(disabledDate.startDate).toLocaleDateString(
-                          "en"
-                        )
-                      ).getTime() / 1000
-                    ) &&
+                  Math.floor(
+                    new Date(
+                      new Date(disabledDate.startDate).toLocaleDateString(
+                        "en"
+                      )
+                    ).getTime() / 1000
+                  ) &&
                   Math.floor(
                     new Date(date.toLocaleDateString("en")).getTime() / 1000
                   ) <
-                    Math.floor(
-                      new Date(
-                        new Date(disabledDate.endDate).toLocaleDateString("en")
-                      ).getTime() / 1000
-                    )
+                  Math.floor(
+                    new Date(
+                      new Date(disabledDate.endDate).toLocaleDateString("en")
+                    ).getTime() / 1000
+                  )
                 );
               }).length > 0 ||
               disabledDates.filter(
@@ -408,21 +407,21 @@ export default function CalendarComp() {
                   Math.floor(
                     new Date(date.toLocaleDateString("en")).getTime() / 1000
                   ) ===
-                    Math.floor(
-                      new Date(
-                        new Date(disabledDate.startDate).toLocaleDateString(
-                          "en"
-                        )
-                      ).getTime() / 1000
-                    ) ||
+                  Math.floor(
+                    new Date(
+                      new Date(disabledDate.startDate).toLocaleDateString(
+                        "en"
+                      )
+                    ).getTime() / 1000
+                  ) ||
                   Math.floor(
                     new Date(date.toLocaleDateString("en")).getTime() / 1000
                   ) ===
-                    Math.floor(
-                      new Date(
-                        new Date(disabledDate.endDate).toLocaleDateString("en")
-                      ).getTime() / 1000
-                    )
+                  Math.floor(
+                    new Date(
+                      new Date(disabledDate.endDate).toLocaleDateString("en")
+                    ).getTime() / 1000
+                  )
               ).length > 1
             );
           }}
@@ -438,36 +437,43 @@ export default function CalendarComp() {
           onChange={handleCalendarChange}
           value={calendarValue}
           minDate={new Date()}
-          tileContent={({ date, view }) =>
-            view === "month" && (
+          tileContent={({ date, view }) => {
+            if (view !== "month") return null;
+
+            const matchingPrice = prices.find((price) => {
+              try {
+                if (!price.startDate || !price.endDate) return false;
+
+                const dateTimestamp = Math.floor(
+                  new Date(date.toLocaleDateString("en")).getTime() / 1000
+                );
+                const startTimestamp = Math.floor(
+                  new Date(
+                    new Date(
+                      date.getFullYear() + "-" + price.startDate
+                    ).toLocaleDateString("en")
+                  ).getTime() / 1000
+                );
+                const endTimestamp = Math.floor(
+                  new Date(
+                    new Date(
+                      date.getFullYear() + "-" + price.endDate
+                    ).toLocaleDateString("en")
+                  ).getTime() / 1000
+                );
+
+                return dateTimestamp >= startTimestamp && dateTimestamp <= endTimestamp;
+              } catch {
+                return false;
+              }
+            });
+
+            return (
               <p className="calendarPrice">
-                {prices.filter(
-                  (price) =>
-                    Math.floor(
-                      new Date(date.toLocaleDateString("en")).getTime() / 1000
-                    ) >=
-                      Math.floor(
-                        new Date(
-                          new Date(
-                            date.getFullYear() + "-" + price.startDate
-                          ).toLocaleDateString("en")
-                        ).getTime() / 1000
-                      ) &&
-                    Math.floor(
-                      new Date(date.toLocaleDateString("en")).getTime() / 1000
-                    ) <=
-                      Math.floor(
-                        new Date(
-                          new Date(
-                            date.getFullYear() + "-" + price.endDate
-                          ).toLocaleDateString("en")
-                        ).getTime() / 1000
-                      )
-                )[0]?.price || "-"}
-                €
+                {matchingPrice?.price || "-"}€
               </p>
-            )
-          }
+            );
+          }}
         />
       </div>
 
