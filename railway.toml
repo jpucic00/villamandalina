@@ -1,7 +1,4 @@
-[build]
-builder = "nixpacks"
-
 [deploy]
-startCommand = "npm run init-db && npm start"
+startCommand = "npm start"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
