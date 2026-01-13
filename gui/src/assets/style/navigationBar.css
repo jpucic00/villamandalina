@@ -100,6 +100,12 @@
   height: 30px;
 }
 
+.NavBarOuter {
+  position: relative;
+  width: 100%;
+  margin-bottom: 64px;
+}
+
 .NavBarWrapper {
   position: relative;
   display: flex;
@@ -107,28 +113,18 @@
   padding-top: 30px;
   padding-left: 60px;
   padding-right: 0;
-  margin-bottom: 64px;
+  z-index: 1;
 }
 
 .withOverlay {
   position: absolute;
   height: 300px;
-  width: 100vw;
-  left: 0px;
-  top: -30px;
+  left: 0;
+  right: 0;
+  top: 0;
   background: linear-gradient(180deg, #1ba3e3 0%, rgba(77, 196, 245, 0) 100%);
   z-index: 0;
   pointer-events: none;
-}
-
-.withOverlay.tablet {
-  left: -30px;
-  top: -20px;
-}
-
-.withOverlay.mobile {
-  left: -30px;
-  top: -20px;
 }
 
 .NavBarWrapper.tablet {
@@ -221,7 +217,7 @@
   display: flex;
   height: 80px;
   width: 100%;
-  padding: 20px 16px;
+  padding: 20px 30px 20px 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   align-items: center;
@@ -230,7 +226,7 @@
 }
 
 .mobileMenuClose.tablet {
-  padding: 20px 16px;
+  padding: 20px 30px 20px 20px;
 }
 
 .mobileMenuCloseIcon {

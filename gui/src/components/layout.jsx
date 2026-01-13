@@ -15,11 +15,12 @@ export default function Layout({ children }) {
       {window.location.pathname === "/" ? (
         <Heading />
       ) : (
-        <div className={`NavBarWrapper  ${deviceCheck(width)}`}>
-          <div className={`blueBackgroundHeading ${deviceCheck(width)}`} />
+        <div className={`NavBarOuter ${deviceCheck(width)}`}>
           <div className={`withOverlay ${deviceCheck(width)}`} />
-          <a href="/" className={`logo ${deviceCheck(width)}`} />
-          <NavigationBar />
+          <div className={`NavBarWrapper ${deviceCheck(width)}`}>
+            <a href="/" className={`logo ${deviceCheck(width)}`} />
+            <NavigationBar />
+          </div>
         </div>
       )}
       <div

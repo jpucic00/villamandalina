@@ -75,7 +75,7 @@
 }
 
 .headingNavBarWrapper.tablet {
-  padding: 20px 30px;
+  padding: 20px 0;
   top: 0;
   bottom: auto;
   left: auto;
@@ -85,7 +85,7 @@
 }
 
 .headingNavBarWrapper.mobile {
-  padding: 20px 30px;
+  padding: 20px 0;
   top: 0;
   bottom: auto;
   left: auto;
