@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, logInWithEmailAndPassword } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { logInWithEmailAndPassword } from "../api";
+import { useAuth } from "../AuthContext";
 import "../assets/style/login.css";
 
 import deviceCheck from "../util/deviceCheck";
@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user] = useAuthState(auth);
+  const { user, updateUser } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
@@ -27,21 +27,21 @@ function Login() {
     <>
       <form
         className="login"
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
           setLoading(true);
-          logInWithEmailAndPassword(email, password)
-            .then(() => {
-              setLoading(false);
-              toast.success("Logged in successfully");
-            })
-            .catch(() => {
-              setLoading(false);
-              console.log("error");
-              toast.error(
-                "Log in failed, please check your email and password"
-              );
-            });
+          try {
+            const userData = await logInWithEmailAndPassword(email, password);
+            updateUser(userData);
+            setLoading(false);
+            toast.success("Logged in successfully");
+          } catch {
+            setLoading(false);
+            console.log("error");
+            toast.error(
+              "Log in failed, please check your email and password"
+            );
+          }
         }}
       >
         <div className={`login__container ${deviceCheck(width)}`}>

@@ -3,13 +3,13 @@ import useWindowDimensions from "../util/useWindowDimensions";
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { navigationMenuItems } from "../constants/menuItems";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, logout } from "../firebase";
+import { logout } from "../api";
+import { useAuth } from "../AuthContext";
 import { toast } from "react-toastify";
 
 export default function MobileMenu() {
   const { width } = useWindowDimensions();
-  const [user, loading] = useAuthState(auth);
+  const { user, loading, clearUser } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const container = useRef();
@@ -58,6 +58,7 @@ export default function MobileMenu() {
   const doLogout = () => {
     try {
       logout();
+      clearUser();
       handleClose();
       toast.success("Logged out");
     } catch {

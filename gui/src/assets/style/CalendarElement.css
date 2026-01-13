@@ -1,10 +1,10 @@
 .CalendarElement__MainWrapper {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 
   width: 100%;
-  height: 800px;
+  min-height: 500px;
 
   font-family: MerriweatherSans-Bold;
 }
@@ -18,13 +18,13 @@
 .CalendarElement__MainWrapper.mobile {
   flex-direction: column-reverse;
   width: 100%;
-  height: 1200px;
+  min-height: auto;
 }
 
 .CalendarElement__MainWrapper.mobile.loggedIn {
   flex-direction: column-reverse;
   width: 100%;
-  height: 800px;
+  min-height: auto;
 }
 
 .CalendarElement__MainWrapper.tablet {
@@ -345,4 +345,92 @@
 
   padding: 0;
   margin: 0;
+}
+
+/* Price Management Section */
+.priceManagementContainer {
+  margin-top: 40px;
+  padding: 20px 30px;
+  background: #b0e7ff;
+  opacity: 0.95;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.priceManagementTitle {
+  font-family: MerriweatherSans-Bold;
+  color: #595450;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.priceForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.priceFormRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.priceFormRow label {
+  font-family: MerriweatherSans-Bold;
+  color: #595450;
+  font-size: 14px;
+}
+
+.priceFormRow input {
+  width: 100px;
+}
+
+.pricesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 5px;
+}
+
+.priceDetails {
+  font-family: MerriweatherSans-Regular;
+  color: #595450;
+  font-size: 14px;
+}
+
+.priceDetails strong {
+  font-family: MerriweatherSans-Bold;
+}
+
+/* Mobile styles for price management */
+.mobile .priceManagementContainer {
+  max-width: 100%;
+  padding: 15px;
+}
+
+.mobile .priceForm {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mobile .priceFormRow input {
+  width: 100%;
+}
+
+.mobile .priceItem {
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }

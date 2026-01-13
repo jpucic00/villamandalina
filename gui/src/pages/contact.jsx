@@ -16,7 +16,10 @@ export default function Contact() {
       {width > 1350 ? (
         <>
           <div className={`contactPageWrapper ${deviceCheck(width)}`}>
-            <ContactForm />
+            <div className="contactHeadlinesWrapper">
+              <ContactHeadline2></ContactHeadline2>
+              <ContactForm />
+            </div>
             <div></div>
             <div></div>
             <div></div>
@@ -26,17 +29,13 @@ export default function Contact() {
             <ContactInfo />
           </div>
           <div className="contactBottomSection">
-            <div className="contactHeadlinesWrapper">
-              <ContactHeadline1></ContactHeadline1>
-              <ContactHeadline2></ContactHeadline2>
-            </div>
+
             <Location />
           </div>
         </>
       ) : (
         <div className={`contactPageWrapper ${deviceCheck(width)}`}>
           <ContactInfo />
-          <ContactHeadline1></ContactHeadline1>
           <ContactHeadline2></ContactHeadline2>
           <ContactForm />
           <Location />

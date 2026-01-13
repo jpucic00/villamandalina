@@ -1,18 +1,18 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import NavigationBar from "./navigationBar";
 import useWindowDimensions from "../util/useWindowDimensions";
 import deviceCheck from "../util/deviceCheck";
 import Heading from "./heading";
-import { auth } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Layout({ children }) {
   const { width } = useWindowDimensions();
-  const [user, loading, error] = useAuthState(auth); //eslint-disable-line
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <div className={`landingPageContainer ${deviceCheck(width)}`}>
-      {window.location.pathname === "/" ? (
+      {isHomePage ? (
         <Heading />
       ) : (
         <div className={`NavBarOuter ${deviceCheck(width)}`}>
@@ -25,14 +25,14 @@ export default function Layout({ children }) {
       )}
       <div
         className={`${
-          window.location.pathname === "/"
+          isHomePage
             ? "landingPageContentContainer"
             : "PageContentContainer"
         } ${deviceCheck(width)}`}
       >
         {children}
       </div>
-      {window.location.pathname === "/" ? (
+      {isHomePage ? (
         <>
           <div className={`blueBackground ${deviceCheck(width)}`} />
           <div className={`moreDetailsBlueBackground ${deviceCheck(width)}`} />

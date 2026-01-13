@@ -7,18 +7,18 @@ import "../assets/style/navigationBar.css";
 import { navigationMenuItems } from "../constants/menuItems";
 import MobileMenu from "./mobileMenu";
 
-import { auth, logout } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { logout } from "../api";
+import { useAuth } from "../AuthContext";
 import { toast } from "react-toastify";
 
 export default function NavigationBar() {
-  const [user, loading] = useAuthState(auth);
+  const { user, loading, clearUser } = useAuth();
   const { width } = useWindowDimensions();
 
   const doLogout = () => {
     try {
       logout();
-
+      clearUser();
       toast.success("Logged out");
     } catch {
       toast.error("Failed to logout");
