@@ -255,7 +255,6 @@ export default function CalendarComp() {
 
   return (
     <>
-      <h1 className="calendarPageTitle">Select dates</h1>
       <div
         className={`CalendarElement__MainWrapper ${user && "loggedIn"
           } ${deviceCheck(width)}`}
@@ -267,8 +266,13 @@ export default function CalendarComp() {
         >
           {!loading && !user ? (
             <>
+              <h2 className="calendarFormTitle">Request a Reservation</h2>
+              <p className="calendarFormDescription">
+                Fill out the form below with your preferred dates and contact details.
+                We will review your request and send a confirmation to your email as soon as possible.
+              </p>
               <label htmlFor="Check-In" className="TopMinusFive">
-                Select Check-In Date
+                Check-In Date
               </label>
               <input
                 required
@@ -281,7 +285,7 @@ export default function CalendarComp() {
                 className="CalendarElement__Date_Input"
               />
               <label htmlFor="Check-Out" className="TopMinusFive">
-                Select Check-Out Date
+                Check-Out Date
               </label>
               <input
                 required

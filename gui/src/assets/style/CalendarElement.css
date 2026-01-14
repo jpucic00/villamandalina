@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-
+  gap: 24px;
   width: 100%;
   min-height: 500px;
-
   font-family: MerriweatherSans-Bold;
 }
 
@@ -13,12 +12,30 @@
   font-family: MerriweatherSans-Bold;
   color: white;
   margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendarFormTitle {
+  font-family: MerriweatherSans-Bold;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+}
+
+.calendarFormDescription {
+  font-family: MerriweatherSans-Regular;
+  color: #5a6a7a;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
 }
 
 .CalendarElement__MainWrapper.mobile {
   flex-direction: column-reverse;
   width: 100%;
   min-height: auto;
+  gap: 20px;
 }
 
 .CalendarElement__MainWrapper.mobile.loggedIn {
@@ -40,32 +57,28 @@
   opacity: 50%;
 }
 
-/* FORM ELEMENTS  -START  */
+/* FORM ELEMENTS -START */
 
 .CalendarElement__FormWrapper {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: space-around;
-
+  align-items: stretch;
+  gap: 4px;
   box-sizing: border-box;
-  padding-top: 1%;
-  padding-bottom: 2%;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 28px 28px 32px;
   font-family: MerriweatherSans-bold;
   height: max-content;
   width: 40%;
-  color: #595450;
-  font-size: 20px;
-
-  background: #b0e7ff;
-  opacity: 0.95;
-  border-radius: 10px;
+  color: #3a4a5c;
+  font-size: 18px;
+  background: linear-gradient(180deg, #e8f4fb 0%, #d4ecf7 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .mobile .CalendarElement__FormWrapper {
   width: 100%;
+  padding: 24px 20px 28px;
 }
 
 .tablet .CalendarElement__FormWrapper {
@@ -78,79 +91,131 @@
 }
 
 .CalendarElement__Date_Input {
-  height: 30px;
-  width: calc(100% - 15px);
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
   outline: none;
-  border: none;
+  border: 2px solid #e8f0f5;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  padding: 0px 8px;
-  font-size: 12px;
+  padding: 0px 14px;
+  font-size: 14px;
   line-height: 15px;
-  border-radius: 5px;
-  background: white;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__Date_Input:hover {
+  border-color: #d4e4ed;
+  background: #ffffff;
+}
+
+.CalendarElement__Date_Input:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
 }
 
 .CalendarElement__Text_Input {
-  height: 30px;
-  width: calc(100% - 15px);
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
   outline: none;
-  border: none;
+  border: 2px solid #e8f0f5;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  padding: 0px 8px;
-  font-size: 12px;
+  padding: 0px 14px;
+  font-size: 14px;
   line-height: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__Text_Input:hover {
+  border-color: #d4e4ed;
+  background: #ffffff;
+}
+
+.CalendarElement__Text_Input:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
 }
 
 .CalendarElement__MakeReservationButton {
-  width: max-content;
-  padding: 10px 20px;
-
-  font-size: 1.2rem;
-
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
   color: white;
   border: none;
-  background: rgba(110, 208, 115, 0.35);
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
   border-radius: 10px;
-
   font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(27, 163, 227, 0.3);
 }
 
-.CalendarElement__MakeReservationButton:hover,
-.CalendarElement__BlockReservationButton:hover {
-  transform: scale(1.05);
+.CalendarElement__MakeReservationButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 163, 227, 0.4);
+}
+
+.CalendarElement__MakeReservationButton:active {
+  transform: translateY(0);
 }
 
 .CalendarElement__BlockReservationButton {
   width: max-content;
   padding: 10px 20px;
-
-  font-size: 0.6rem;
-
+  font-size: 0.8rem;
+  font-weight: 600;
   color: white;
   border: none;
-  background: rgba(110, 208, 115, 0.35);
-  border-radius: 10px;
-
+  background: linear-gradient(135deg, #e05555 0%, #d45555 100%);
+  border-radius: 8px;
   font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__BlockReservationButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(224, 85, 85, 0.3);
 }
 
 .calendarTextField {
-  background: white;
-  border-radius: 0px 0px 10px 0px;
-  height: 184px;
-  width: calc(100% - 15px);
+  background: #ffffff;
+  border: 2px solid #e8f0f5;
+  border-radius: 10px;
+  height: 140px;
+  width: 100%;
+  box-sizing: border-box;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-size: 12px;
-  line-height: 15px;
-  padding: 8px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 14px;
   resize: none;
   outline: none;
-  border: none;
-  border-radius: 5px;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.calendarTextField:hover {
+  border-color: #d4e4ed;
+  background: #ffffff;
+}
+
+.calendarTextField:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
 }
 
 .calendarTextField::placeholder,
@@ -158,61 +223,62 @@
 .CalendarElement__Date_Input::placeholder {
   font-family: MerriweatherSans-Regular;
   font-style: normal;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 15px;
-  color: rgba(45, 170, 224, 0.55);
+  color: #9aacba;
 }
 
 .calendarTextField.mobile,
 .CalendarElement__Text_Input.mobile,
 .CalendarElement__Date_Input.mobile {
-  width: calc(100% - 60px);
+  width: 100%;
 }
 
 .calendarButton {
-  margin: 15px auto 0 auto;
+  margin: 20px 0 0 0;
 }
 
 .mobile .calendarButton {
-  margin: 15px auto 0 auto;
-  width: calc(100% - 15px);
+  margin: 20px 0 0 0;
+  width: 100%;
 }
 
 .tablet .calendarButton {
-  margin: 15px auto 0 auto;
-  width: calc(100% - 15px);
+  margin: 20px 0 0 0;
+  width: 100%;
 }
 
 .CalendarElement__ContactUsButton {
   width: 55%;
   height: 7%;
   font-size: 1.2rem;
-
   background: transparent;
-  border: none;
-  border: 1px solid rgba(89, 84, 80, 0.5);
+  border: 2px solid #d4e4ed;
   box-sizing: border-box;
   border-radius: 10px;
-
   font-family: inherit;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__ContactUsButton:hover {
+  border-color: #3aa3d4;
+  color: #3aa3d4;
 }
 
 /* FORM ELEMENTS -END */
 
-/* DATEPICKER ELEMENTS -START  */
+/* DATEPICKER ELEMENTS -START */
 
 .CalendarElement__DatePickerWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-
   height: 90%;
   width: 75%;
-
-  background: #66b3d4;
-  opacity: 0.95;
-  border-radius: 0px 10px 10px 0px;
+  background: linear-gradient(135deg, #2d8ab8 0%, #3aa3d4 100%);
+  border-radius: 16px;
 }
 
 .CalendarElement__MonthWrapper {
@@ -225,17 +291,18 @@
   display: grid;
   width: 80%;
   height: 70%;
-
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(8, 1fr);
-
   font-size: 1.5rem;
 }
 
 .TopMinusFive {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
   margin-top: 16px;
-  width: calc(100%-60px);
+  margin-bottom: 6px;
+  width: 100%;
+  color: #3a4a5c;
 }
 
 .CalendarElement__Year {
@@ -256,12 +323,10 @@
   align-self: center;
   width: 100%;
   height: 3px;
-
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 8;
-
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -276,7 +341,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 5%;
   margin: 0;
 }
@@ -287,7 +351,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -298,7 +361,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -309,7 +371,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -320,7 +381,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -331,7 +391,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -342,7 +401,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
 }
@@ -350,43 +408,45 @@
 /* Price Management Section */
 .priceManagementContainer {
   margin-top: 40px;
-  padding: 20px 30px;
-  background: #b0e7ff;
-  opacity: 0.95;
-  border-radius: 10px;
+  padding: 28px;
+  background: linear-gradient(180deg, #e8f4fb 0%, #d4ecf7 100%);
+  border-radius: 16px;
   max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .priceManagementTitle {
   font-family: MerriweatherSans-Bold;
-  color: #595450;
+  color: #3a4a5c;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   margin-top: 0;
 }
 
 .priceForm {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 16px;
   align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .priceFormRow {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .priceFormRow label {
   font-family: MerriweatherSans-Bold;
-  color: #595450;
-  font-size: 14px;
+  color: #3a4a5c;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .priceFormRow input {
-  width: 100px;
+  width: 110px;
+  height: 40px;
 }
 
 .pricesList {
@@ -399,25 +459,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-  background: white;
-  border-radius: 5px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid #e8f0f5;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.priceItem:hover {
+  background: #f0f6fa;
+  border-color: #d4e4ed;
 }
 
 .priceDetails {
   font-family: MerriweatherSans-Regular;
-  color: #595450;
+  color: #3a4a5c;
   font-size: 14px;
 }
 
 .priceDetails strong {
   font-family: MerriweatherSans-Bold;
+  color: #1ba3e3;
 }
 
 /* Mobile styles for price management */
 .mobile .priceManagementContainer {
   max-width: 100%;
-  padding: 15px;
+  padding: 20px;
 }
 
 .mobile .priceForm {
@@ -431,6 +499,6 @@
 
 .mobile .priceItem {
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
 }
