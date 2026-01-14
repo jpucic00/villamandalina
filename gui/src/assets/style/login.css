@@ -27,7 +27,7 @@
   font-style: normal;
   font-size: 32px;
   line-height: 40px;
-  color: #2c3e50;
+  color: #1ba3e3;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -45,11 +45,11 @@
 }
 
 .login__textBox {
-  background: #fef3e8;
+  background: #f8fbfd;
   height: 48px;
   width: calc(100% - 32px);
   outline: none;
-  border: 2px solid rgba(27, 163, 227, 0.15);
+  border: 2px solid #e8f4fc;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
   padding: 0px 16px;
@@ -57,13 +57,17 @@
   line-height: 20px;
   border-radius: 10px;
   transition: all 0.3s ease;
-  color: #2c3e50;
+  color: #3a4a5c;
   margin-bottom: 20px;
+}
+
+.login__textBox:hover {
+  border-color: #1ba3e3;
 }
 
 .login__textBox:focus {
   border-color: #1ba3e3;
-  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
   background: #ffffff;
 }
 
@@ -72,7 +76,7 @@
   font-style: normal;
   font-size: 14px;
   line-height: 20px;
-  color: rgba(44, 62, 80, 0.4);
+  color: #9aacba;
 }
 
 .login__textBox.mobile {

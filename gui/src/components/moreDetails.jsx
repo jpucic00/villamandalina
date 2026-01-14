@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import { moreDetails } from "../constants/moreDetails";
@@ -14,15 +16,16 @@ export default function MoreDetails() {
         Villa Mandalina
       </div>
       <div className={`moreDetailsWrapper ${deviceCheck(width)}`}>
-        {moreDetails.map((detail) => {
+        {moreDetails.map((detail, index) => {
           return (
-            <div className={`moreDetailsCategoryWrapper ${deviceCheck(width)}`}>
+            <div key={index} className={`moreDetailsCategoryWrapper ${deviceCheck(width)}`}>
               <div className={`moreDetailsCategoryTitle ${deviceCheck(width)}`}>
                 {detail.title}
               </div>
-              {detail.details.map((item) => {
+              {detail.details.map((item, itemIndex) => {
                 return (
                   <div
+                    key={itemIndex}
                     className={`moreDetailsItemWrapper ${deviceCheck(width)}`}
                   >
                     {item}
@@ -33,6 +36,15 @@ export default function MoreDetails() {
           );
         })}
       </div>
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`moreDetailsButtonWrapper ${deviceCheck(width)}`}
+      >
+        <Link to="/details" className={`moreDetailsButton ${deviceCheck(width)}`}>
+          View Full Details
+        </Link>
+      </motion.div>
     </div>
   );
 }

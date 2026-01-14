@@ -15,7 +15,6 @@ import {
   deletePrice,
 } from "../api";
 import emailjs from "@emailjs/browser";
-import MoreDetails from "../components/moreDetails";
 import ConfirmPopup from "../components/confirmPopup";
 
 export default function CalendarComp() {
@@ -554,8 +553,6 @@ export default function CalendarComp() {
           </div>
         </div>
       )}
-
-      <MoreDetails />
 
       {/* Confirmation popup for removing blocks */}
       {blockToRemove && (

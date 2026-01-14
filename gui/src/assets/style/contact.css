@@ -3,62 +3,83 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: 60px;
-  gap: 40px;
+  gap: 80px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
 .contactPageWrapper.tablet {
-  display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   margin-top: 40px;
-  gap: 30px;
+  gap: 40px;
 }
 
 .contactPageWrapper.mobile {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 30px;
+  padding: 0 15px;
+}
+
+/* Left column: Headline + Form */
+.contactLeftColumn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  gap: 0px;
+  flex: 1;
+  max-width: 500px;
+}
+
+.contactLeftColumn.tablet,
+.contactLeftColumn.mobile {
+  width: 100%;
+  max-width: 100%;
+  order: 1;
+}
+
+/* Right column: Contact Info + Location */
+.contactRightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+.contactRightColumn.tablet,
+.contactRightColumn.mobile {
+  width: 100%;
+  align-items: center;
+  order: 2;
 }
 
 .contactForm {
   position: relative;
-  width: 420px;
-  flex-shrink: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 0px;
   background: #ffffff;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .contactForm.mobile {
-  margin-top: 30px;
-  width: calc(100% - 80px);
   padding: 30px;
 }
 
 .contactForm.tablet {
-  width: calc(100% - 80px);
   padding: 35px;
 }
 
 .contactInput {
-  background: #fef3e8;
+  background: #f8fbfd;
   height: 48px;
   width: calc(100% - 32px);
   outline: none;
-  border: 2px solid rgba(27, 163, 227, 0.15);
+  border: 2px solid #e8f4fc;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
   padding: 0px 16px;
@@ -66,19 +87,23 @@
   line-height: 20px;
   border-radius: 10px;
   transition: all 0.3s ease;
-  color: #2c3e50;
+  color: #3a4a5c;
   margin-bottom: 4px;
+}
+
+.contactInput:hover {
+  border-color: #1ba3e3;
 }
 
 .contactInput:focus {
   border-color: #1ba3e3;
-  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
   background: #ffffff;
 }
 
 .contactInput.tablet,
 .contactInput.mobile {
-  background: #fef3e8;
+  background: #f8fbfd;
 }
 
 .contactInput::placeholder,
@@ -87,11 +112,11 @@
   font-style: normal;
   font-size: 14px;
   line-height: 20px;
-  color: rgba(44, 62, 80, 0.4);
+  color: #9aacba;
 }
 
 .contactText {
-  background: #fef3e8;
+  background: #f8fbfd;
   border-radius: 10px;
   height: 184px;
   width: calc(100% - 32px);
@@ -102,21 +127,25 @@
   padding: 16px 16px;
   resize: none;
   outline: none;
-  border: 2px solid rgba(27, 163, 227, 0.15);
+  border: 2px solid #e8f4fc;
   transition: all 0.3s ease;
-  color: #2c3e50;
+  color: #3a4a5c;
   margin-bottom: 4px;
+}
+
+.contactText:hover {
+  border-color: #1ba3e3;
 }
 
 .contactText:focus {
   border-color: #1ba3e3;
-  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
   background: #ffffff;
 }
 
 .contactText.tablet,
 .contactText.mobile {
-  background: #fef3e8;
+  background: #f8fbfd;
 }
 
 .contactSubmit {
@@ -152,30 +181,26 @@
 .contactInfoWrapper {
   background: #ffffff;
   border-radius: 16px;
-  width: 340px;
-  flex-shrink: 0;
+  width: 400px;
   text-align: center;
-  padding: 50px 40px;
-  margin-top: 0px;
+  padding: 40px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .contactInfoWrapper.tablet {
-  margin: auto;
-  margin-top: 20px;
   padding: 40px 30px;
-  width: calc(100% - 80px);
+  width: 100%;
+  max-width: 500px;
 }
 
 .contactInfoWrapper.mobile {
-  margin: auto;
-  margin-top: 20px;
   padding: 35px 25px;
-  width: calc(100% - 70px);
+  width: 100%;
 }
 
 .contactInfoTitle {
-  font-family: MerriweatherSans-Regular;
+  font-family: MerriweatherSans-Bold;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -194,7 +219,7 @@
   font-style: normal;
   font-size: 16px;
   line-height: 24px;
-  color: #2c3e50;
+  color: #4a4a4a;
 }
 
 .contactInfoText.mobile {
@@ -230,18 +255,18 @@
   font-size: 30px;
   line-height: 32px;
   margin-bottom: 0px;
-  color: #2c3e50;
+  color: #3a4a5c;
 }
 
 .contactHeadline1Title1.tablet {
   font-size: 25px;
-  color: #2c3e50;
+  color: #3a4a5c;
   line-height: 28px;
 }
 
 .contactHeadline1Title1.mobile {
   font-size: 18px;
-  color: #2c3e50;
+  color: #3a4a5c;
   line-height: 22px;
 }
 
@@ -250,19 +275,19 @@
   font-style: normal;
   font-size: 50px;
   line-height: 53px;
-  color: #2c3e50;
+  color: #3a4a5c;
   margin: 0;
 }
 
 .contactHeadline1Title2.tablet {
   font-size: 40px;
-  color: #2c3e50;
+  color: #3a4a5c;
   line-height: 44px;
 }
 
 .contactHeadline1Title2.mobile {
   font-size: 28px;
-  color: #2c3e50;
+  color: #3a4a5c;
   line-height: 32px;
 }
 
@@ -274,25 +299,16 @@
 .contactHeadline2Wrapper {
   display: flex;
   flex-direction: column;
-  justify-self: flex-start;
-  margin-left: 50px;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .contactHeadline2Wrapper.tablet {
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .contactHeadline2Wrapper.mobile {
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .contactHeadline2Title1 {
@@ -300,7 +316,7 @@
   font-style: normal;
   font-size: 25px;
   line-height: 30px;
-  color: #2c3e50;
+  color: #3a4a5c;
 }
 
 .contactHeadline2Title2 {
@@ -309,7 +325,7 @@
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.03em;
-  color: #2c3e50;
+  color: #3a4a5c;
 }
 
 .formErrorMessage {
@@ -323,30 +339,3 @@
   margin-top: 4px;
 }
 
-.contactBottomSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-bottom: 80px;
-}
-
-.contactHeadlinesWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  flex-shrink: 0;
-}
-
-.contactHeadlinesWrapper .contactHeadline1Wrapper {
-  margin-left: 0;
-  margin-top: 50px;
-}
-
-.contactHeadlinesWrapper .contactHeadline2Wrapper {
-  margin-left: 0;
-}

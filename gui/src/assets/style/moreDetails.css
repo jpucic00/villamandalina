@@ -102,3 +102,42 @@
 .moreDetailsBlueBackground {
   display: none;
 }
+
+/* View Full Details Button */
+.moreDetailsButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.moreDetailsButtonWrapper.mobile {
+  margin-top: 30px;
+}
+
+.moreDetailsButton {
+  display: inline-block;
+  background: #ffffff;
+  color: #1ba3e3;
+  font-family: MerriweatherSans-Bold;
+  font-size: 18px;
+  padding: 18px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.moreDetailsButton:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.moreDetailsButton.tablet {
+  font-size: 16px;
+  padding: 15px 40px;
+}
+
+.moreDetailsButton.mobile {
+  font-size: 14px;
+  padding: 14px 35px;
+}
