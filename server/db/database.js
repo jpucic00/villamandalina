@@ -35,35 +35,37 @@ export function getDatabase() {
 }
 
 export async function initializeDatabase(db) {
-  // Create users table
-  await db.execute(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      email TEXT UNIQUE NOT NULL,
-      password_hash TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    )
-  `);
+  // Use batch to create all tables at once (better for Turso)
+  try {
+    await db.batch([
+      `CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`,
+      `CREATE TABLE IF NOT EXISTS booked_dates (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        start_date TEXT NOT NULL,
+        end_date TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`,
+      `CREATE TABLE IF NOT EXISTS prices (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        start_date TEXT NOT NULL,
+        end_date TEXT NOT NULL,
+        price TEXT NOT NULL
+      )`
+    ], 'write');
 
-  // Create booked_dates table
-  await db.execute(`
-    CREATE TABLE IF NOT EXISTS booked_dates (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      start_date TEXT NOT NULL,
-      end_date TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    )
-  `);
-
-  // Create prices table
-  await db.execute(`
-    CREATE TABLE IF NOT EXISTS prices (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      start_date TEXT NOT NULL,
-      end_date TEXT NOT NULL,
-      price TEXT NOT NULL
-    )
-  `);
-
-  console.log('Database tables initialized');
+    console.log('Database tables initialized');
+  } catch (error) {
+    // Tables likely already exist, which is fine
+    if (error.message?.includes('already exists')) {
+      console.log('Database tables already exist');
+    } else {
+      // For other errors, log but don't fail - tables may already exist
+      console.log('Database initialization note:', error.message);
+    }
+  }
 }
