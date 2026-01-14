@@ -133,20 +133,24 @@ export default function CalendarComp() {
   // Handle date selection for both admin and public users
   const handleCalendarChange = (value) => {
     if (Array.isArray(value) && value.length === 2) {
-      // Range selection
-      setCalendarValue([formatDate(value[0]), formatDate(value[1])]);
+      // Range selection - keep Date objects for calendar display
+      setCalendarValue(value);
       setCheckIn(formatDate(value[0]));
       setCheckOut(formatDate(value[1]));
     }
   };
 
   const onCheckInSelect = (e) => {
-    setCalendarValue([e.target.value, checkOut ? checkOut : null]);
+    const newCheckIn = new Date(e.target.value + "T00:00:00");
+    const existingCheckOut = checkOut ? new Date(checkOut + "T00:00:00") : null;
+    setCalendarValue([newCheckIn, existingCheckOut]);
     setCheckIn(e.target.value);
   };
 
   const onCheckOutSelect = (e) => {
-    setCalendarValue([checkIn ? checkIn : null, e.target.value]);
+    const existingCheckIn = checkIn ? new Date(checkIn + "T00:00:00") : null;
+    const newCheckOut = new Date(e.target.value + "T00:00:00");
+    setCalendarValue([existingCheckIn, newCheckOut]);
     setCheckOut(e.target.value);
   };
 
