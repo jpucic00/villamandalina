@@ -16,6 +16,13 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Debug: log all relevant env vars
+console.log('Environment:', {
+  NODE_ENV: process.env.NODE_ENV,
+  PORT: process.env.PORT,
+  RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
+});
+
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
