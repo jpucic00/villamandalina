@@ -142,7 +142,7 @@
   font-size: 18px;
   line-height: 1.8;
   color: #4a4a4a;
-  text-align: center;
+  text-align: justify;
   white-space: pre-line;
 }
 
@@ -154,7 +154,7 @@
 .villaDetailsDescriptionText.mobile {
   font-size: 14px;
   line-height: 1.6;
-  text-align: left;
+  text-align: justify;
 }
 
 /* Section Titles */
