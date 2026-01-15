@@ -79,6 +79,9 @@
 .mobile .CalendarElement__FormWrapper {
   width: 100%;
   padding: 24px 20px 28px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .tablet .CalendarElement__FormWrapper {
@@ -93,18 +96,22 @@
 .CalendarElement__Date_Input {
   height: 44px;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   outline: none;
   border: 2px solid #e8f4fc;
   font-family: MerriweatherSans-Regular;
   font-style: normal;
   padding: 0px 14px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 15px;
   border-radius: 10px;
   background: #f8fbfd;
   color: #3a4a5c;
   transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .CalendarElement__Date_Input:hover {
@@ -155,10 +162,13 @@
   border: none;
   background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
   border-radius: 10px;
-  font-family: inherit;
+  font-family: MerriweatherSans-Bold, -apple-system, BlinkMacSystemFont, sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(27, 163, 227, 0.3);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .CalendarElement__MakeReservationButton:hover {
@@ -179,9 +189,12 @@
   border: none;
   background: linear-gradient(135deg, #e05555 0%, #d45555 100%);
   border-radius: 8px;
-  font-family: inherit;
+  font-family: MerriweatherSans-Bold, -apple-system, BlinkMacSystemFont, sans-serif;
   cursor: pointer;
   transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .CalendarElement__BlockReservationButton:hover {
