@@ -7,7 +7,8 @@ import GalleryElementComp6 from "../components/GalleryElementComp6";
 import GalleryElementComp7 from "../components/GalleryElementComp7";
 import "../assets/style/gallery.css";
 
-import { SRLWrapper } from "simple-react-lightbox";
+import { Gallery as PhotoGallery } from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
 
 export default function Gallery() {
   const { width } = useWindowDimensions();
@@ -15,7 +16,7 @@ export default function Gallery() {
     <>
       <div className={`blueBackgroundSurroundings ${deviceCheck(width)}`} />
       <div className={`blueBackgroundBedrooms ${deviceCheck(width)}`} />
-      <SRLWrapper>
+      <PhotoGallery>
         <div className={`galleryContainer ${deviceCheck(width)}`}>
           <GalleryElementComp5
             device={deviceCheck(width)}
@@ -58,7 +59,7 @@ export default function Gallery() {
             image7={galleryImages.image138}
           />
         </div>
-      </SRLWrapper>
+      </PhotoGallery>
     </>
   );
 }

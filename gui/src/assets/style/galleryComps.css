@@ -83,6 +83,13 @@
   height: 2px;
 }
 
+/* Gallery item clickable styles */
+[class^="gallery5ItemImage_"],
+[class^="gallery6ItemImage_"],
+[class^="gallery7ItemImage_"] {
+  cursor: pointer;
+}
+
 /* 5 picture gallery items */
 
 .gallery5ItemImage_1 {
