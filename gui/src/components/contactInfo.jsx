@@ -18,12 +18,12 @@ export default function ContactInfo() {
         Obala Jerka Šižgorića 13, 22000 Šibenik, Hrvatska
       </p>
       <h3 className={`contactInfoTitle ${deviceCheck(width)}`}>
-        CHECK IN / CHECK OUT HOURS
+        CHECK IN / CHECK OUT
       </h3>
       <p className={`contactInfoText ${deviceCheck(width)}`}>
-        Check In: Mon - Sun......12:00 - 20:00
+        Check In: from 16:00
         <br />
-        Check Out: Mon-Sun......11:00
+        Check Out: until 10:00
       </p>
     </div>
   );

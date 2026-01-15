@@ -21,7 +21,7 @@ function Login() {
   const { width } = useWindowDimensions();
 
   useEffect(() => {
-    if (user) history.push("/");
+    if (user) history.push("/calendar");
   }, [user]); //eslint-disable-line
   return (
     <>

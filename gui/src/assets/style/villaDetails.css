@@ -307,10 +307,22 @@
 
 .villaDetailsRulesSection.tablet {
   padding: 40px 20px;
+  margin-bottom: -30px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .villaDetailsRulesSection.mobile {
-  padding: 30px 20px;
+  padding: 30px 15px;
+  margin-bottom: -30px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .villaDetailsRulesGrid {
@@ -321,9 +333,20 @@
   margin: 0 auto;
 }
 
+.villaDetailsRulesGrid.tablet {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
 .villaDetailsRulesGrid.mobile {
   grid-template-columns: 1fr;
   gap: 15px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
 }
 
 .villaDetailsRuleItem {
@@ -337,11 +360,14 @@
   padding: 15px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .villaDetailsRuleItem.mobile {
   font-size: 14px;
   padding: 12px 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .villaDetailsRuleIcon {
