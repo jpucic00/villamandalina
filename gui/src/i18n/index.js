@@ -17,10 +17,13 @@ i18n
     resources,
     fallbackLng: 'en',
     supportedLngs: ['en', 'hr'],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
       lookupLocalStorage: 'i18nextLng',
       caches: ['localStorage'],
+      convertDetectedLanguage: (lng) => lng.split('-')[0]
     },
     interpolation: {
       escapeValue: false
