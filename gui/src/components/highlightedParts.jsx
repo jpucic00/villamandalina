@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { listOfHighlights } from "../constants/listOfHighlights";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
@@ -11,6 +12,10 @@ import { useInView } from "framer-motion";
 
 export default function HighlightedParts() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
+  const highlightKeys = ["firewoodBarbecue", "midnightSwim", "warmAndComfortable"];
+
   const animationRef1 = useRef(null);
   const isInView1 = useInView(animationRef1, {
     once: true,
@@ -46,6 +51,7 @@ export default function HighlightedParts() {
     <div className={`highlightedContainer ${deviceCheck(width)}`}>
       {listOfHighlights.map((item, index) => (
         <div
+          key={index}
           ref={animationArray[index].animationRef}
           className={`highlightItemContainer ${deviceCheck(width)}`}
         >
@@ -60,12 +66,12 @@ export default function HighlightedParts() {
             <div
               className={`highlightItemDescriptionTitle ${deviceCheck(width)}`}
             >
-              {item.title}
+              {t(`highlights.${highlightKeys[index]}.title`)}
             </div>
             <div
               className={`highlightItemDescriptionText ${deviceCheck(width)}`}
             >
-              {item.description}
+              {t(`highlights.${highlightKeys[index]}.description`)}
             </div>
           </motion.div>
           <motion.div
@@ -82,7 +88,7 @@ export default function HighlightedParts() {
         className={`galleryButton ${deviceCheck(width)}`}
         href="/gallery"
       >
-        Gallery
+        {t("highlights.galleryButton")}
       </motion.a>
     </div>
   );

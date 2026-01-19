@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { logInWithEmailAndPassword } from "../api";
 import { useAuth } from "../AuthContext";
@@ -13,6 +14,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, updateUser } = useAuth();
+  const { t } = useTranslation();
 
   const [loading, setLoading] = useState(false);
 
@@ -34,13 +36,11 @@ function Login() {
             const userData = await logInWithEmailAndPassword(email, password);
             updateUser(userData);
             setLoading(false);
-            toast.success("Logged in successfully");
+            toast.success(t("toast.loggedInSuccess"));
           } catch {
             setLoading(false);
             console.log("error");
-            toast.error(
-              "Log in failed, please check your email and password"
-            );
+            toast.error(t("toast.loginFailed"));
           }
         }}
       >
@@ -50,14 +50,14 @@ function Login() {
               <div className="spinner"></div>
             </div>
           ) : null}
-          <h3 className={`loginTitle ${deviceCheck(width)}`}>Login</h3>
+          <h3 className={`loginTitle ${deviceCheck(width)}`}>{t("login.title")}</h3>
           <input
             type="email"
             name="e-mail"
             className={`login__textBox email ${deviceCheck(width)}`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-mail Address"
+            placeholder={t("login.emailPlaceholder")}
           />
           <input
             name="password"
@@ -65,11 +65,11 @@ function Login() {
             className={`login__textBox password ${deviceCheck(width)}`}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder={t("login.passwordPlaceholder")}
           />
 
           <button className={`login__btn ${deviceCheck(width)}`} type="submit">
-            Login
+            {t("login.button")}
           </button>
         </div>
       </form>

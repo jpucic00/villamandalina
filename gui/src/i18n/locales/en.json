@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "Home",
+    "details": "Details",
+    "gallery": "Gallery",
+    "calendar": "Calendar",
+    "contact": "Contact",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "header": {
+    "title": "Luxury Villa Just Outside The City Center With A Beautifull Panoramic View",
+    "makeReservation": "Make a Reservation",
+    "contactUs": "Contact Us",
+    "scroll": "SCROLL"
+  },
+  "highlights": {
+    "firewoodBarbecue": {
+      "title": "Firewood Barbecue",
+      "description": "Guests can experience the atmosphere of the Dalmatian summer night by preparing traditional barbecued meals on the terrace while watching the coast of Šibenik at night and listening to the sound of the waves."
+    },
+    "midnightSwim": {
+      "title": "Midnight swim with a view",
+      "description": "Heated outside pool with an amazing view on the city is right outside. Sunbeds and outside shower are next to the pool for those hot summer days."
+    },
+    "warmAndComfortable": {
+      "title": "Warm and comfortable",
+      "description": "Villa Mandalina has four beautiful and air-conditioned bedrooms, fully equipped kitchen and living room. All bedrooms have SAT TV, three of them have en-suite bathrooms and a baby cot is available upon request."
+    },
+    "galleryButton": "Gallery"
+  },
+  "reviews": {
+    "title": "We are honoured to share the testimonials we recived from our exceptional guests"
+  },
+  "moreDetails": {
+    "title": "More details about",
+    "villaName": "Villa Mandalina",
+    "viewFullDetails": "View Full Details",
+    "categories": {
+      "typeAndSize": {
+        "title": "Type and size",
+        "items": [
+          "House area 170m2",
+          "Private pool 19m2",
+          "4 bedrooms",
+          "4 bathrooms"
+        ]
+      },
+      "distance": {
+        "title": "Distance",
+        "items": [
+          "Beach: 4km",
+          "Shop: 300m",
+          "Airport: 30km",
+          "City center: 2km",
+          "Restaurant: 300m",
+          "Cafe: 300m",
+          "Pharmacy: 1km",
+          "Hospital: 2km"
+        ]
+      },
+      "exterior": {
+        "title": "Exterior",
+        "items": [
+          "Fully fenced yard",
+          "Private parking",
+          "Outside shower",
+          "Heated pool",
+          "Firewood barbacue",
+          "Sunbathing equipment"
+        ]
+      },
+      "activities": {
+        "title": "Activities",
+        "items": [
+          "Swimming",
+          "Hiking",
+          "Bike riding",
+          "Fishing",
+          "Sunbathing",
+          "Sightseeing"
+        ]
+      },
+      "bathrooms": {
+        "title": "Bathrooms",
+        "items": [
+          "Shower or walk in shower",
+          "Hair dryer",
+          "Washing machine",
+          "Towels",
+          "Toilet Paper"
+        ]
+      },
+      "kitchen": {
+        "title": "Kitchen",
+        "items": [
+          "Coffee machine",
+          "Oven",
+          "Blender",
+          "Dishwasher",
+          "Refrigirator and freezer",
+          "Microwave",
+          "Stove",
+          "Inside and outside dining area"
+        ]
+      },
+      "bedrooms": {
+        "title": "Bedrooms",
+        "items": [
+          "Three bedrooms with king size beds",
+          "One bedroom with two single beds",
+          "Televisions and airconditioning in every room",
+          "Cradle and extra bed on request",
+          "Bed linen",
+          "Mosquito net on windows"
+        ]
+      },
+      "livingRoom": {
+        "title": "Living room",
+        "items": [
+          "Television",
+          "Satelite tv",
+          "Extendable couch",
+          "Airconditioning",
+          "Coffee table"
+        ]
+      }
+    }
+  },
+  "attractions": {
+    "title": "Nearby Attractions",
+    "items": {
+      "cathedral": {
+        "title": "The Cathedral of St. James",
+        "text": "St. James Cathedral is a UNESCO World Heritage Site in Šibenik, Croatia. Built in the 15th and 16th centuries, it is a masterpiece of Gothic and Renaissance architecture. The exterior is adorned with sculptures and unique faces, while the interior features stunning stone work and stained glass windows. The cathedral's magnificent dome dominates the city's skyline, and visitors can see an ornate altar and baptismal font inside. The exterior of the cathedral is adorned with numerous sculptures, including 71 unique sculpted faces that are said to represent the citizens of Šibenik at the time of the cathedral's construction."
+      },
+      "krka": {
+        "title": "NP Krka",
+        "text": "Krka National Park is a breathtakingly beautiful natural reserve in Croatia, famous for its magnificent waterfalls, crystal clear pools, and stunning natural scenery. The park spans over 142 square kilometers, with a diverse array of flora and fauna, including over 200 bird species. The park's main attraction is the Skradinski Buk waterfall, which cascades down a series of limestone steps and creates a mesmerizing visual display. Visitors can swim in the crystal-clear pools at the base of the waterfall, or take a boat tour to explore the park's various waterways and enjoy the surrounding nature."
+      },
+      "kornati": {
+        "title": "NP Kornati",
+        "text": "Kornati National Park, a breathtaking natural wonder nestled in the heart of Croatia! Known as a sailor's paradise, this archipelago consists of 109 stunning islands, islets, and reefs, forming an awe-inspiring maze of rugged beauty in the Adriatic Sea.he islands are characterized by their stark limestone cliffs, rising majestically from the crystal-clear turquoise waters. These dramatic formations have been shaped by the elements over thousands of years, creating a landscape that is truly one-of-a-kind."
+      },
+      "stNicholas": {
+        "title": "St Nicholas' Fortress",
+        "text": "St Nicholas' Fortress at the entrance to the St Anthony's Channel in Šibenik represents a unique Renaissance building of Venetian fortification architecture and an exceptional monument of the world's architectural heritage. It was constructed on the islet of Ljuljevac, where once was the Benedictine monastery of St Nicholas, after which the fortress was named. The construction of the fortress, based on Gian Girolamo San Micheli's design, commenced in 1540 after the fall of Skradin under the Ottoman rule, when the Venetians were forced to strengthen the defence of Šibenik port, which was the most important port on the east coast of the Adriatic Sea."
+      },
+      "stAnthony": {
+        "title": "St Anthony's Channel",
+        "text": "The St Anthony's Channel is part of a wider location called Channel – Port, which represents a significant landscape protected in 1974. It is more than 2000 metres long and 140 – 220 metres wide. It is a gateway to the open sea and entrance to Šibenik. At the same time, the channel represents a symbolical end of the Krka River, since it is where the river flows into the Adriatic Sea. It can be seen from all parts of Šibenik and despite being in close proximity to the city and easily accessible, it used to be isolated and unknown due to historical circumstances. Apart from the obvious natural attractions and a magnificent panoramic view of Šibenik, the Šibenik archipelago and St Nicholas' Fortress, the channel treasures numerous cultural and natural values."
+      }
+    }
+  },
+  "villaDetails": {
+    "introText": "Your Perfect Croatian Retreat in Šibenik",
+    "aboutTitle": "About the Villa",
+    "description": "Villa Mandalina is a beautiful, modern holiday home built in 2019, located in the peaceful neighborhood of Mandalina, just 2 km from the historic city center of Šibenik. This stunning property offers 170m² of living space on 180m² of land with a private heated pool and sea views, perfect for families or groups looking for a relaxing Croatian getaway.\n\nThe villa features 4 spacious bedrooms and 4 bathrooms, comfortably accommodating up to 10 guests. Three bedrooms have king-size beds with private en-suite bathrooms, while the fourth has two single beds. Each room is equipped with air conditioning and satellite TV for your comfort.",
+    "highlights": {
+      "livingSpace": "Living Space",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "heatedPool": "Heated Pool",
+      "maxGuests": "Max Guests",
+      "parking": "Parking",
+      "free": "Free"
+    },
+    "sections": {
+      "interior": "Interior",
+      "exteriorPool": "Exterior & Pool",
+      "locationDistances": "Location & Distances",
+      "activitiesExperiences": "Activities & Experiences"
+    },
+    "categories": {
+      "bedrooms": "Bedrooms",
+      "livingRoom": "Living Room",
+      "kitchen": "Kitchen",
+      "bathrooms": "Bathrooms",
+      "poolArea": "Pool Area",
+      "outdoorSpace": "Outdoor Space",
+      "nearbyAmenities": "Nearby Amenities",
+      "travelDistances": "Travel Distances",
+      "atTheVilla": "At the Villa",
+      "inTheArea": "In the Area"
+    },
+    "details": {
+      "bedrooms": [
+        "3 bedrooms with king-size beds (180×200 cm)",
+        "3 private en-suite bathrooms",
+        "1 bedroom with 2 single beds (100×200 cm)",
+        "Satellite TV in every bedroom",
+        "Air conditioning in every room",
+        "Crib available upon request",
+        "Sofa bed in living room (sleeps 2)",
+        "Weekly linen change included"
+      ],
+      "livingRoom": [
+        "Spacious living area",
+        "Satellite TV",
+        "Stereo system",
+        "Sofa bed for extra sleeping",
+        "Air conditioning",
+        "WiFi throughout the villa"
+      ],
+      "kitchen": [
+        "Fully equipped modern kitchen",
+        "Coffee machine",
+        "Oven and stove",
+        "Blender",
+        "Dishwasher",
+        "Refrigerator and freezer",
+        "Microwave",
+        "Toaster",
+        "Ice maker",
+        "Indoor dining for 10 guests"
+      ],
+      "bathrooms": [
+        "4 modern bathrooms",
+        "3 en-suite bathrooms",
+        "Washing machine",
+        "Iron and ironing board",
+        "Hair dryer",
+        "Towels provided"
+      ],
+      "poolArea": [
+        "Private heated swimming pool (19m²)",
+        "5 sun loungers",
+        "Outdoor shower",
+        "Pool towels provided",
+        "Panoramic sea views"
+      ],
+      "outdoorSpace": [
+        "Fully enclosed private yard (180m²)",
+        "Private parking",
+        "BBQ grill",
+        "Outdoor kitchen",
+        "Outdoor dining for 12 guests",
+        "Garden furniture"
+      ],
+      "nearbyAmenities": [
+        "Restaurants: 300m",
+        "Cafés: 300m",
+        "Shops: 300m",
+        "City center: 2km"
+      ],
+      "travelDistances": [
+        "Beach: 4km",
+        "Split Airport: 30km",
+        "Near Krka National Park",
+        "Near Kornati National Park"
+      ],
+      "atTheVilla": [
+        "Swimming in the heated pool",
+        "Sunbathing with sea views",
+        "BBQ evenings",
+        "Relaxing in the private garden"
+      ],
+      "inTheArea": [
+        "Beach visits",
+        "Exploring historic Šibenik",
+        "Day trips to Krka National Park",
+        "Visits to Kornati National Park",
+        "Local cuisine and wine tasting"
+      ]
+    },
+    "houseRules": {
+      "title": "House Rules",
+      "rules": [
+        "Check-in: from 16:00",
+        "Check-out: until 10:00",
+        "No smoking inside the villa",
+        "Pets not permitted",
+        "Parties and events not permitted",
+        "Family-friendly property"
+      ]
+    },
+    "cta": {
+      "title": "Ready to Book Your Stay?",
+      "text": "Check availability and make a reservation for your perfect Croatian holiday.",
+      "checkAvailability": "Check Availability",
+      "contactUs": "Contact Us"
+    }
+  },
+  "contact": {
+    "headline": "We're looking forward to hearing from you!",
+    "subheadline": "Have questions about Villa Mandalina? Send us a message and we'll get back to you as soon as possible.",
+    "form": {
+      "namePlaceholder": "Enter your name",
+      "emailPlaceholder": "Enter a valid email adress",
+      "messagePlaceholder": "Enter your message...",
+      "captchaPlaceholder": "Enter Captcha Value",
+      "submit": "Submit",
+      "required": "Required",
+      "invalidEmail": "Invalid email address",
+      "wrongCaptcha": "Wrong captcha"
+    },
+    "info": {
+      "callUs": "CALL US",
+      "location": "LOCATION",
+      "checkInOut": "CHECK IN / CHECK OUT",
+      "checkIn": "Check In: from 16:00",
+      "checkOut": "Check Out: until 10:00",
+      "copyAddress": "Copy address",
+      "copied": "Copied!"
+    }
+  },
+  "calendar": {
+    "title": "Request a Reservation",
+    "description": "Fill out the form below with your preferred dates and contact details. We will review your request and send a confirmation to your email as soon as possible.",
+    "checkInDate": "Check-In Date",
+    "checkOutDate": "Check-Out Date",
+    "selectCheckInDate": "Select Check-In Date",
+    "selectCheckOutDate": "Select Check-Out Date",
+    "name": "Name",
+    "email": "Email",
+    "contactNumber": "Contact Number",
+    "message": "Message",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "Enter your mobile or phone number",
+    "messagePlaceholder": "Enter a message",
+    "makeReservation": "Make a Reservation",
+    "block": "Block",
+    "managePrices": "Manage Prices",
+    "startDate": "Start (DD.MM)",
+    "endDate": "End (DD.MM)",
+    "pricePerNight": "Price (€/night)",
+    "addPrice": "Add Price",
+    "remove": "Remove"
+  },
+  "gallery": {
+    "livingroom": "Livingroom",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "surroundings": "Surroundings"
+  },
+  "login": {
+    "title": "Login",
+    "emailPlaceholder": "E-mail Address",
+    "passwordPlaceholder": "Password",
+    "button": "Login"
+  },
+  "popup": {
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "removeBlockMessage": "Remove block from {{startDate}} to {{endDate}}?"
+  },
+  "toast": {
+    "loggedOut": "Logged out",
+    "failedLogout": "Failed to logout",
+    "loggedInSuccess": "Logged in successfully",
+    "loginFailed": "Log in failed, please check your email and password",
+    "emailPending": "Email is being sent please wait...",
+    "emailSent": "Email sent",
+    "emailError": "There was an issue with sending of the email, please try again later",
+    "blockAdded": "Block for dates between {{startDate}} and {{endDate}} added",
+    "blockError": "Not possible to block these dates, try again",
+    "blockRemoved": "Block removed successfully",
+    "blockRemoveError": "Not possible to remove this block, try again",
+    "priceAdded": "Price added successfully",
+    "priceError": "Not possible to add this price, try again",
+    "priceRemoved": "Price removed successfully",
+    "priceRemoveError": "Not possible to remove this price, try again",
+    "fetchDatesError": "Something went wrong fetching calendar booked dates",
+    "fetchPricesError": "Something went wrong fetching prices"
+  },
+  "language": {
+    "en": "EN",
+    "hr": "HR"
+  }
+}

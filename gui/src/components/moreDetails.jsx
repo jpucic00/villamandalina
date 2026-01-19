@@ -1,34 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
-import { moreDetails } from "../constants/moreDetails";
 import "../assets/style/moreDetails.css";
 
 export default function MoreDetails() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
+  const categoryKeys = [
+    "typeAndSize",
+    "distance",
+    "exterior",
+    "activities",
+    "bathrooms",
+    "kitchen",
+    "bedrooms",
+    "livingRoom"
+  ];
 
   return (
     <div className={`moreDetailsContainer ${deviceCheck(width)}`}>
       <div className={`moreDetailsTitle ${deviceCheck(width)}`}>
-        More details about <br />
-        Villa Mandalina
+        {t("moreDetails.title")} <br />
+        {t("moreDetails.villaName")}
       </div>
       <div className={`moreDetailsWrapper ${deviceCheck(width)}`}>
-        {moreDetails.map((detail, index) => {
+        {categoryKeys.map((categoryKey, index) => {
+          const items = t(`moreDetails.categories.${categoryKey}.items`, { returnObjects: true });
           return (
             <div key={index} className={`moreDetailsCategoryWrapper ${deviceCheck(width)}`}>
               <div className={`moreDetailsCategoryTitle ${deviceCheck(width)}`}>
-                {detail.title}
+                {t(`moreDetails.categories.${categoryKey}.title`)}
               </div>
-              {detail.details.map((item, itemIndex) => {
+              {items.map((item, itemIndex) => {
                 return (
                   <div
                     key={itemIndex}
                     className={`moreDetailsItemWrapper ${deviceCheck(width)}`}
                   >
-                    {item}
+                    •{item}
                   </div>
                 );
               })}
@@ -42,7 +55,7 @@ export default function MoreDetails() {
         className={`moreDetailsButtonWrapper ${deviceCheck(width)}`}
       >
         <Link to="/details" className={`moreDetailsButton ${deviceCheck(width)}`}>
-          View Full Details
+          {t("moreDetails.viewFullDetails")}
         </Link>
       </motion.div>
     </div>

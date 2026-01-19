@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "home": "Početna",
+    "details": "Detalji",
+    "gallery": "Galerija",
+    "calendar": "Kalendar",
+    "contact": "Kontakt",
+    "login": "Prijava",
+    "logout": "Odjava"
+  },
+  "header": {
+    "title": "Luksuzna vila nedaleko od centra grada s prekrasnim panoramskim pogledom",
+    "makeReservation": "Rezervirajte",
+    "contactUs": "Kontaktirajte nas",
+    "scroll": "SCROLL"
+  },
+  "highlights": {
+    "firewoodBarbecue": {
+      "title": "Roštilj na drva",
+      "description": "Gosti mogu doživjeti atmosferu dalmatinske ljetne noći pripremajući tradicionalna jela s roštilja na terasi dok gledaju obalu Šibenika noću i slušaju zvuk valova."
+    },
+    "midnightSwim": {
+      "title": "Ponoćno kupanje s pogledom",
+      "description": "Grijani vanjski bazen s nevjerojatnim pogledom na grad nalazi se odmah vani. Ležaljke i vanjski tuš nalaze se uz bazen za vruće ljetne dane."
+    },
+    "warmAndComfortable": {
+      "title": "Toplo i udobno",
+      "description": "Villa Mandalina ima četiri prekrasne klimatizirane spavaće sobe, potpuno opremljenu kuhinju i dnevni boravak. Sve spavaće sobe imaju SAT TV, tri od njih imaju vlastitu kupaonicu, a dječji krevetić je dostupan na zahtjev."
+    },
+    "galleryButton": "Galerija"
+  },
+  "reviews": {
+    "title": "Čast nam je podijeliti svjedočanstva koja smo primili od naših izuzetnih gostiju"
+  },
+  "moreDetails": {
+    "title": "Više detalja o",
+    "villaName": "Villi Mandalina",
+    "viewFullDetails": "Pogledaj sve detalje",
+    "categories": {
+      "typeAndSize": {
+        "title": "Tip i veličina",
+        "items": [
+          "Površina kuće 170m2",
+          "Privatni bazen 19m2",
+          "4 spavaće sobe",
+          "4 kupaonice"
+        ]
+      },
+      "distance": {
+        "title": "Udaljenost",
+        "items": [
+          "Plaža: 4km",
+          "Trgovina: 300m",
+          "Zračna luka: 30km",
+          "Centar grada: 2km",
+          "Restoran: 300m",
+          "Kafić: 300m",
+          "Ljekarna: 1km",
+          "Bolnica: 2km"
+        ]
+      },
+      "exterior": {
+        "title": "Vanjski prostor",
+        "items": [
+          "Potpuno ograđeno dvorište",
+          "Privatni parking",
+          "Vanjski tuš",
+          "Grijani bazen",
+          "Roštilj na drva",
+          "Oprema za sunčanje"
+        ]
+      },
+      "activities": {
+        "title": "Aktivnosti",
+        "items": [
+          "Plivanje",
+          "Planinarenje",
+          "Vožnja biciklom",
+          "Ribolov",
+          "Sunčanje",
+          "Razgledavanje"
+        ]
+      },
+      "bathrooms": {
+        "title": "Kupaonice",
+        "items": [
+          "Tuš ili walk-in tuš",
+          "Sušilo za kosu",
+          "Perilica rublja",
+          "Ručnici",
+          "Toaletni papir"
+        ]
+      },
+      "kitchen": {
+        "title": "Kuhinja",
+        "items": [
+          "Aparat za kavu",
+          "Pećnica",
+          "Blender",
+          "Perilica posuđa",
+          "Hladnjak i zamrzivač",
+          "Mikrovalna",
+          "Štednjak",
+          "Unutarnji i vanjski prostor za jelo"
+        ]
+      },
+      "bedrooms": {
+        "title": "Spavaće sobe",
+        "items": [
+          "Tri spavaće sobe s king size krevetima",
+          "Jedna spavaća soba s dva odvojena kreveta",
+          "Televizori i klima u svakoj sobi",
+          "Kolijevka i dodatni krevet na zahtjev",
+          "Posteljina",
+          "Mreža protiv komaraca na prozorima"
+        ]
+      },
+      "livingRoom": {
+        "title": "Dnevni boravak",
+        "items": [
+          "Televizor",
+          "Satelitska TV",
+          "Rasklopivi kauč",
+          "Klima uređaj",
+          "Stolić za kavu"
+        ]
+      }
+    }
+  },
+  "attractions": {
+    "title": "Obližnje atrakcije",
+    "items": {
+      "cathedral": {
+        "title": "Katedrala sv. Jakova",
+        "text": "Katedrala sv. Jakova je UNESCO-va svjetska baština u Šibeniku, Hrvatska. Izgrađena u 15. i 16. stoljeću, remek je djelo gotičke i renesansne arhitekture. Eksterijer je ukrašen skulpturama i jedinstvenim licima, dok interijer ima zadivljujuće kamene radove i vitraje. Veličanstvena kupola katedrale dominira gradskim horizontom, a posjetitelji mogu vidjeti ukrašeni oltar i krstionicu unutra. Eksterijer katedrale ukrašen je brojnim skulpturama, uključujući 71 jedinstveno isklesano lice za koje se kaže da predstavljaju građane Šibenika u vrijeme gradnje katedrale."
+      },
+      "krka": {
+        "title": "NP Krka",
+        "text": "Nacionalni park Krka je zadivljujuće lijep prirodni rezervat u Hrvatskoj, poznat po veličanstvenim vodopadima, kristalno čistim jezerima i prekrasnim prirodnim krajolicima. Park se prostire na preko 142 četvorna kilometra, s raznolikim biljnim i životinjskim svijetom, uključujući preko 200 vrsta ptica. Glavna atrakcija parka je slap Skradinski Buk, koji se spušta niz niz vapnenačkih stepenica i stvara hipnotizirajući vizualni doživljaj. Posjetitelji se mogu kupati u kristalno čistim bazenima u podnožju slapa ili se provozati brodom kako bi istražili različite vodene putove parka i uživali u okolnoj prirodi."
+      },
+      "kornati": {
+        "title": "NP Kornati",
+        "text": "Nacionalni park Kornati, zadivljujuće prirodno čudo smješteno u srcu Hrvatske! Poznat kao raj za pomorce, ovaj arhipelag se sastoji od 109 prekrasnih otoka, otočića i grebena, tvoreći zadivljujući labirint surove ljepote u Jadranskom moru. Otoke karakteriziraju strme vapnenačke litice koje se veličanstveno uzdižu iz kristalno čistih tirkiznih voda. Ove dramatične formacije oblikovane su elementima tijekom tisućama godina, stvarajući krajobraz koji je uistinu jedinstven."
+      },
+      "stNicholas": {
+        "title": "Tvrđava sv. Nikole",
+        "text": "Tvrđava sv. Nikole na ulazu u Kanal sv. Ante u Šibeniku predstavlja jedinstvenu renesansnu građevinu mletačke fortifikacijske arhitekture i izuzetan spomenik svjetske arhitektonske baštine. Izgrađena je na otočiću Ljuljevcu, gdje se nekada nalazio benediktinski samostan sv. Nikole, po kojem je tvrđava dobila ime. Gradnja tvrđave, prema projektu Giana Girolama San Michelija, započela je 1540. godine nakon pada Skradina pod osmansku vlast, kada su Mlečani bili prisiljeni ojačati obranu šibenske luke, koja je bila najvažnija luka na istočnoj obali Jadranskog mora."
+      },
+      "stAnthony": {
+        "title": "Kanal sv. Ante",
+        "text": "Kanal sv. Ante dio je šire lokacije zvane Kanal – Luka, koja predstavlja značajan krajobraz zaštićen 1974. godine. Dugačak je više od 2000 metara i širok 140 – 220 metara. To je vrata prema otvorenom moru i ulaz u Šibenik. Istovremeno, kanal predstavlja simbolični kraj rijeke Krke, jer se tu rijeka ulijeva u Jadransko more. Vidljiv je iz svih dijelova Šibenika i unatoč tome što je u neposrednoj blizini grada i lako dostupan, bio je izoliran i nepoznat zbog povijesnih okolnosti. Osim očitih prirodnih atrakcija i veličanstvenog panoramskog pogleda na Šibenik, šibenski arhipelag i Tvrđavu sv. Nikole, kanal čuva brojne kulturne i prirodne vrijednosti."
+      }
+    }
+  },
+  "villaDetails": {
+    "introText": "Vaše savršeno hrvatsko utočište u Šibeniku",
+    "aboutTitle": "O vili",
+    "description": "Villa Mandalina je prekrasna, moderna kuća za odmor izgrađena 2019. godine, smještena u mirnom susjedstvu Mandalina, samo 2 km od povijesnog centra grada Šibenika. Ova zadivljujuća nekretnina nudi 170m² stambenog prostora na 180m² zemljišta s privatnim grijanim bazenom i pogledom na more, savršena za obitelji ili grupe koje traže opuštajući hrvatski odmor.\n\nVila ima 4 prostrane spavaće sobe i 4 kupaonice, udobno smještajući do 10 gostiju. Tri spavaće sobe imaju king-size krevete s privatnim kupaonama, dok četvrta ima dva odvojena kreveta. Svaka soba opremljena je klima uređajem i satelitskom televizijom za vašu udobnost.",
+    "highlights": {
+      "livingSpace": "Stambeni prostor",
+      "bedrooms": "Spavaće sobe",
+      "bathrooms": "Kupaonice",
+      "heatedPool": "Grijani bazen",
+      "maxGuests": "Maks. gostiju",
+      "parking": "Parking",
+      "free": "Besplatan"
+    },
+    "sections": {
+      "interior": "Interijer",
+      "exteriorPool": "Eksterijer i bazen",
+      "locationDistances": "Lokacija i udaljenosti",
+      "activitiesExperiences": "Aktivnosti i iskustva"
+    },
+    "categories": {
+      "bedrooms": "Spavaće sobe",
+      "livingRoom": "Dnevni boravak",
+      "kitchen": "Kuhinja",
+      "bathrooms": "Kupaonice",
+      "poolArea": "Prostor bazena",
+      "outdoorSpace": "Vanjski prostor",
+      "nearbyAmenities": "Obližnji sadržaji",
+      "travelDistances": "Putne udaljenosti",
+      "atTheVilla": "U vili",
+      "inTheArea": "U okolici"
+    },
+    "details": {
+      "bedrooms": [
+        "3 spavaće sobe s king-size krevetima (180×200 cm)",
+        "3 privatne kupaonice",
+        "1 spavaća soba s 2 odvojena kreveta (100×200 cm)",
+        "Satelitska TV u svakoj spavaćoj sobi",
+        "Klima uređaj u svakoj sobi",
+        "Dječji krevetić dostupan na zahtjev",
+        "Rasklopivi kauč u dnevnom boravku (za 2 osobe)",
+        "Tjedna promjena posteljine uključena"
+      ],
+      "livingRoom": [
+        "Prostrani dnevni boravak",
+        "Satelitska TV",
+        "Stereo sustav",
+        "Rasklopivi kauč za dodatno spavanje",
+        "Klima uređaj",
+        "WiFi kroz cijelu vilu"
+      ],
+      "kitchen": [
+        "Potpuno opremljena moderna kuhinja",
+        "Aparat za kavu",
+        "Pećnica i štednjak",
+        "Blender",
+        "Perilica posuđa",
+        "Hladnjak i zamrzivač",
+        "Mikrovalna",
+        "Toster",
+        "Ledomat",
+        "Unutarnji prostor za jelo za 10 gostiju"
+      ],
+      "bathrooms": [
+        "4 moderne kupaonice",
+        "3 privatne kupaonice",
+        "Perilica rublja",
+        "Glačalo i daska za glačanje",
+        "Sušilo za kosu",
+        "Ručnici osigurani"
+      ],
+      "poolArea": [
+        "Privatni grijani bazen (19m²)",
+        "5 ležaljki",
+        "Vanjski tuš",
+        "Ručnici za bazen osigurani",
+        "Panoramski pogled na more"
+      ],
+      "outdoorSpace": [
+        "Potpuno ograđeno privatno dvorište (180m²)",
+        "Privatni parking",
+        "Roštilj",
+        "Vanjska kuhinja",
+        "Vanjski prostor za jelo za 12 gostiju",
+        "Vrtni namještaj"
+      ],
+      "nearbyAmenities": [
+        "Restorani: 300m",
+        "Kafići: 300m",
+        "Trgovine: 300m",
+        "Centar grada: 2km"
+      ],
+      "travelDistances": [
+        "Plaža: 4km",
+        "Zračna luka Split: 30km",
+        "Blizu NP Krka",
+        "Blizu NP Kornati"
+      ],
+      "atTheVilla": [
+        "Plivanje u grijanom bazenu",
+        "Sunčanje s pogledom na more",
+        "Roštilj večeri",
+        "Opuštanje u privatnom vrtu"
+      ],
+      "inTheArea": [
+        "Posjeti plažama",
+        "Istraživanje povijesnog Šibenika",
+        "Jednodnevni izleti u NP Krka",
+        "Posjeti NP Kornati",
+        "Lokalna kuhinja i degustacija vina"
+      ]
+    },
+    "houseRules": {
+      "title": "Kućna pravila",
+      "rules": [
+        "Prijava: od 16:00",
+        "Odjava: do 10:00",
+        "Pušenje nije dozvoljeno unutar vile",
+        "Kućni ljubimci nisu dozvoljeni",
+        "Zabave i događanja nisu dozvoljeni",
+        "Nekretnina prikladna za obitelji"
+      ]
+    },
+    "cta": {
+      "title": "Spremni rezervirati svoj boravak?",
+      "text": "Provjerite dostupnost i rezervirajte savršen hrvatski odmor.",
+      "checkAvailability": "Provjeri dostupnost",
+      "contactUs": "Kontaktirajte nas"
+    }
+  },
+  "contact": {
+    "headline": "Radujemo se vašoj poruci!",
+    "subheadline": "Imate pitanja o Villi Mandalina? Pošaljite nam poruku i javit ćemo vam se što je prije moguće.",
+    "form": {
+      "namePlaceholder": "Unesite svoje ime",
+      "emailPlaceholder": "Unesite valjanu email adresu",
+      "messagePlaceholder": "Unesite svoju poruku...",
+      "captchaPlaceholder": "Unesite vrijednost Captcha",
+      "submit": "Pošalji",
+      "required": "Obavezno",
+      "invalidEmail": "Nevažeća email adresa",
+      "wrongCaptcha": "Pogrešna captcha"
+    },
+    "info": {
+      "callUs": "NAZOVITE NAS",
+      "location": "LOKACIJA",
+      "checkInOut": "PRIJAVA / ODJAVA",
+      "checkIn": "Prijava: od 16:00",
+      "checkOut": "Odjava: do 10:00",
+      "copyAddress": "Kopiraj adresu",
+      "copied": "Kopirano!"
+    }
+  },
+  "calendar": {
+    "title": "Zatražite rezervaciju",
+    "description": "Ispunite obrazac ispod s preferiranim datumima i kontakt podacima. Pregledat ćemo vaš zahtjev i poslati potvrdu na vašu email adresu što je prije moguće.",
+    "checkInDate": "Datum prijave",
+    "checkOutDate": "Datum odjave",
+    "selectCheckInDate": "Odaberite datum prijave",
+    "selectCheckOutDate": "Odaberite datum odjave",
+    "name": "Ime",
+    "email": "Email",
+    "contactNumber": "Kontakt broj",
+    "message": "Poruka",
+    "namePlaceholder": "Unesite svoje ime",
+    "emailPlaceholder": "Unesite svoj email",
+    "phonePlaceholder": "Unesite svoj broj mobitela ili telefona",
+    "messagePlaceholder": "Unesite poruku",
+    "makeReservation": "Rezerviraj",
+    "block": "Blokiraj",
+    "managePrices": "Upravljanje cijenama",
+    "startDate": "Početak (DD.MM)",
+    "endDate": "Kraj (DD.MM)",
+    "pricePerNight": "Cijena (€/noć)",
+    "addPrice": "Dodaj cijenu",
+    "remove": "Ukloni"
+  },
+  "gallery": {
+    "livingroom": "Dnevni boravak",
+    "bedrooms": "Spavaće sobe",
+    "bathrooms": "Kupaonice",
+    "surroundings": "Okoliš"
+  },
+  "login": {
+    "title": "Prijava",
+    "emailPlaceholder": "Email adresa",
+    "passwordPlaceholder": "Lozinka",
+    "button": "Prijavi se"
+  },
+  "popup": {
+    "cancel": "Odustani",
+    "remove": "Ukloni",
+    "removeBlockMessage": "Ukloniti blokadu od {{startDate}} do {{endDate}}?"
+  },
+  "toast": {
+    "loggedOut": "Odjavljeni ste",
+    "failedLogout": "Neuspjela odjava",
+    "loggedInSuccess": "Uspješna prijava",
+    "loginFailed": "Prijava nije uspjela, provjerite email i lozinku",
+    "emailPending": "Email se šalje, molimo pričekajte...",
+    "emailSent": "Email poslan",
+    "emailError": "Došlo je do problema pri slanju emaila, pokušajte ponovo kasnije",
+    "blockAdded": "Blokada za datume između {{startDate}} i {{endDate}} dodana",
+    "blockError": "Nije moguće blokirati ove datume, pokušajte ponovo",
+    "blockRemoved": "Blokada uspješno uklonjena",
+    "blockRemoveError": "Nije moguće ukloniti ovu blokadu, pokušajte ponovo",
+    "priceAdded": "Cijena uspješno dodana",
+    "priceError": "Nije moguće dodati ovu cijenu, pokušajte ponovo",
+    "priceRemoved": "Cijena uspješno uklonjena",
+    "priceRemoveError": "Nije moguće ukloniti ovu cijenu, pokušajte ponovo",
+    "fetchDatesError": "Nešto je pošlo po zlu pri dohvaćanju zauzetih datuma",
+    "fetchPricesError": "Nešto je pošlo po zlu pri dohvaćanju cijena"
+  },
+  "language": {
+    "en": "EN",
+    "hr": "HR"
+  }
+}

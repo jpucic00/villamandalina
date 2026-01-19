@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import galleryImages from "../constants/galleryImages";
@@ -12,6 +13,8 @@ import "photoswipe/dist/photoswipe.css";
 
 export default function Gallery() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={`blueBackgroundSurroundings ${deviceCheck(width)}`} />
@@ -20,7 +23,7 @@ export default function Gallery() {
         <div className={`galleryContainer ${deviceCheck(width)}`}>
           <GalleryElementComp5
             device={deviceCheck(width)}
-            title={"Livingroom"}
+            title={t("gallery.livingroom")}
             image1={galleryImages.image112}
             image2={galleryImages.image114}
             image3={galleryImages.image108}
@@ -30,7 +33,7 @@ export default function Gallery() {
 
           <GalleryElementComp6
             device={deviceCheck(width)}
-            title={"Bedrooms"}
+            title={t("gallery.bedrooms")}
             image1={galleryImages.image100}
             image2={galleryImages.image101}
             image3={galleryImages.image104}
@@ -40,7 +43,7 @@ export default function Gallery() {
           />
           <GalleryElementComp5
             device={deviceCheck(width)}
-            title={"Bathrooms"}
+            title={t("gallery.bathrooms")}
             image1={galleryImages.image145}
             image2={galleryImages.image153}
             image3={galleryImages.image156}
@@ -49,7 +52,7 @@ export default function Gallery() {
           />
           <GalleryElementComp7
             device={deviceCheck(width)}
-            title={"Surroundings"}
+            title={t("gallery.surroundings")}
             image1={galleryImages.image125}
             image2={galleryImages.image124}
             image3={galleryImages.image123}

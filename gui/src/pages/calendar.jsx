@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Calendar from "react-calendar";
 import "../assets/style/reactCalendar.css";
 import "../assets/style/CalendarElement.css";
@@ -20,6 +21,7 @@ import ConfirmPopup from "../components/confirmPopup";
 export default function CalendarComp() {
   const { width } = useWindowDimensions();
   const { user, loading } = useAuth();
+  const { t, i18n } = useTranslation();
 
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
@@ -47,7 +49,7 @@ export default function CalendarComp() {
       setDisabledDates(data);
     } catch {
       setDisabledDates([]);
-      toast.error("Something went wrong fetching calendar booked dates");
+      toast.error(t("toast.fetchDatesError"));
     }
   };
 
@@ -57,7 +59,7 @@ export default function CalendarComp() {
       setPrices(data);
     } catch {
       setPrices([]);
-      toast.error("Something went wrong fetching prices");
+      toast.error(t("toast.fetchPricesError"));
     }
   };
 
@@ -164,10 +166,10 @@ export default function CalendarComp() {
         fetchDisabledDates();
         document.getElementById("reservationForm").reset();
         toast.success(
-          `Block for dates between ${checkIn} and ${checkOut} added`
+          t("toast.blockAdded", { startDate: checkIn, endDate: checkOut })
         );
       } catch {
-        toast.error("Not possible to block these dates, try again");
+        toast.error(t("toast.blockError"));
       }
     }
   };
@@ -180,9 +182,9 @@ export default function CalendarComp() {
       setCalendarValue(null);
       fetchDisabledDates();
       document.getElementById("reservationForm").reset();
-      toast.success(`Block removed successfully`);
+      toast.success(t("toast.blockRemoved"));
     } catch {
-      toast.error("Not possible to remove this block, try again");
+      toast.error(t("toast.blockRemoveError"));
     }
   };
 
@@ -195,9 +197,9 @@ export default function CalendarComp() {
         setPriceEndDate("");
         setPriceAmount("");
         fetchPrices();
-        toast.success(`Price added successfully`);
+        toast.success(t("toast.priceAdded"));
       } catch {
-        toast.error("Not possible to add this price, try again");
+        toast.error(t("toast.priceError"));
       }
     }
   };
@@ -206,9 +208,9 @@ export default function CalendarComp() {
     try {
       await deletePrice(price.id);
       fetchPrices();
-      toast.success(`Price removed successfully`);
+      toast.success(t("toast.priceRemoved"));
     } catch {
-      toast.error("Not possible to remove this price, try again");
+      toast.error(t("toast.priceRemoveError"));
     }
   };
 
@@ -245,11 +247,16 @@ export default function CalendarComp() {
     };
 
     toast.promise(SendEmail(templateParams), {
-      pending: "Email is being sent please wait...",
-      success: "Email sent",
-      error:
-        "There was an issue with sending of the email, please try again later",
+      pending: t("toast.emailPending"),
+      success: t("toast.emailSent"),
+      error: t("toast.emailError"),
     });
+  };
+
+  // Get calendar locale based on current language
+  const getCalendarLocale = () => {
+    const lang = i18n.language?.substring(0, 2);
+    return lang === "hr" ? "hr" : "en";
   };
 
   return (
@@ -265,13 +272,12 @@ export default function CalendarComp() {
         >
           {!loading && !user ? (
             <>
-              <h2 className="calendarFormTitle">Request a Reservation</h2>
+              <h2 className="calendarFormTitle">{t("calendar.title")}</h2>
               <p className="calendarFormDescription">
-                Fill out the form below with your preferred dates and contact details.
-                We will review your request and send a confirmation to your email as soon as possible.
+                {t("calendar.description")}
               </p>
               <label htmlFor="Check-In" className="TopMinusFive">
-                Check-In Date
+                {t("calendar.checkInDate")}
               </label>
               <input
                 required
@@ -284,7 +290,7 @@ export default function CalendarComp() {
                 className="CalendarElement__Date_Input"
               />
               <label htmlFor="Check-Out" className="TopMinusFive">
-                Check-Out Date
+                {t("calendar.checkOutDate")}
               </label>
               <input
                 required
@@ -296,55 +302,55 @@ export default function CalendarComp() {
                 className="CalendarElement__Date_Input"
               />
               <label htmlFor="Name" className="TopMinusFive">
-                Name
+                {t("calendar.name")}
               </label>
               <input
                 required
                 type="text"
                 id="Name"
-                placeholder="Enter your name"
+                placeholder={t("calendar.namePlaceholder")}
                 className="CalendarElement__Text_Input"
               />
               <label htmlFor="Email" className="TopMinusFive">
-                Email
+                {t("calendar.email")}
               </label>
               <input
                 required
                 type="email"
                 id="Email"
-                placeholder="Enter your email"
+                placeholder={t("calendar.emailPlaceholder")}
                 className="CalendarElement__Text_Input"
               />
               <label htmlFor="ContactNumber" className="TopMinusFive">
-                Contact Number
+                {t("calendar.contactNumber")}
               </label>
               <input
                 required
                 id="ContactNumber"
                 className="CalendarElement__Text_Input"
-                placeholder="Enter your mobile or phone number"
+                placeholder={t("calendar.phonePlaceholder")}
               />
               <label htmlFor="ContactTextArea" className="TopMinusFive">
-                Message
+                {t("calendar.message")}
               </label>
               <textarea
                 required
                 type="textarea"
                 id="ContactTextArea"
-                placeholder="Enter a message"
+                placeholder={t("calendar.messagePlaceholder")}
                 className="calendarTextField"
               />
               <button
                 type="submit"
                 className="CalendarElement__MakeReservationButton calendarButton"
               >
-                Make a Reservation
+                {t("calendar.makeReservation")}
               </button>
             </>
           ) : (
             <>
               <label htmlFor="Check-In" className="TopMinusFive">
-                Select Check-In Date
+                {t("calendar.selectCheckInDate")}
               </label>
               <input
                 required
@@ -357,7 +363,7 @@ export default function CalendarComp() {
                 className="CalendarElement__Date_Input"
               />
               <label htmlFor="Check-Out" className="TopMinusFive">
-                Select Check-Out Date
+                {t("calendar.selectCheckOutDate")}
               </label>
               <input
                 required
@@ -372,7 +378,7 @@ export default function CalendarComp() {
                 type="submit"
                 className="CalendarElement__MakeReservationButton calendarButton"
               >
-                Block
+                {t("calendar.block")}
               </button>
             </>
           )}
@@ -440,7 +446,7 @@ export default function CalendarComp() {
           }}
           onClickDay={user ? onClickDay : undefined}
           selectRange={true}
-          locale={"en"}
+          locale={getCalendarLocale()}
           onChange={handleCalendarChange}
           value={calendarValue}
           minDate={new Date()}
@@ -487,10 +493,10 @@ export default function CalendarComp() {
       {/* Admin: Price Management */}
       {!loading && user && (
         <div className="priceManagementContainer">
-          <h2 className="priceManagementTitle">Manage Prices</h2>
+          <h2 className="priceManagementTitle">{t("calendar.managePrices")}</h2>
           <form onSubmit={submitPrice} className="priceForm">
             <div className="priceFormRow">
-              <label htmlFor="priceStartDate">Start (DD.MM)</label>
+              <label htmlFor="priceStartDate">{t("calendar.startDate")}</label>
               <input
                 type="text"
                 id="priceStartDate"
@@ -503,7 +509,7 @@ export default function CalendarComp() {
               />
             </div>
             <div className="priceFormRow">
-              <label htmlFor="priceEndDate">End (DD.MM)</label>
+              <label htmlFor="priceEndDate">{t("calendar.endDate")}</label>
               <input
                 type="text"
                 id="priceEndDate"
@@ -516,7 +522,7 @@ export default function CalendarComp() {
               />
             </div>
             <div className="priceFormRow">
-              <label htmlFor="priceAmount">Price (€/night)</label>
+              <label htmlFor="priceAmount">{t("calendar.pricePerNight")}</label>
               <input
                 type="number"
                 id="priceAmount"
@@ -531,7 +537,7 @@ export default function CalendarComp() {
               type="submit"
               className="CalendarElement__MakeReservationButton calendarButton"
             >
-              Add Price
+              {t("calendar.addPrice")}
             </button>
           </form>
 
@@ -546,7 +552,7 @@ export default function CalendarComp() {
                   onClick={() => removePrice(price)}
                   className="CalendarElement__BlockReservationButton"
                 >
-                  Remove
+                  {t("calendar.remove")}
                 </button>
               </div>
             ))}
@@ -557,7 +563,7 @@ export default function CalendarComp() {
       {/* Confirmation popup for removing blocks */}
       {blockToRemove && (
         <ConfirmPopup
-          message={`Remove block from ${blockToRemove.startDate} to ${blockToRemove.endDate}?`}
+          message={t("popup.removeBlockMessage", { startDate: blockToRemove.startDate, endDate: blockToRemove.endDate })}
           onConfirm={confirmRemoveBlock}
           onCancel={cancelRemoveBlock}
         />

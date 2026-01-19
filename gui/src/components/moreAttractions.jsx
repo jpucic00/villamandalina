@@ -1,8 +1,7 @@
+import { useTranslation } from "react-i18next";
 import useWindowDimensions from "../util/useWindowDimensions";
 import deviceCheck from "../util/deviceCheck";
 import Slider from "react-slick";
-
-import { attractions } from "../constants/attractions";
 
 import "../assets/style/moreAttractions.css";
 import Krka from "../assets/images/krka.jpg";
@@ -13,6 +12,7 @@ import Kanal from "../assets/images/kanal.jpg";
 
 export default function MoreAttractions() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   var settings = {
     dots: true,
@@ -26,19 +26,20 @@ export default function MoreAttractions() {
   };
 
   const images = [Katedrala, Krka, Kornati, SvNikola, Kanal];
+  const attractionKeys = ["cathedral", "krka", "kornati", "stNicholas", "stAnthony"];
 
   return (
     <div className={`attractionsContainer ${deviceCheck(width)}`}>
       <div className={`attractionsTitle ${deviceCheck(width)}`}>
-        Nearby Attractions
+        {t("attractions.title")}
       </div>
       <div className={`reviewItemsContainer ${deviceCheck(width)}`}>
         <Slider {...settings}>
-          {attractions.map((attraction, index) => {
+          {attractionKeys.map((key, index) => {
             return (
-              <div className={`attractionItemContainer ${deviceCheck(width)}`}>
+              <div key={index} className={`attractionItemContainer ${deviceCheck(width)}`}>
                 <div className={`attractionTitle ${deviceCheck(width)}`}>
-                  {attraction.title}
+                  {t(`attractions.items.${key}.title`)}
                 </div>
                 <img
                   alt=""
@@ -46,7 +47,7 @@ export default function MoreAttractions() {
                   className={`attractionImage ${deviceCheck(width)}`}
                 ></img>
                 <div className={`attractionText ${deviceCheck(width)}`}>
-                  {attraction.text}
+                  {t(`attractions.items.${key}.text`)}
                 </div>
               </div>
             );

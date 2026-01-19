@@ -339,3 +339,96 @@
   margin-top: 4px;
 }
 
+/* Phone links and WhatsApp */
+.phoneRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.phoneRow:last-child {
+  margin-bottom: 0;
+}
+
+.phoneLink {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phoneLink:hover {
+  color: #1ba3e3;
+}
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #25D366;
+  transition: transform 0.3s ease, color 0.3s ease;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.whatsappLink svg {
+  display: block;
+}
+
+.whatsappLink:hover {
+  color: #128C7E;
+  transform: scale(1.1);
+}
+
+.mobile .phoneLink {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.mobile .whatsappLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Address copy button */
+.addressRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.addressText {
+  user-select: text;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #e8f4fc;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #9aacba;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-family: MerriweatherSans-Regular;
+  font-size: 12px;
+}
+
+.copyButton:hover {
+  color: #1ba3e3;
+  border-color: #1ba3e3;
+  background: rgba(27, 163, 227, 0.05);
+}
+
+.copyButton svg {
+  display: block;
+}
+

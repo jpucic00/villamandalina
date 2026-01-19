@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import "../assets/style/reviews.css";
@@ -10,6 +11,8 @@ import "../assets/style/slick-custom.css";
 
 export default function Reviews() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
   var settings = {
     dots: true,
     infinite: true,
@@ -28,8 +31,7 @@ export default function Reviews() {
   return (
     <div className={`reviewContainer ${deviceCheck(width)}`}>
       <div className={`reviewTitle ${deviceCheck(width)}`}>
-        We are honoured to share the testimonials we recived from our
-        exceptional guests
+        {t("reviews.title")}
       </div>
       <div className={`reviewItemsContainer ${deviceCheck(width)}`}>
         <Slider {...settings}>

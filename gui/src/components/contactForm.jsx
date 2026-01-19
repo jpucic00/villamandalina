@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import useWindowDimensions from "../util/useWindowDimensions";
 import deviceCheck from "../util/deviceCheck";
 import "../assets/style/contact.css";
@@ -13,6 +14,7 @@ import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   emailjs.init("TO7HNsppourbFcFDu");
 
@@ -50,10 +52,9 @@ export default function ContactForm() {
     };
 
     toast.promise(SendEmail(templateParams, resetForm, setSubmitting), {
-      pending: "Email is being sent please wait...",
-      success: "Email sent",
-      error:
-        "There was an issue with sending of the email, please try again later",
+      pending: t("toast.emailPending"),
+      success: t("toast.emailSent"),
+      error: t("toast.emailError"),
     });
   };
 
@@ -65,20 +66,20 @@ export default function ContactForm() {
       validate={(values) => {
         const errors = {};
         if (!values.email) {
-          errors.email = "Required";
+          errors.email = t("contact.form.required");
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = "Invalid email address";
+          errors.email = t("contact.form.invalidEmail");
         }
         if (!values.name) {
-          errors.name = "Required";
+          errors.name = t("contact.form.required");
         }
         if (!values.message) {
-          errors.message = "Required";
+          errors.message = t("contact.form.required");
         }
         if (!validateCaptcha(values.userCaptchaInput, true)) {
-          errors.userCaptchaInput = "Wrong captcha";
+          errors.userCaptchaInput = t("contact.form.wrongCaptcha");
         }
         return errors;
       }}
@@ -97,14 +98,14 @@ export default function ContactForm() {
           <Field
             type="input"
             name="name"
-            placeholder="Enter your name"
+            placeholder={t("contact.form.namePlaceholder")}
             className={`contactInput ${deviceCheck(width)}`}
           />
           <div className="formErrorMessage">{errors.name}</div>
           <Field
             type="email"
             name="email"
-            placeholder="Enter a valid email adress"
+            placeholder={t("contact.form.emailPlaceholder")}
             className={`contactInput ${deviceCheck(width)}`}
           />
           <div className="formErrorMessage">{errors.email}</div>
@@ -112,13 +113,13 @@ export default function ContactForm() {
             type="textarea"
             as="textarea"
             name="message"
-            placeholder="Enter your message..."
+            placeholder={t("contact.form.messagePlaceholder")}
             className={`contactText ${deviceCheck(width)}`}
           />
           <div className="formErrorMessage">{errors.message}</div>
           <LoadCanvasTemplate reloadColor="white" />
           <Field
-            placeholder="Enter Captcha Value"
+            placeholder={t("contact.form.captchaPlaceholder")}
             id="user_captcha_input"
             name="userCaptchaInput"
             type="text"
@@ -130,7 +131,7 @@ export default function ContactForm() {
             type="submit"
             disabled={isSubmitting}
           >
-            Submit
+            {t("contact.form.submit")}
           </button>
         </Form>
       )}

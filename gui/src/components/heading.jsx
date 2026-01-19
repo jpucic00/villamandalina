@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import deviceCheck from "../util/deviceCheck";
 
 import "../assets/style/heading.css";
@@ -8,6 +9,8 @@ import { motion } from "framer-motion";
 
 export default function Heading() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
   return (
     <div className={`wrap-layer ${deviceCheck(width)}`}>
       <div className={`rightSection ${deviceCheck(width)}`}>
@@ -29,8 +32,7 @@ export default function Heading() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={`headerTitle ${deviceCheck(width)}`}
           >
-            Luxury Villa Just Outside The City Center With A Beautifull Panoramic
-            View
+            {t("header.title")}
           </motion.div>
           <div className={`headerButtonContainer ${deviceCheck(width)}`}>
             <motion.a
@@ -39,7 +41,7 @@ export default function Heading() {
               href={"/calendar"}
               className={`reservationButtonHeader ${deviceCheck(width)}`}
             >
-              Make a Reservation
+              {t("header.makeReservation")}
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -47,7 +49,7 @@ export default function Heading() {
               href={"/contact"}
               className={`contactButtonHeader ${deviceCheck(width)}`}
             >
-              Contact Us
+              {t("header.contactUs")}
             </motion.a>
           </div>
         </div>
@@ -60,7 +62,7 @@ export default function Heading() {
         className={`scrollIndicator ${deviceCheck(width)}`}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <span>SCROLL</span>
+        <span>{t("header.scroll")}</span>
       </div>
     </div>
   );

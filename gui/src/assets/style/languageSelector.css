@@ -1,0 +1,55 @@
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 20px;
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: MerriweatherSans-Regular;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.langButton:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.langButton.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.langDivider {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+/* Mobile header - next to hamburger */
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.languageSelector.mobileHeader {
+  margin-right: 8px;
+}
+
+.languageSelector.mobileHeader .langButton {
+  font-size: 12px;
+  padding: 4px 6px;
+}
+
+.languageSelector.mobileHeader .langDivider {
+  font-size: 12px;
+}

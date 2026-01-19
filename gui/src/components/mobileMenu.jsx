@@ -2,14 +2,17 @@ import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 import { navigationMenuItems } from "../constants/menuItems";
 import { logout } from "../api";
 import { useAuth } from "../AuthContext";
 import { toast } from "react-toastify";
+import LanguageSelector from "./LanguageSelector";
 
 export default function MobileMenu() {
   const { width } = useWindowDimensions();
   const { user, loading, clearUser } = useAuth();
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const container = useRef();
@@ -60,10 +63,22 @@ export default function MobileMenu() {
       logout();
       clearUser();
       handleClose();
-      toast.success("Logged out");
+      toast.success(t("toast.loggedOut"));
     } catch {
-      toast.error("Failed to logout");
+      toast.error(t("toast.failedLogout"));
     }
+  };
+
+  const getTranslatedName = (item) => {
+    const keyMap = {
+      "Home": "nav.home",
+      "Details": "nav.details",
+      "Gallery": "nav.gallery",
+      "Calendar": "nav.calendar",
+      "Contact": "nav.contact",
+      "Log in": "nav.login"
+    };
+    return t(keyMap[item.name] || item.name);
   };
 
   const mobileMenuContent = mobileMenuOpen && (
@@ -95,9 +110,9 @@ export default function MobileMenu() {
             >
               {item.name === "Log in"
                 ? user && !loading
-                  ? "Log out"
-                  : !loading && item.name
-                : item.name}
+                  ? t("nav.logout")
+                  : !loading && getTranslatedName(item)
+                : getTranslatedName(item)}
             </a>
           ))}
         </div>
@@ -107,12 +122,15 @@ export default function MobileMenu() {
 
   return (
     <>
-      {!mobileMenuOpen && (
-        <div
-          onClick={() => setMobileMenuOpen(true)}
-          className={`mobileMenu  ${deviceCheck(width)}`}
-        />
-      )}
+      <div className={`mobileMenuHeader ${deviceCheck(width)}`}>
+        <LanguageSelector className="mobileHeader" />
+        {!mobileMenuOpen && (
+          <div
+            onClick={() => setMobileMenuOpen(true)}
+            className={`mobileMenu  ${deviceCheck(width)}`}
+          />
+        )}
+      </div>
       {mobileMenuOpen && createPortal(mobileMenuContent, document.body)}
     </>
   );
