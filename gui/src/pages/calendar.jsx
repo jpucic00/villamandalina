@@ -512,21 +512,15 @@ export default function CalendarComp() {
             const isBlocked = isDateBlocked(date);
 
             if (user) {
-              // Admin view
+              // Admin view - show half-blocked styling for boundaries
               if (isBlocked || isFullyBooked) {
                 classes.push("blocked-date-admin");
               } else {
                 if (isStart) classes.push("half-blocked-start-admin");
                 if (isEnd) classes.push("half-blocked-end-admin");
               }
-            } else {
-              // Public view - fully booked days show as disabled (handled by tileDisabled)
-              // Only show half-blocked for single boundary dates
-              if (!isFullyBooked) {
-                if (isStart) classes.push("half-blocked-start");
-                if (isEnd) classes.push("half-blocked-end");
-              }
             }
+            // Public view - no half-blocked styling, boundaries appear as fully open
 
             return classes.length > 0 ? classes.join(" ") : null;
           }}

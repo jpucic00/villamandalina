@@ -9,7 +9,7 @@
     "logout": "Odjava"
   },
   "header": {
-    "title": "Luksuzna vila nedaleko od centra grada s prekrasnim panoramskim pogledom",
+    "title": "Luksuzna vila s pogledom koji oduzima dah, nadomak centra Šibenika",
     "makeReservation": "Rezervirajte",
     "contactUs": "Kontaktirajte nas",
     "scroll": "SCROLL"
@@ -20,8 +20,8 @@
       "description": "Gosti mogu doživjeti atmosferu dalmatinske ljetne noći pripremajući tradicionalna jela s roštilja na terasi dok gledaju obalu Šibenika noću i slušaju zvuk valova."
     },
     "midnightSwim": {
-      "title": "Ponoćno kupanje s pogledom",
-      "description": "Grijani vanjski bazen s nevjerojatnim pogledom na grad nalazi se odmah vani. Ležaljke i vanjski tuš nalaze se uz bazen za vruće ljetne dane."
+      "title": "Kupanje pod zvijezdama",
+      "description": "Grijani vanjski bazen s nevjerojatnim pogledom na grad nalazi se u dvorištu. Uz bazen su dostupne ležaljke i vanjski tuš, idealni za vruće ljetne dane."
     },
     "warmAndComfortable": {
       "title": "Toplo i udobno",
@@ -30,7 +30,7 @@
     "galleryButton": "Galerija"
   },
   "reviews": {
-    "title": "Čast nam je podijeliti svjedočanstva koja smo primili od naših izuzetnih gostiju"
+    "title": "Što naši gosti kažu o svom boravku"
   },
   "moreDetails": {
     "title": "Više detalja o",
@@ -140,7 +140,7 @@
       },
       "kornati": {
         "title": "NP Kornati",
-        "text": "Nacionalni park Kornati, zadivljujuće prirodno čudo smješteno u srcu Hrvatske! Poznat kao raj za pomorce, ovaj arhipelag se sastoji od 109 prekrasnih otoka, otočića i grebena, tvoreći zadivljujući labirint surove ljepote u Jadranskom moru. Otoke karakteriziraju strme vapnenačke litice koje se veličanstveno uzdižu iz kristalno čistih tirkiznih voda. Ove dramatične formacije oblikovane su elementima tijekom tisućama godina, stvarajući krajobraz koji je uistinu jedinstven."
+        "text": "Nacionalni park Kornati, zadivljujuće prirodno čudo smješteno u srcu Hrvatske! Poznat kao raj za pomorce, ovaj arhipelag se sastoji od 109 prekrasnih otoka, otočića i grebena, tvoreći zadivljujući labirint surove ljepote u Jadranskom moru. Otoke karakteriziraju strme vapnenačke litice koje se veličanstveno uzdižu iz kristalno čistog tirkiznog mora. Ove formacije oblikovane su vanjskim elementima tisućama godina, stvarajući krajobraz koji je uistinu jedinstven."
       },
       "stNicholas": {
         "title": "Tvrđava sv. Nikole",
@@ -153,9 +153,9 @@
     }
   },
   "villaDetails": {
-    "introText": "Vaše savršeno hrvatsko utočište u Šibeniku",
+    "introText": "Vaš kutak raja na dalmatinskoj obali",
     "aboutTitle": "O vili",
-    "description": "Villa Mandalina je prekrasna, moderna kuća za odmor izgrađena 2019. godine, smještena u mirnom susjedstvu Mandalina, samo 2 km od povijesnog centra grada Šibenika. Ova zadivljujuća nekretnina nudi 170m² stambenog prostora na 180m² zemljišta s privatnim grijanim bazenom i pogledom na more, savršena za obitelji ili grupe koje traže opuštajući hrvatski odmor.\n\nVila ima 4 prostrane spavaće sobe i 4 kupaonice, udobno smještajući do 10 gostiju. Tri spavaće sobe imaju king-size krevete s privatnim kupaonama, dok četvrta ima dva odvojena kreveta. Svaka soba opremljena je klima uređajem i satelitskom televizijom za vašu udobnost.",
+    "description": "Villa Mandalina je moderna kuća za odmor izgrađena 2019. godine, smještena u mirnom susjedstvu Mandalina, svega 2 km od povijesne jezgre Šibenika. Kuća ima 170m² stambenog prostora te privatni grijani vanjski bazen sa pogledom na more, što je čini pogodnom za obitelji ili grupe koje traže opuštajući odmor.\n\nVila sadrži 4 prostrane spavaće sobe i 4 kupaonice, udobno smještajući do 10 gostiju. Tri spavaće sobe imaju king-size krevete s vlastitim kupaonicama, dok je četvrta opremljena dva odvojena kreveta. Sve soba imaju klima uređaj i satelitsku televiziju.",
     "highlights": {
       "livingSpace": "Stambeni prostor",
       "bedrooms": "Spavaće sobe",
@@ -252,7 +252,7 @@
       "atTheVilla": [
         "Plivanje u grijanom bazenu",
         "Sunčanje s pogledom na more",
-        "Roštilj večeri",
+        "Roštilj",
         "Opuštanje u privatnom vrtu"
       ],
       "inTheArea": [
@@ -276,7 +276,7 @@
     },
     "cta": {
       "title": "Spremni rezervirati svoj boravak?",
-      "text": "Provjerite dostupnost i rezervirajte savršen hrvatski odmor.",
+      "text": "Provjerite dostupnost i rezervirajte svoj odmor.",
       "checkAvailability": "Provjeri dostupnost",
       "contactUs": "Kontaktirajte nas"
     }
@@ -293,12 +293,12 @@
     "subheadline": "Imate pitanja o Villi Mandalina? Pošaljite nam poruku i javit ćemo vam se što je prije moguće.",
     "form": {
       "namePlaceholder": "Unesite svoje ime",
-      "emailPlaceholder": "Unesite valjanu email adresu",
+      "emailPlaceholder": "Unesite valjanu e-mail adresu",
       "messagePlaceholder": "Unesite svoju poruku...",
       "captchaPlaceholder": "Unesite vrijednost Captcha",
       "submit": "Pošalji",
       "required": "Obavezno",
-      "invalidEmail": "Nevažeća email adresa",
+      "invalidEmail": "Nevažeća e-mail adresa",
       "wrongCaptcha": "Pogrešna captcha"
     },
     "info": {
@@ -313,17 +313,17 @@
   },
   "calendar": {
     "title": "Zatražite rezervaciju",
-    "description": "Ispunite obrazac ispod s preferiranim datumima i kontakt podacima. Pregledat ćemo vaš zahtjev i poslati potvrdu na vašu email adresu što je prije moguće.",
+    "description": "Ispunite obrazac ispod s preferiranim datumima i kontakt podacima. Nakon pregled zahtjeva, potvrdu ćemo vam poslati putem e-maila u najkraćem roku.",
     "checkInDate": "Datum prijave",
     "checkOutDate": "Datum odjave",
     "selectCheckInDate": "Odaberite datum prijave",
     "selectCheckOutDate": "Odaberite datum odjave",
     "name": "Ime",
-    "email": "Email",
+    "email": "E-mail",
     "contactNumber": "Kontakt broj",
     "message": "Poruka",
     "namePlaceholder": "Unesite svoje ime",
-    "emailPlaceholder": "Unesite svoj email",
+    "emailPlaceholder": "Unesite svoj e-mail",
     "phonePlaceholder": "Unesite svoj broj mobitela ili telefona",
     "messagePlaceholder": "Unesite poruku",
     "makeReservation": "Rezerviraj",
@@ -344,7 +344,7 @@
   },
   "login": {
     "title": "Prijava",
-    "emailPlaceholder": "Email adresa",
+    "emailPlaceholder": "E-mail adresa",
     "passwordPlaceholder": "Lozinka",
     "button": "Prijavi se"
   },
@@ -357,10 +357,10 @@
     "loggedOut": "Odjavljeni ste",
     "failedLogout": "Neuspjela odjava",
     "loggedInSuccess": "Uspješna prijava",
-    "loginFailed": "Prijava nije uspjela, provjerite email i lozinku",
-    "emailPending": "Email se šalje, molimo pričekajte...",
-    "emailSent": "Email poslan",
-    "emailError": "Došlo je do problema pri slanju emaila, pokušajte ponovo kasnije",
+    "loginFailed": "Prijava nije uspjela, provjerite e-mail i lozinku",
+    "emailPending": "E-mail se šalje, molimo pričekajte...",
+    "emailSent": "E-mail poslan",
+    "emailError": "Došlo je do problema pri slanju e-maila, pokušajte ponovo kasnije",
     "blockAdded": "Blokada za datume između {{startDate}} i {{endDate}} dodana",
     "blockError": "Nije moguće blokirati ove datume, pokušajte ponovo",
     "blockRemoved": "Blokada uspješno uklonjena",
