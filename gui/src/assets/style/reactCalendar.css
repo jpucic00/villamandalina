@@ -309,3 +309,75 @@
   font-weight: bold;
   line-height: 1;
 }
+
+/* Half-blocked dates (check-in/check-out boundary dates) */
+/* These dates are part of a booking but still available for new reservations */
+.half-blocked-start {
+  background: linear-gradient(to bottom right, #ffffff 50%, #f0f3f5 50%) !important;
+  position: relative;
+}
+
+.half-blocked-end {
+  background: linear-gradient(to bottom right, #f0f3f5 50%, #ffffff 50%) !important;
+  position: relative;
+}
+
+/* When both start and end meet on the same date (adjacent bookings) */
+/* Shows both corners blocked with white diagonal stripe in middle */
+.half-blocked-start.half-blocked-end {
+  background:
+    linear-gradient(to bottom right, #f0f3f5 0%, #f0f3f5 35%, transparent 35%),
+    linear-gradient(to top left, #f0f3f5 0%, #f0f3f5 35%, transparent 35%),
+    #ffffff !important;
+  position: relative;
+}
+
+/* Admin view half-blocked styling */
+.half-blocked-start-admin {
+  background: linear-gradient(to bottom right, #ffffff 50%, #ffe4e4 50%) !important;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+.half-blocked-end-admin {
+  background: linear-gradient(to bottom right, #ffe4e4 50%, #ffffff 50%) !important;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Shows both corners blocked with white diagonal stripe in middle */
+.half-blocked-start-admin.half-blocked-end-admin {
+  background:
+    linear-gradient(to bottom right, #ffe4e4 0%, #ffe4e4 35%, transparent 35%),
+    linear-gradient(to top left, #ffe4e4 0%, #ffe4e4 35%, transparent 35%),
+    #ffffff !important;
+}
+
+.half-blocked-start-admin:hover,
+.half-blocked-end-admin:hover {
+  transform: scale(1.02);
+}
+
+/* Override half-blocked styling when date is selected */
+.half-blocked-start.react-calendar__tile--active,
+.half-blocked-end.react-calendar__tile--active,
+.half-blocked-start.react-calendar__tile--rangeStart,
+.half-blocked-end.react-calendar__tile--rangeEnd,
+.half-blocked-start-admin.react-calendar__tile--active,
+.half-blocked-end-admin.react-calendar__tile--active,
+.half-blocked-start-admin.react-calendar__tile--rangeStart,
+.half-blocked-end-admin.react-calendar__tile--rangeEnd {
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%) !important;
+  color: white !important;
+}
+
+/* Override half-blocked styling when date is in selected range */
+.half-blocked-start.react-calendar__tile--hasActive,
+.half-blocked-end.react-calendar__tile--hasActive,
+.half-blocked-start-admin.react-calendar__tile--hasActive,
+.half-blocked-end-admin.react-calendar__tile--hasActive {
+  background: rgba(27, 163, 227, 0.08) !important;
+  color: #3a4a5c !important;
+}

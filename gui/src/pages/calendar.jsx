@@ -33,6 +33,9 @@ export default function CalendarComp() {
   // Popup state for confirming block removal
   const [blockToRemove, setBlockToRemove] = useState(null);
 
+  // Key to force calendar re-render when clearing selection
+  const [calendarKey, setCalendarKey] = useState(0);
+
   // Price management state (for admin)
   const [priceStartDate, setPriceStartDate] = useState("");
   const [priceEndDate, setPriceEndDate] = useState("");
@@ -42,6 +45,17 @@ export default function CalendarComp() {
     fetchDisabledDates();
     fetchPrices();
   }, []);
+
+  // Clear selection when remove popup is shown
+  useEffect(() => {
+    if (blockToRemove) {
+      setCalendarValue(null);
+      setCheckIn();
+      setCheckOut();
+      // Force calendar to re-render to clear its internal selection state
+      setCalendarKey((prev) => prev + 1);
+    }
+  }, [blockToRemove]);
 
   const fetchDisabledDates = async () => {
     try {
@@ -89,8 +103,60 @@ export default function CalendarComp() {
     return (date = date.toISOString().split("T")[0]);
   };
 
-  // Check if a date falls within a blocked range
+  // Check if a date falls within a blocked range (exclusive of boundaries)
+  // Boundaries (start/end dates) remain selectable for same-day check-in/check-out
   const getBlockForDate = (date) => {
+    const dateTimestamp = Math.floor(
+      new Date(date.toLocaleDateString("en")).getTime() / 1000
+    );
+    return disabledDates.find((disabledDate) => {
+      const startTimestamp = Math.floor(
+        new Date(new Date(disabledDate.startDate).toLocaleDateString("en")).getTime() / 1000
+      );
+      const endTimestamp = Math.floor(
+        new Date(new Date(disabledDate.endDate).toLocaleDateString("en")).getTime() / 1000
+      );
+      return dateTimestamp > startTimestamp && dateTimestamp < endTimestamp;
+    });
+  };
+
+  // Check if a date is blocked
+  const isDateBlocked = (date) => {
+    return !!getBlockForDate(date);
+  };
+
+  // Check if a date is a boundary (start or end) of any booking
+  // Also tracks if start and end are from different bookings (meaning fully booked)
+  const getDateBoundaryType = (date) => {
+    const dateTimestamp = Math.floor(
+      new Date(date.toLocaleDateString("en")).getTime() / 1000
+    );
+
+    let startFromBookingId = null;
+    let endFromBookingId = null;
+
+    disabledDates.forEach((disabledDate) => {
+      const startTimestamp = Math.floor(
+        new Date(new Date(disabledDate.startDate).toLocaleDateString("en")).getTime() / 1000
+      );
+      const endTimestamp = Math.floor(
+        new Date(new Date(disabledDate.endDate).toLocaleDateString("en")).getTime() / 1000
+      );
+
+      if (dateTimestamp === startTimestamp) startFromBookingId = disabledDate.id;
+      if (dateTimestamp === endTimestamp) endFromBookingId = disabledDate.id;
+    });
+
+    const isStart = startFromBookingId !== null;
+    const isEnd = endFromBookingId !== null;
+    // If both start and end exist and are from different bookings, the day is fully booked
+    const isFullyBooked = isStart && isEnd && startFromBookingId !== endFromBookingId;
+
+    return { isStart, isEnd, isFullyBooked };
+  };
+
+  // Find any block that includes this date (including start/end boundaries) - for admin to remove blocks
+  const getBlockIncludingBoundaries = (date) => {
     const dateTimestamp = Math.floor(
       new Date(date.toLocaleDateString("en")).getTime() / 1000
     );
@@ -105,18 +171,36 @@ export default function CalendarComp() {
     });
   };
 
-  // Check if a date is blocked
-  const isDateBlocked = (date) => {
-    return !!getBlockForDate(date);
-  };
-
   // Handle clicking on a day (for admin to remove blocks)
   const onClickDay = (date) => {
     if (!user) return;
 
-    const block = getBlockForDate(date);
-    if (block) {
-      setBlockToRemove(block);
+    const { isStart, isEnd, isFullyBooked } = getDateBoundaryType(date);
+    const isBlocked = isDateBlocked(date);
+
+    // Show remove popup for fully blocked dates
+    if (isBlocked || isFullyBooked) {
+      const block = getBlockIncludingBoundaries(date);
+      if (block) {
+        setBlockToRemove(block);
+      }
+      return;
+    }
+
+    // For boundary dates (half-blocked), check if this is a 1-night block
+    // that has no "middle" date to click on
+    if (isStart || isEnd) {
+      const block = getBlockIncludingBoundaries(date);
+      if (block) {
+        const startDate = new Date(block.startDate);
+        const endDate = new Date(block.endDate);
+        const daysDiff = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+        // For 1-night blocks only, show popup on boundary click since there's no middle to click
+        if (daysDiff === 1) {
+          setBlockToRemove(block);
+        }
+      }
     }
   };
 
@@ -384,6 +468,7 @@ export default function CalendarComp() {
           )}
         </form>
         <Calendar
+          key={calendarKey}
           maxDate={
             new Date(new Date().setFullYear(new Date().getFullYear() + 1))
           }
@@ -392,57 +477,58 @@ export default function CalendarComp() {
             // For admin users, don't disable blocked dates so they can click to remove
             if (user) return false;
 
-            return (
-              disabledDates.filter((disabledDate) => {
-                return (
-                  Math.floor(
-                    new Date(date.toLocaleDateString("en")).getTime() / 1000
-                  ) >
-                  Math.floor(
-                    new Date(
-                      new Date(disabledDate.startDate).toLocaleDateString(
-                        "en"
-                      )
-                    ).getTime() / 1000
-                  ) &&
-                  Math.floor(
-                    new Date(date.toLocaleDateString("en")).getTime() / 1000
-                  ) <
-                  Math.floor(
-                    new Date(
-                      new Date(disabledDate.endDate).toLocaleDateString("en")
-                    ).getTime() / 1000
-                  )
-                );
-              }).length > 0 ||
-              disabledDates.filter(
-                (disabledDate) =>
-                  Math.floor(
-                    new Date(date.toLocaleDateString("en")).getTime() / 1000
-                  ) ===
-                  Math.floor(
-                    new Date(
-                      new Date(disabledDate.startDate).toLocaleDateString(
-                        "en"
-                      )
-                    ).getTime() / 1000
-                  ) ||
-                  Math.floor(
-                    new Date(date.toLocaleDateString("en")).getTime() / 1000
-                  ) ===
-                  Math.floor(
-                    new Date(
-                      new Date(disabledDate.endDate).toLocaleDateString("en")
-                    ).getTime() / 1000
-                  )
-              ).length > 1
+            const { isFullyBooked } = getDateBoundaryType(date);
+            // If checkout and check-in from different bookings meet on same day, it's fully booked
+            if (isFullyBooked) return true;
+
+            const dateTimestamp = Math.floor(
+              new Date(date.toLocaleDateString("en")).getTime() / 1000
             );
+
+            return disabledDates.some((disabledDate) => {
+              const startTimestamp = Math.floor(
+                new Date(
+                  new Date(disabledDate.startDate).toLocaleDateString("en")
+                ).getTime() / 1000
+              );
+              const endTimestamp = Math.floor(
+                new Date(
+                  new Date(disabledDate.endDate).toLocaleDateString("en")
+                ).getTime() / 1000
+              );
+
+              // Only disable dates strictly between start and end (exclusive of both boundaries)
+              // This allows check-in/check-out on the same day:
+              // - Previous guest can checkout on start date
+              // - New guest can check-in on end date
+              return dateTimestamp > startTimestamp && dateTimestamp < endTimestamp;
+            });
           }}
           tileClassName={({ date, view }) => {
-            if (view === "month" && user && isDateBlocked(date)) {
-              return "blocked-date-admin";
+            if (view !== "month") return null;
+
+            const classes = [];
+            const { isStart, isEnd, isFullyBooked } = getDateBoundaryType(date);
+            const isBlocked = isDateBlocked(date);
+
+            if (user) {
+              // Admin view
+              if (isBlocked || isFullyBooked) {
+                classes.push("blocked-date-admin");
+              } else {
+                if (isStart) classes.push("half-blocked-start-admin");
+                if (isEnd) classes.push("half-blocked-end-admin");
+              }
+            } else {
+              // Public view - fully booked days show as disabled (handled by tileDisabled)
+              // Only show half-blocked for single boundary dates
+              if (!isFullyBooked) {
+                if (isStart) classes.push("half-blocked-start");
+                if (isEnd) classes.push("half-blocked-end");
+              }
             }
-            return null;
+
+            return classes.length > 0 ? classes.join(" ") : null;
           }}
           onClickDay={user ? onClickDay : undefined}
           selectRange={true}
