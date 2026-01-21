@@ -8,6 +8,7 @@
   width: 100%;
   height: max-content;
   overflow: hidden;
+  padding-bottom: 60px;
 }
 
 .galleryContainer.tablet {
@@ -20,7 +21,7 @@
   width: 100%;
   height: max-content;
   overflow: hidden;
-
+  padding-bottom: 40px;
   margin-left: -3%;
   margin-right: -3%;
 }
@@ -35,4 +36,5 @@
   width: 100%;
   height: max-content;
   overflow: hidden;
+  padding-bottom: 40px;
 }

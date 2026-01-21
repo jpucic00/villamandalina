@@ -4,6 +4,7 @@ import NavigationBar from "./navigationBar";
 import useWindowDimensions from "../util/useWindowDimensions";
 import deviceCheck from "../util/deviceCheck";
 import Heading from "./heading";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   const { width } = useWindowDimensions();
@@ -38,6 +39,7 @@ export default function Layout({ children }) {
           <div className={`moreDetailsBlueBackground ${deviceCheck(width)}`} />
         </>
       ) : null}
+      <Footer />
     </div>
   );
 }

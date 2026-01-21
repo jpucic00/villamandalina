@@ -375,5 +375,8 @@
   "language": {
     "en": "EN",
     "hr": "HR"
+  },
+  "footer": {
+    "allRightsReserved": "Sva prava pridržana"
   }
 }

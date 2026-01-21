@@ -302,12 +302,12 @@
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   width: 100vw;
-  margin-bottom: -80px;
+  margin-bottom: 0;
 }
 
 .villaDetailsRulesSection.tablet {
   padding: 40px 20px;
-  margin-bottom: -30px;
+  margin-bottom: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -317,7 +317,7 @@
 
 .villaDetailsRulesSection.mobile {
   padding: 30px 15px;
-  margin-bottom: -30px;
+  margin-bottom: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -381,7 +381,7 @@
   background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
   padding: 80px 20px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -390,12 +390,12 @@
 
 .villaDetailsCTA.tablet {
   padding: 60px 20px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .villaDetailsCTA.mobile {
   padding: 40px 20px;
-  margin-top: 30px;
+  margin-top: 0;
 }
 
 .villaDetailsCTATitle {
