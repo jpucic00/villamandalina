@@ -1,15 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import deviceCheck from "../util/deviceCheck";
 import useWindowDimensions from "../util/useWindowDimensions";
 import "../assets/style/location.css";
 
 export default function Location() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   return (
     <div className={`locationContainer ${deviceCheck(width)}`}>
       <div className={`locationTitle ${deviceCheck(width)}`}>
-        Where are we located?
+        {t("location.title")}
       </div>
       <div className={`locationContentWrapper ${deviceCheck(width)}`}>
         <iframe

@@ -546,7 +546,7 @@ export default function CalendarComp() {
               <div className="priceItem" key={price.id}>
                 <div className="priceDetails">
                   <span>{mmddToDdmm(price.startDate)}</span> - <span>{mmddToDdmm(price.endDate)}</span>:{" "}
-                  <strong>{price.price}€</strong>/night
+                  <strong>{price.price}€</strong>{t("calendar.perNight")}
                 </div>
                 <button
                   onClick={() => removePrice(price)}

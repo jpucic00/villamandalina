@@ -281,6 +281,13 @@
       "contactUs": "Contact Us"
     }
   },
+  "location": {
+    "title": "Where are we located?"
+  },
+  "contactPage": {
+    "dontHesitate": "Don't Hesitate To",
+    "contactUs": "Contact Us"
+  },
   "contact": {
     "headline": "We're looking forward to hearing from you!",
     "subheadline": "Have questions about Villa Mandalina? Send us a message and we'll get back to you as soon as possible.",
@@ -326,7 +333,8 @@
     "endDate": "End (DD.MM)",
     "pricePerNight": "Price (€/night)",
     "addPrice": "Add Price",
-    "remove": "Remove"
+    "remove": "Remove",
+    "perNight": "/night"
   },
   "gallery": {
     "livingroom": "Livingroom",

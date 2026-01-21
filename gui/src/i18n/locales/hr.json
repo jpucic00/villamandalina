@@ -281,6 +281,13 @@
       "contactUs": "Kontaktirajte nas"
     }
   },
+  "location": {
+    "title": "Gdje se nalazimo?"
+  },
+  "contactPage": {
+    "dontHesitate": "Ne ustručavajte se",
+    "contactUs": "Kontaktirajte nas"
+  },
   "contact": {
     "headline": "Radujemo se vašoj poruci!",
     "subheadline": "Imate pitanja o Villi Mandalina? Pošaljite nam poruku i javit ćemo vam se što je prije moguće.",
@@ -326,7 +333,8 @@
     "endDate": "Kraj (DD.MM)",
     "pricePerNight": "Cijena (€/noć)",
     "addPrice": "Dodaj cijenu",
-    "remove": "Ukloni"
+    "remove": "Ukloni",
+    "perNight": "/noć"
   },
   "gallery": {
     "livingroom": "Dnevni boravak",
