@@ -49,6 +49,7 @@ export async function generateMetadata({
 
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
+  const isHr = locale === "hr";
   // JSON-LD structured data for the villa (LodgingBusiness / VacationRental)
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,8 +96,75 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
       reviewCount: "5",
     },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: isHr
+          ? "Koliko gostiju može boraviti u Villi Mandalina?"
+          : "How many guests can stay at Villa Mandalina?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isHr
+            ? "Villa Mandalina prima do 10 gostiju u 4 spavaće sobe."
+            : "Villa Mandalina can accommodate up to 10 guests across 4 bedrooms.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isHr
+          ? "Ima li Villa Mandalina privatni bazen?"
+          : "Does Villa Mandalina have a private pool?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isHr
+            ? "Da, villa ima privatni grijani bazen površine 19m²."
+            : "Yes, the villa has a private heated pool (19m²).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isHr ? "Gdje se nalazi Villa Mandalina?" : "Where is Villa Mandalina located?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isHr
+            ? "Villa Mandalina nalazi se na adresi Obala Jerka Šižgorića 13, 2 km od centra Šibenika, Hrvatska, s pogledom na more."
+            : "Villa Mandalina is located at Obala Jerka Šižgorića 13, 2 km from Šibenik city centre, Croatia, with sea views.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isHr
+          ? "Što je uključeno u cijenu vile?"
+          : "What amenities are included at Villa Mandalina?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isHr
+            ? "Villa uključuje klimatizaciju, besplatni WiFi, privatno parkirno mjesto, roštilj, perilicu posuđa i perilicu rublja."
+            : "The villa includes air conditioning, free WiFi, private parking, BBQ grill, dishwasher, and washing machine.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isHr
+          ? "Kada je check-in i check-out u Villi Mandalina?"
+          : "What are the check-in and check-out times at Villa Mandalina?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isHr
+            ? "Check-in je od 16:00, a check-out do 10:00."
+            : "Check-in is from 16:00 and check-out is by 10:00.",
+        },
+      },
+    ],
   };
 
   return (
@@ -104,6 +172,10 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <HighlightedParts />
       <Reviews />
