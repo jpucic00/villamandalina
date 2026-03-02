@@ -1,0 +1,517 @@
+.CalendarElement__MainWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-height: 500px;
+  font-family: MerriweatherSans-Bold;
+}
+
+.calendarPageTitle {
+  font-family: MerriweatherSans-Bold;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendarFormTitle {
+  font-family: MerriweatherSans-Bold;
+  color: #1ba3e3;
+  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+}
+
+.calendarFormDescription {
+  font-family: MerriweatherSans-Regular;
+  color: #5a6a7a;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.CalendarElement__MainWrapper.mobile {
+  flex-direction: column-reverse;
+  width: 100%;
+  min-height: auto;
+  gap: 20px;
+}
+
+.CalendarElement__MainWrapper.mobile.loggedIn {
+  flex-direction: column-reverse;
+  width: 100%;
+  min-height: auto;
+}
+
+.CalendarElement__MainWrapper.tablet {
+  width: 100%;
+}
+
+.TopMinusOne {
+  position: relative;
+  top: 1%;
+}
+
+.CE {
+  opacity: 50%;
+}
+
+/* FORM ELEMENTS -START */
+
+.CalendarElement__FormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  box-sizing: border-box;
+  padding: 28px 28px 32px;
+  font-family: MerriweatherSans-bold;
+  height: max-content;
+  width: 40%;
+  color: #1ba3e3;
+  font-size: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mobile .CalendarElement__FormWrapper {
+  width: 100%;
+  padding: 24px 20px 28px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.tablet .CalendarElement__FormWrapper {
+  width: 60%;
+}
+
+.CalendarElement__FormElementHeader {
+  margin: 0;
+  padding: 0;
+}
+
+.CalendarElement__Date_Input {
+  height: 44px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid #e8f4fc;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  padding: 0px 14px;
+  font-size: 16px;
+  line-height: 15px;
+  border-radius: 10px;
+  background: #f8fbfd;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.CalendarElement__Date_Input:hover {
+  border-color: #1ba3e3;
+  background: #f8fbfd;
+}
+
+.CalendarElement__Date_Input:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
+}
+
+.CalendarElement__Text_Input {
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid #e8f4fc;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  padding: 0px 14px;
+  font-size: 14px;
+  line-height: 15px;
+  border-radius: 10px;
+  background: #f8fbfd;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__Text_Input:hover {
+  border-color: #1ba3e3;
+  background: #f8fbfd;
+}
+
+.CalendarElement__Text_Input:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
+}
+
+.CalendarElement__MakeReservationButton {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
+  border-radius: 10px;
+  font-family: MerriweatherSans-Bold, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(27, 163, 227, 0.3);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.CalendarElement__MakeReservationButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 163, 227, 0.4);
+}
+
+.CalendarElement__MakeReservationButton:active {
+  transform: translateY(0);
+}
+
+.CalendarElement__BlockReservationButton {
+  width: max-content;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  background: linear-gradient(135deg, #e05555 0%, #d45555 100%);
+  border-radius: 8px;
+  font-family: MerriweatherSans-Bold, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.CalendarElement__BlockReservationButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(224, 85, 85, 0.3);
+}
+
+.calendarTextField {
+  background: #f8fbfd;
+  border: 2px solid #e8f4fc;
+  border-radius: 10px;
+  height: 140px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 14px;
+  resize: none;
+  outline: none;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.calendarTextField:hover {
+  border-color: #1ba3e3;
+  background: #f8fbfd;
+}
+
+.calendarTextField:focus {
+  border-color: #1ba3e3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 163, 227, 0.15);
+}
+
+.calendarTextField::placeholder,
+.CalendarElement__Text_Input::placeholder,
+.CalendarElement__Date_Input::placeholder {
+  font-family: MerriweatherSans-Regular;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 15px;
+  color: #9aacba;
+}
+
+.calendarTextField.mobile,
+.CalendarElement__Text_Input.mobile,
+.CalendarElement__Date_Input.mobile {
+  width: 100%;
+}
+
+.calendarButton {
+  margin: 20px 0 0 0;
+}
+
+.mobile .calendarButton {
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+.tablet .calendarButton {
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+.CalendarElement__ContactUsButton {
+  width: 55%;
+  height: 7%;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 2px solid #d4e4ed;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: inherit;
+  color: #3a4a5c;
+  transition: all 0.2s ease;
+}
+
+.CalendarElement__ContactUsButton:hover {
+  border-color: #3aa3d4;
+  color: #3aa3d4;
+}
+
+/* FORM ELEMENTS -END */
+
+/* DATEPICKER ELEMENTS -START */
+
+.CalendarElement__DatePickerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  height: 90%;
+  width: 75%;
+  background: linear-gradient(135deg, #2d8ab8 0%, #3aa3d4 100%);
+  border-radius: 16px;
+}
+
+.CalendarElement__MonthWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.CalendarElement__DateWrapper {
+  display: grid;
+  width: 80%;
+  height: 70%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  font-size: 1.5rem;
+}
+
+.TopMinusFive {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  width: 100%;
+  color: #1ba3e3;
+}
+
+.CalendarElement__Year {
+  font-size: 4rem;
+  padding: 0;
+  padding-top: 1%;
+  margin: 0;
+}
+
+.CalendarElement__DayOfTheWeek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CalendarElement__DividerLine {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 3px;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 8;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 48.96%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.CalendarElement__Monday {
+  grid-column-start: 0;
+  grid-column-start: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  margin: 0;
+}
+
+.CalendarElement__Tuesday {
+  grid-column-start: 1;
+  grid-column-start: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.CalendarElement__Wednesday {
+  grid-column-start: 2;
+  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.CalendarElement__Thursday {
+  grid-column-start: 3;
+  grid-column-start: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.CalendarElement__Friday {
+  grid-column-start: 4;
+  grid-column-start: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.CalendarElement__Saturday {
+  grid-column-start: 5;
+  grid-column-start: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.CalendarElement__Sunday {
+  grid-column-start: 6;
+  grid-column-start: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Price Management Section */
+.priceManagementContainer {
+  margin-top: 40px;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.priceManagementTitle {
+  font-family: MerriweatherSans-Bold;
+  color: #1ba3e3;
+  font-size: 20px;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.priceForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.priceFormRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.priceFormRow label {
+  font-family: MerriweatherSans-Bold;
+  color: #1ba3e3;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.priceFormRow input {
+  width: 110px;
+  height: 40px;
+}
+
+.pricesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #f8fbfd;
+  border: 1px solid #e8f4fc;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.priceItem:hover {
+  background: #f0f8fc;
+  border-color: #1ba3e3;
+}
+
+.priceDetails {
+  font-family: MerriweatherSans-Regular;
+  color: #3a4a5c;
+  font-size: 14px;
+}
+
+.priceDetails strong {
+  font-family: MerriweatherSans-Bold;
+  color: #1ba3e3;
+}
+
+/* Mobile styles for price management */
+.mobile .priceManagementContainer {
+  max-width: 100%;
+  padding: 20px;
+}
+
+.mobile .priceForm {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mobile .priceFormRow input {
+  width: 100%;
+}
+
+.mobile .priceItem {
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}

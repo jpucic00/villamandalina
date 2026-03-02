@@ -1,0 +1,100 @@
+.attractionsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: max-content;
+  margin: auto;
+  margin-top: 200px;
+}
+
+.attractionsContainer.mobile {
+  margin-top: 100px;
+}
+.attractionsContainer.tablet {
+  margin-top: 100px;
+}
+
+.attractionItemContainer {
+  outline: none;
+}
+
+.attractionsTitle {
+  font-family: Merriweather-Regular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 53px;
+  text-align: center;
+  color: #595450;
+}
+
+.attractionsTitle.tablet {
+  font-size: 30px;
+  line-height: 33px;
+}
+
+.attractionsTitle.mobile {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.attractionImage {
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+.attractionImage.tablet {
+  width: 75%;
+}
+
+.attractionImage.mobile {
+  width: 90%;
+}
+
+.attractionTitle {
+  font-family: Merriweather-Regular;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 106.2%;
+  color: #595450;
+  margin-bottom: 60px;
+}
+
+.attractionTitle.tablet {
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 45px;
+}
+
+.attractionTitle.mobile {
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.attractionText {
+  font-family: MerriweatherSans-Regular;
+  line-height: 157.18%;
+  /* or 31px */
+  margin-top: 60px;
+  padding: 8px;
+  text-align: justify;
+  text-justify: inter-character;
+  letter-spacing: 0.03em;
+  color: #595450;
+  font-size: 1em;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.attractionText.tablet {
+  font-size: 12px;
+  margin-top: 45px;
+}
+
+.attractionText.mobile {
+  font-size: 12px;
+  margin-top: 30px;
+}

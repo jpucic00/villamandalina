@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  background-color: #3a4a5c;
+  padding: 24px 0;
+  margin-top: auto;
+}
+
+.footer.mobile {
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 140px;
+}
+
+.footer-content.mobile {
+  padding: 0 20px;
+}
+
+.footer-content.tablet {
+  padding: 0 70px;
+}
+
+.footer-copyright {
+  font-family: "MerriweatherSans-Regular", sans-serif;
+  font-size: 14px;
+  color: #fef3e8;
+  margin: 0;
+}
+
+.footer.mobile .footer-copyright {
+  font-size: 12px;
+}

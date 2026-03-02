@@ -1,0 +1,40 @@
+.galleryContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 0;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.galleryContainer.tablet {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 0;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+  padding-bottom: 40px;
+  margin-left: -3%;
+  margin-right: -3%;
+}
+
+.galleryContainer.mobile {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 0;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+  padding-bottom: 40px;
+}

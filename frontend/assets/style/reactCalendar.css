@@ -1,0 +1,383 @@
+.react-calendar {
+  width: 100%;
+  height: 80%;
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.react-calendar--doubleView {
+  width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+
+.react-calendar__viewContainer {
+  height: 90%;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  color: #3a4a5c;
+  font-family: MerriweatherSans-bold;
+  transition: all 0.2s ease;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+/* Navigation Header */
+.react-calendar__navigation {
+  display: flex;
+  height: 56px;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%);
+  padding: 0 8px;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+.react-calendar__navigation__label {
+  font-weight: 600 !important;
+  font-size: 17px !important;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 20px !important;
+}
+
+/* Weekday Headers */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6b7c8f;
+  background: #f5f8fa;
+  padding: 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.react-calendar__month-view {
+  height: 100%;
+}
+
+.react-calendar__month-view > div {
+  height: 100%;
+}
+
+.react-calendar__month-view > div > div {
+  height: 100%;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+/* Weekend styling - subtle difference */
+.react-calendar__month-view__days__day--weekend {
+  color: #e05555;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #b8c4cf;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+
+/* Base Tile Styling */
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 12px 6px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  position: relative;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f3f5;
+  color: #b8c4cf;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e8f4fb;
+  border-radius: 8px;
+}
+
+/* Today Indicator - subtle ring */
+.react-calendar__tile--now {
+  background: transparent;
+  position: relative;
+}
+
+.react-calendar__tile--now::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border: 2px solid #1ba3e3;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #e8f4fb;
+}
+
+/* Active selection (start and end dates) */
+.react-calendar__tile--active {
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%) !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(27, 163, 227, 0.35);
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: linear-gradient(135deg, #1593d0 0%, #1ba3e3 100%) !important;
+}
+
+/* Range selection - dates between start and end */
+.react-calendar__tile--hasActive {
+  background: rgba(27, 163, 227, 0.08);
+  color: #3a4a5c !important;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: rgba(27, 163, 227, 0.12);
+  color: #3a4a5c !important;
+}
+
+/* Hover effect during range selection */
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e8f4fb;
+}
+
+/* Range start and end styling - fully rounded */
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd,
+.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd {
+  border-radius: 8px !important;
+}
+
+/* Blocked dates container (legacy) */
+.blockedDatesContainer {
+  display: flex;
+  width: 100%;
+  font-family: MerriweatherSans-bold;
+  height: max-content;
+  color: #3a4a5c;
+  font-size: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.blockedDatesWrapper {
+  display: flex;
+  width: calc(33% - 20px);
+  justify-content: space-between;
+  padding: 14px 18px;
+  font-size: 12px;
+  border: none;
+  background: linear-gradient(135deg, #e8f4fb 0%, #d4ecf7 100%);
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blockedDatesWrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile .blockedDatesContainer {
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobile .blockedDatesWrapper {
+  width: 100%;
+}
+
+.mobile .blockedDate {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Price display in calendar tiles */
+.calendarPrice {
+  font-size: 10px !important;
+  color: #6b7c8f;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.react-calendar__tile--active .calendarPrice {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.react-calendar__tile {
+  height: max-content;
+}
+
+/* Admin blocked date styling */
+.blocked-date-admin {
+  background: linear-gradient(135deg, #ffe4e4 0%, #ffd4d4 100%) !important;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+.blocked-date-admin:hover {
+  background: linear-gradient(135deg, #ffd4d4 0%, #ffc4c4 100%) !important;
+  transform: scale(1.02);
+}
+
+.blocked-date-admin::after {
+  content: "\00d7";
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 12px;
+  color: #d45555;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Half-blocked dates (check-in/check-out boundary dates) */
+/* These dates are part of a booking but still available for new reservations */
+.half-blocked-start {
+  background: linear-gradient(to bottom right, #ffffff 50%, #f0f3f5 50%) !important;
+  position: relative;
+}
+
+.half-blocked-end {
+  background: linear-gradient(to bottom right, #f0f3f5 50%, #ffffff 50%) !important;
+  position: relative;
+}
+
+/* When both start and end meet on the same date (adjacent bookings) */
+/* Shows both corners blocked with white diagonal stripe in middle */
+.half-blocked-start.half-blocked-end {
+  background:
+    linear-gradient(to bottom right, #f0f3f5 0%, #f0f3f5 35%, transparent 35%),
+    linear-gradient(to top left, #f0f3f5 0%, #f0f3f5 35%, transparent 35%),
+    #ffffff !important;
+  position: relative;
+}
+
+/* Admin view half-blocked styling */
+.half-blocked-start-admin {
+  background: linear-gradient(to bottom right, #ffffff 50%, #ffe4e4 50%) !important;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+.half-blocked-end-admin {
+  background: linear-gradient(to bottom right, #ffe4e4 50%, #ffffff 50%) !important;
+  cursor: pointer;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Shows both corners blocked with white diagonal stripe in middle */
+.half-blocked-start-admin.half-blocked-end-admin {
+  background:
+    linear-gradient(to bottom right, #ffe4e4 0%, #ffe4e4 35%, transparent 35%),
+    linear-gradient(to top left, #ffe4e4 0%, #ffe4e4 35%, transparent 35%),
+    #ffffff !important;
+}
+
+.half-blocked-start-admin:hover,
+.half-blocked-end-admin:hover {
+  transform: scale(1.02);
+}
+
+/* Override half-blocked styling when date is selected */
+.half-blocked-start.react-calendar__tile--active,
+.half-blocked-end.react-calendar__tile--active,
+.half-blocked-start.react-calendar__tile--rangeStart,
+.half-blocked-end.react-calendar__tile--rangeEnd,
+.half-blocked-start-admin.react-calendar__tile--active,
+.half-blocked-end-admin.react-calendar__tile--active,
+.half-blocked-start-admin.react-calendar__tile--rangeStart,
+.half-blocked-end-admin.react-calendar__tile--rangeEnd {
+  background: linear-gradient(135deg, #1ba3e3 0%, #4dc4f5 100%) !important;
+  color: white !important;
+}
+
+/* Override half-blocked styling when date is in selected range */
+.half-blocked-start.react-calendar__tile--hasActive,
+.half-blocked-end.react-calendar__tile--hasActive,
+.half-blocked-start-admin.react-calendar__tile--hasActive,
+.half-blocked-end-admin.react-calendar__tile--hasActive {
+  background: rgba(27, 163, 227, 0.08) !important;
+  color: #3a4a5c !important;
+}

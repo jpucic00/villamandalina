@@ -1,0 +1,72 @@
+.confirmPopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirmPopupContent {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  width: 90%;
+  animation: popupSlideIn 0.2s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.confirmPopupMessage {
+  font-family: MerriweatherSans-Regular;
+  color: #595450;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.confirmPopupButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirmPopupBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-family: MerriweatherSans-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.confirmPopupBtn:hover {
+  transform: scale(1.05);
+}
+
+.confirmPopupCancel {
+  background: #e0e0e0;
+  color: #595450;
+}
+
+.confirmPopupConfirm {
+  background: #ff6b6b;
+  color: white;
+}
