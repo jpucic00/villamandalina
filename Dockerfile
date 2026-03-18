@@ -19,9 +19,9 @@ WORKDIR /app
 
 # Standalone output includes server.js + minimal node_modules
 COPY --from=builder /app/frontend/.next/standalone ./
-# Static assets (not included in standalone automatically)
-COPY --from=builder /app/frontend/.next/static ./frontend/.next/static
-COPY --from=builder /app/frontend/public ./frontend/public
+# Static assets must be co-located with server.js
+COPY --from=builder /app/frontend/.next/static ./.next/static
+COPY --from=builder /app/frontend/public ./public
 # DB init script + its dependencies (not included in standalone output)
 COPY --from=builder /app/frontend/scripts ./frontend/scripts
 COPY --from=builder /app/frontend/node_modules/bcryptjs ./node_modules/bcryptjs
