@@ -30,4 +30,4 @@ COPY --from=builder /app/frontend/node_modules/libsql ./node_modules/libsql
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "node frontend/scripts/init-db.mjs && node frontend/server.js"]
+CMD ["sh", "-c", "node frontend/scripts/init-db.mjs && node server.js"]
