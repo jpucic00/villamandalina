@@ -22,8 +22,11 @@ COPY --from=builder /app/frontend/.next/standalone ./
 # Static assets (not included in standalone automatically)
 COPY --from=builder /app/frontend/.next/static ./frontend/.next/static
 COPY --from=builder /app/frontend/public ./frontend/public
-# DB init script (deps like @libsql/client and bcryptjs are in standalone node_modules)
+# DB init script + its dependencies (not included in standalone output)
 COPY --from=builder /app/frontend/scripts ./frontend/scripts
+COPY --from=builder /app/frontend/node_modules/bcryptjs ./node_modules/bcryptjs
+COPY --from=builder /app/frontend/node_modules/@libsql ./node_modules/@libsql
+COPY --from=builder /app/frontend/node_modules/libsql ./node_modules/libsql
 
 EXPOSE 3000
 
