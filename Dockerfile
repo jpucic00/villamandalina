@@ -1,26 +1,30 @@
-FROM node:20-slim
+# ---- Build stage ----
+FROM node:20-slim AS builder
+
+WORKDIR /app/frontend
+
+COPY frontend/package*.json ./
+RUN npm ci
+
+COPY frontend/ ./
+RUN npm run build
+
+# ---- Runtime stage ----
+FROM node:20-slim AS runner
+
+ENV NODE_ENV=production
+ENV HOSTNAME=0.0.0.0
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-COPY frontend/package*.json ./frontend/
+# Standalone output includes server.js + minimal node_modules
+COPY --from=builder /app/frontend/.next/standalone ./
+# Static assets (not included in standalone automatically)
+COPY --from=builder /app/frontend/.next/static ./frontend/.next/static
+COPY --from=builder /app/frontend/public ./frontend/public
+# DB init script (deps like @libsql/client and bcryptjs are in standalone node_modules)
+COPY --from=builder /app/frontend/scripts ./frontend/scripts
 
-# Install root and frontend dependencies
-RUN npm install
-RUN cd frontend && npm install
-
-# Copy source code
-COPY . .
-
-# Build Next.js app
-RUN cd frontend && npm run build
-
-# Expose port
 EXPOSE 3000
 
-# Set environment
-ENV NODE_ENV=production
-
-# Initialize DB and start Next.js
-CMD ["sh", "-c", "cd frontend && node scripts/init-db.mjs && npm start"]
+CMD ["sh", "-c", "node frontend/scripts/init-db.mjs && node frontend/server.js"]

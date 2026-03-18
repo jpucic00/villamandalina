@@ -13,7 +13,6 @@ import {
   createPrice,
   deletePrice,
 } from "@/api";
-import emailjs from "@emailjs/browser";
 import ConfirmPopup from "./ConfirmPopup";
 import useWindowDimensions from "@/util/useWindowDimensions";
 import deviceCheck from "@/util/deviceCheck";
@@ -250,9 +249,13 @@ export default function CalendarPage() {
 
   const SendEmail = (templateParams: Record<string, string>) =>
     new Promise<void>((resolve, reject) => {
-      emailjs
-        .send("service_s6zkdbo", "template_4rhgldh", templateParams, "TO7HNsppourbFcFDU")
-        .then(() => {
+      fetch("/api/send-reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(templateParams),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error(`status ${res.status}`);
           (document.getElementById("reservationForm") as HTMLFormElement)?.reset();
           setCheckIn(undefined);
           setCheckOut(undefined);

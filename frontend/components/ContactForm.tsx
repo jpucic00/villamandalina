@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Formik, Field, Form } from "formik";
-import emailjs from "@emailjs/browser";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -17,8 +16,6 @@ export default function ContactForm() {
   const { width } = useWindowDimensions();
   const t = useTranslations();
 
-  emailjs.init("TO7HNsppourbFcFDu");
-
   useEffect(() => {
     loadCaptchaEnginge(6);
   });
@@ -29,9 +26,13 @@ export default function ContactForm() {
     setSubmitting: (b: boolean) => void
   ) =>
     new Promise<void>((resolve, reject) => {
-      emailjs
-        .send("service_s6zkdbo", "template_12fr9ge", templateParams, "TO7HNsppourbFcFDU")
-        .then(() => {
+      fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(templateParams),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error(`status ${res.status}`);
           resetForm();
           setSubmitting(false);
           loadCaptchaEnginge(6);
