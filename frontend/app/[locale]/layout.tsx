@@ -4,6 +4,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales } from "@/navigation";
 import Providers from "@/components/Providers";
+import Analytics from "@/components/Analytics";
 
 // Global styles — imported here so they apply to all pages
 import "@/assets/style/landingPage.css";
@@ -68,6 +69,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

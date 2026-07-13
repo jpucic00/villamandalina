@@ -7,6 +7,15 @@ COPY frontend/package*.json ./
 RUN npm install
 
 COPY frontend/ ./
+
+# NEXT_PUBLIC_* vars are inlined at build time, so they must be present here.
+# Railway exposes service variables as build args automatically; declare them
+# to consume them. Only NEXT_PUBLIC_UMAMI_WEBSITE_ID is required.
+ARG NEXT_PUBLIC_UMAMI_WEBSITE_ID
+ARG NEXT_PUBLIC_UMAMI_SRC
+ENV NEXT_PUBLIC_UMAMI_WEBSITE_ID=$NEXT_PUBLIC_UMAMI_WEBSITE_ID
+ENV NEXT_PUBLIC_UMAMI_SRC=$NEXT_PUBLIC_UMAMI_SRC
+
 RUN npm run build
 
 # ---- Runtime stage ----

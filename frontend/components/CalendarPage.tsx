@@ -16,6 +16,7 @@ import {
 import ConfirmPopup from "./ConfirmPopup";
 import useWindowDimensions from "@/util/useWindowDimensions";
 import deviceCheck from "@/util/deviceCheck";
+import { trackEvent } from "@/lib/analytics";
 
 interface BookedDate {
   id: number;
@@ -256,6 +257,7 @@ export default function CalendarPage() {
       })
         .then((res) => {
           if (!res.ok) throw new Error(`status ${res.status}`);
+          trackEvent("reservation-submit");
           (document.getElementById("reservationForm") as HTMLFormElement)?.reset();
           setCheckIn(undefined);
           setCheckOut(undefined);

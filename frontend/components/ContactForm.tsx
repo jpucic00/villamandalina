@@ -11,6 +11,7 @@ import {
 import { toast } from "react-toastify";
 import useWindowDimensions from "@/util/useWindowDimensions";
 import deviceCheck from "@/util/deviceCheck";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactForm() {
   const { width } = useWindowDimensions();
@@ -33,6 +34,7 @@ export default function ContactForm() {
       })
         .then((res) => {
           if (!res.ok) throw new Error(`status ${res.status}`);
+          trackEvent("contact-submit");
           resetForm();
           setSubmitting(false);
           loadCaptchaEnginge(6);
