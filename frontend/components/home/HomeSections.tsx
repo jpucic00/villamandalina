@@ -8,6 +8,7 @@ import Faq, { type FaqItem } from "@/components/Faq";
 import krka from "@/assets/images/krka.jpg";
 import kornati from "@/assets/images/kornati.jpg";
 import fortress from "@/assets/images/svnikola.jpeg";
+import sibenikAerial from "@/assets/images/sibenik-aerial-sunset.jpg";
 
 export async function Hero() {
   const t = await getTranslations("home");
@@ -273,7 +274,7 @@ export async function ClosingCta() {
   return (
     <section className="closingCta">
       <Image
-        src={galleryImage(120)}
+        src={sibenikAerial}
         alt={t("alt")}
         placeholder="blur"
         sizes="(max-width: 768px) 100vw, 1360px"

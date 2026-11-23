@@ -93,20 +93,6 @@ dd {
   margin: 0;
 }
 
-.skipLink {
-  position: absolute;
-  left: 16px;
-  top: -60px;
-  z-index: 100;
-  padding: 10px 16px;
-  background: var(--ink);
-  color: var(--on-ink);
-}
-
-.skipLink:focus {
-  top: 16px;
-}
-
 /* ---------- Layout ---------- */
 
 .container {

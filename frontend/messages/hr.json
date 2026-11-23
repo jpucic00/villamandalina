@@ -415,7 +415,7 @@
       "text": "Pošaljite nam željene datume i odgovorit ćemo vam osobno.",
       "availability": "Provjeri dostupnost",
       "whatsapp": "Pišite nam na WhatsApp",
-      "alt": "Stara jezgra Šibenika i tvrđava sv. Mihovila s mora"
+      "alt": "Pogled iz zraka na staru jezgru Šibenika i tvrđavu sv. Mihovila u zalazak sunca"
     }
   },
   "guide": {
@@ -459,7 +459,8 @@
           "a": "Katedrala sv. Jakova i Tvrđava sv. Nikole nalaze se na UNESCO-vu popisu svjetske baštine."
         }
       ]
-    }
+    },
+    "heroAlt": "Stara jezgra Šibenika, kupola katedrale i tvrđava sv. Mihovila s mora u zlatni sat"
   },
   "galleryPage": {
     "eyebrow": "Galerija",

@@ -415,7 +415,7 @@
       "text": "Send us your dates and we'll answer personally.",
       "availability": "Check availability",
       "whatsapp": "WhatsApp us",
-      "alt": "Šibenik old town and St Michael's Fortress seen from the sea"
+      "alt": "Aerial view of Šibenik old town and St Michael's Fortress at sunset"
     }
   },
   "guide": {
@@ -459,7 +459,8 @@
           "a": "The Cathedral of St James and St Nicholas Fortress are both on the UNESCO World Heritage List."
         }
       ]
-    }
+    },
+    "heroAlt": "Šibenik old town, the cathedral dome and St Michael's Fortress seen across the water at golden hour"
   },
   "galleryPage": {
     "eyebrow": "Gallery",

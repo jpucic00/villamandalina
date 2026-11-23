@@ -7,11 +7,11 @@ import PageHeader from "@/components/PageHeader";
 import Faq, { type FaqItem } from "@/components/Faq";
 import { galleryImage } from "@/constants/galleryImages";
 import { alternates, localeUrl } from "@/constants/site";
-import cathedral from "@/assets/images/katedrala.png";
 import fortress from "@/assets/images/svnikola.jpeg";
 import channel from "@/assets/images/kanal.jpg";
 import krka from "@/assets/images/krka.jpg";
 import kornati from "@/assets/images/kornati.jpg";
+import sibenikWaterfront from "@/assets/images/sibenik-waterfront.jpg";
 
 const PATH = "/sibenik-dalmatia";
 
@@ -39,7 +39,7 @@ export async function generateMetadata({
 }
 
 const inTown: { key: string; image: StaticImageData }[] = [
-  { key: "cathedral", image: cathedral },
+  { key: "cathedral", image: galleryImage(135) },
   { key: "stNicholas", image: fortress },
   { key: "stAnthony", image: channel },
 ];
@@ -81,7 +81,7 @@ export default async function GuidePage({ params: { locale } }: { params: { loca
       <PageHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="container">
         <div className="heroImage__frame heroImage__frame--short">
-          <Image src={galleryImage(120)} alt={t("title")} priority placeholder="blur" sizes="(max-width: 768px) 100vw, 1360px" className="cover" />
+          <Image src={sibenikWaterfront} alt={t("heroAlt")} priority placeholder="blur" sizes="(max-width: 768px) 100vw, 1360px" className="cover" />
         </div>
       </div>
 
