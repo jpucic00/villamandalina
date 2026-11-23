@@ -21,7 +21,7 @@
 .calendarFormTitle {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.1;
 }
 
@@ -146,7 +146,7 @@
 
 .react-calendar__navigation__label {
   font-family: var(--serif) !important;
-  font-size: 24px !important;
+  font-size: 22px !important;
   text-transform: capitalize;
 }
 
@@ -285,7 +285,7 @@
 .priceManagementTitle {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .priceForm {

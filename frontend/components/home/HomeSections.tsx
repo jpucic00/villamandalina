@@ -273,7 +273,7 @@ export async function ClosingCta() {
   return (
     <section className="closingCta">
       <Image
-        src={galleryImage(127)}
+        src={galleryImage(120)}
         alt={t("alt")}
         placeholder="blur"
         sizes="(max-width: 768px) 100vw, 1360px"
