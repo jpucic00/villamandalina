@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { PHONES } from "@/constants/site";
 import ContactPage from "@/components/ContactPage";
 import Layout from "@/components/Layout";
 
@@ -54,7 +55,7 @@ export default function Contact({ params: { locale } }: { params: { locale: stri
     name: "Villa Mandalina",
     url: "https://villamandalina.hr",
     description,
-    telephone: ["+38599803841", "+38598846520"],
+    telephone: PHONES.map((p) => p.tel),
     address: {
       "@type": "PostalAddress",
       streetAddress: "Obala Jerka Šižgorića 13",
@@ -69,7 +70,7 @@ export default function Contact({ params: { locale } }: { params: { locale: stri
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+38599803841",
+      telephone: PHONES[0].tel,
       contactType: "reservations",
       availableLanguage: ["English", "Croatian"],
     },

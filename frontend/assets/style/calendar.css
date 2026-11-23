@@ -1,0 +1,367 @@
+/* Rates & availability page — reservation form + react-calendar */
+
+.CalendarElement__MainWrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 48px;
+  align-items: start;
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+
+.CalendarElement__FormWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 36px;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+}
+
+.calendarFormTitle {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.calendarFormDescription {
+  margin-bottom: 12px;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.CalendarElement__FormWrapper label {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.CalendarElement__Date_Input,
+.CalendarElement__Text_Input,
+.calendarTextField {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--bg);
+  font-size: 16px;
+}
+
+.calendarTextField {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.CalendarElement__Date_Input:focus,
+.CalendarElement__Text_Input:focus,
+.calendarTextField:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+
+.CalendarElement__MakeReservationButton {
+  margin-top: 20px;
+  min-height: 52px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.CalendarElement__MakeReservationButton:hover {
+  background: var(--accent-dark);
+}
+
+.loggedIn .CalendarElement__MakeReservationButton {
+  background: var(--ink);
+}
+
+.CalendarElement__BlockReservationButton {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.CalendarElement__BlockReservationButton:hover {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+/* react-calendar */
+
+.react-calendar {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  font-family: var(--sans);
+  position: sticky;
+  top: 112px;
+}
+
+.react-calendar *,
+.react-calendar *::before,
+.react-calendar *::after {
+  box-sizing: border-box;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+  font: inherit;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 64px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.react-calendar__navigation button {
+  min-width: 52px;
+  background: none;
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.react-calendar__navigation__label {
+  font-family: var(--serif) !important;
+  font-size: 24px !important;
+  text-transform: capitalize;
+}
+
+.react-calendar__navigation button:disabled {
+  color: var(--line);
+}
+
+.react-calendar__navigation button:enabled:hover {
+  background: var(--bg);
+}
+
+.react-calendar__month-view__weekdays {
+  padding: 14px 8px 6px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+
+.react-calendar__month-view__days {
+  padding: 0 8px 12px;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  min-height: 72px;
+  padding: 10px 4px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background-color 0.15s;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  min-height: 64px;
+  text-transform: capitalize;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #a9a497;
+}
+
+.react-calendar__tile:enabled:hover {
+  background: var(--bg);
+}
+
+.react-calendar__tile:disabled {
+  color: #a9a497;
+  cursor: not-allowed;
+}
+
+.react-calendar__month-view__days__day:disabled abbr {
+  text-decoration: line-through;
+}
+
+.react-calendar__tile:disabled .calendarPrice {
+  visibility: hidden;
+}
+
+.react-calendar__tile--now {
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.react-calendar__tile--hasActive,
+.react-calendar__tile--active,
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background: var(--accent-tint);
+}
+
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd,
+.react-calendar__tile--active.react-calendar__tile--rangeStart,
+.react-calendar__tile--active.react-calendar__tile--rangeEnd {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.react-calendar__tile--rangeStart .calendarPrice,
+.react-calendar__tile--rangeEnd .calendarPrice {
+  color: var(--on-ink-2);
+}
+
+.calendarPrice {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Admin view: booked ranges */
+
+.blocked-date-admin {
+  background: repeating-linear-gradient(135deg, #d3deea 0 6px, #e6edf4 6px 12px);
+  color: var(--accent-dark);
+}
+
+.blocked-date-admin:enabled:hover {
+  background: #c6d5e5;
+}
+
+.half-blocked-start-admin {
+  background: linear-gradient(135deg, transparent 50%, #d3deea 50%);
+}
+
+.half-blocked-end-admin {
+  background: linear-gradient(135deg, #d3deea 50%, transparent 50%);
+}
+
+.half-blocked-start-admin.half-blocked-end-admin {
+  background: linear-gradient(135deg, #d3deea 45%, var(--paper) 45% 55%, #d3deea 55%);
+}
+
+/* Admin: price management */
+
+.priceManagementContainer {
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.priceManagementTitle {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.priceForm {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 16px;
+  align-items: end;
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+}
+
+.priceFormRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.priceFormRow label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.priceForm .CalendarElement__MakeReservationButton {
+  margin-top: 0;
+  padding: 0 24px;
+  min-height: 48px;
+}
+
+.pricesList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.priceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+@media (max-width: 1024px) {
+  .CalendarElement__MainWrapper {
+    grid-template-columns: 1fr;
+  }
+  .react-calendar {
+    position: static;
+    grid-row: 1;
+  }
+  .priceForm {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .CalendarElement__FormWrapper {
+    padding: 24px 20px;
+  }
+  .react-calendar__tile {
+    min-height: 56px;
+    font-size: 14px;
+    padding: 6px 2px;
+  }
+  .calendarPrice {
+    font-size: 10px;
+  }
+  .react-calendar__month-view__days {
+    padding: 0 2px 8px;
+  }
+  .priceForm {
+    grid-template-columns: 1fr;
+  }
+}

@@ -6,8 +6,6 @@ import { useRouter } from "@/navigation";
 import { logInWithEmailAndPassword } from "@/api";
 import { useAuth } from "@/AuthContext";
 import { toast } from "react-toastify";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -15,7 +13,6 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const { user, updateUser } = useAuth();
   const t = useTranslations();
-  const { width } = useWindowDimensions();
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +21,7 @@ export default function LoginPage() {
 
   return (
     <form
-      className="login"
+      className="container login"
       onSubmit={async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -39,17 +36,19 @@ export default function LoginPage() {
         }
       }}
     >
-      <div className={`login__container ${deviceCheck(width)}`}>
+      <div className="login__card">
         {loading && (
           <div className="spinnerMask">
             <div className="spinner"></div>
           </div>
         )}
-        <h1 className={`loginTitle ${deviceCheck(width)}`}>{t("login.title")}</h1>
+        <h1 className="h2">{t("login.title")}</h1>
         <input
           type="email"
           name="e-mail"
-          className={`login__textBox email ${deviceCheck(width)}`}
+          className="field"
+          aria-label={t("login.emailPlaceholder")}
+          autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={t("login.emailPlaceholder")}
@@ -57,12 +56,14 @@ export default function LoginPage() {
         <input
           name="password"
           type="password"
-          className={`login__textBox password ${deviceCheck(width)}`}
+          className="field"
+          aria-label={t("login.passwordPlaceholder")}
+          autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder={t("login.passwordPlaceholder")}
         />
-        <button className={`login__btn ${deviceCheck(width)}`} type="submit">
+        <button className="btn btn--ink" type="submit">
           {t("login.button")}
         </button>
       </div>

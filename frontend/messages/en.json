@@ -1,132 +1,4 @@
 {
-  "nav": {
-    "home": "Home",
-    "details": "Details",
-    "gallery": "Gallery",
-    "calendar": "Calendar",
-    "contact": "Contact",
-    "login": "Log in",
-    "logout": "Log out"
-  },
-  "header": {
-    "title": "Luxury Villa Just Outside The City Center With A Beautiful Panoramic View",
-    "makeReservation": "Make a Reservation",
-    "contactUs": "Contact Us",
-    "scroll": "SCROLL"
-  },
-  "highlights": {
-    "firewoodBarbecue": {
-      "title": "Firewood Barbecue",
-      "description": "Guests can experience the atmosphere of the Dalmatian summer night by preparing traditional barbecued meals on the terrace while watching the coast of Šibenik at night and listening to the sound of the waves."
-    },
-    "midnightSwim": {
-      "title": "Midnight swim with a view",
-      "description": "Heated outside pool with an amazing view on the city is right outside. Sunbeds and outside shower are next to the pool for those hot summer days."
-    },
-    "warmAndComfortable": {
-      "title": "Warm and comfortable",
-      "description": "Villa Mandalina has four beautiful and air-conditioned bedrooms, fully equipped kitchen and living room. All bedrooms have SAT TV, three of them have en-suite bathrooms and a baby cot is available upon request."
-    },
-    "galleryButton": "Gallery"
-  },
-  "reviews": {
-    "title": "We are honoured to share the testimonials we recived from our exceptional guests"
-  },
-  "moreDetails": {
-    "title": "More details about",
-    "villaName": "Villa Mandalina",
-    "viewFullDetails": "View Full Details",
-    "categories": {
-      "typeAndSize": {
-        "title": "Type and size",
-        "items": [
-          "House area 170m2",
-          "Private pool 19m2",
-          "4 bedrooms",
-          "4 bathrooms"
-        ]
-      },
-      "distance": {
-        "title": "Distance",
-        "items": [
-          "Beach: 4km",
-          "Shop: 300m",
-          "Airport: 30km",
-          "City center: 2km",
-          "Restaurant: 300m",
-          "Cafe: 300m",
-          "Pharmacy: 1km",
-          "Hospital: 2km"
-        ]
-      },
-      "exterior": {
-        "title": "Exterior",
-        "items": [
-          "Fully fenced yard",
-          "Private parking",
-          "Outside shower",
-          "Heated pool",
-          "Firewood barbacue",
-          "Sunbathing equipment"
-        ]
-      },
-      "activities": {
-        "title": "Activities",
-        "items": [
-          "Swimming",
-          "Hiking",
-          "Bike riding",
-          "Fishing",
-          "Sunbathing",
-          "Sightseeing"
-        ]
-      },
-      "bathrooms": {
-        "title": "Bathrooms",
-        "items": [
-          "Shower or walk in shower",
-          "Hair dryer",
-          "Washing machine",
-          "Towels",
-          "Toilet Paper"
-        ]
-      },
-      "kitchen": {
-        "title": "Kitchen",
-        "items": [
-          "Coffee machine",
-          "Oven",
-          "Blender",
-          "Dishwasher",
-          "Refrigirator and freezer",
-          "Microwave",
-          "Stove",
-          "Inside and outside dining area"
-        ]
-      },
-      "bedrooms": {
-        "title": "Bedrooms",
-        "items": [
-          "Three bedrooms with king size beds",
-          "One bedroom with two single beds",
-          "Televisions and airconditioning in every room",
-          "Cradle and extra bed on request",
-          "Bed linen",
-          "Mosquito net on windows"
-        ]
-      },
-      "livingRoom": {
-        "title": "Living room",
-        "items": [
-          "Television",
-          "Satelite tv",
-          "Extendable couch",
-          "Airconditioning",
-          "Coffee table"
-        ]
-      }
-    }
-  },
   "attractions": {
     "title": "Nearby Attractions",
     "items": {
@@ -140,7 +12,7 @@
       },
       "kornati": {
         "title": "NP Kornati",
-        "text": "Kornati National Park, a breathtaking natural wonder nestled in the heart of Croatia! Known as a sailor's paradise, this archipelago consists of 109 stunning islands, islets, and reefs, forming an awe-inspiring maze of rugged beauty in the Adriatic Sea.he islands are characterized by their stark limestone cliffs, rising majestically from the crystal-clear turquoise waters. These dramatic formations have been shaped by the elements over thousands of years, creating a landscape that is truly one-of-a-kind."
+        "text": "Kornati National Park, a breathtaking natural wonder nestled in the heart of Croatia! Known as a sailor's paradise, this archipelago consists of 109 stunning islands, islets, and reefs, forming an awe-inspiring maze of rugged beauty in the Adriatic Sea. The islands are characterized by their stark limestone cliffs, rising majestically from the crystal-clear turquoise waters. These dramatic formations have been shaped by the elements over thousands of years, creating a landscape that is truly one-of-a-kind."
       },
       "stNicholas": {
         "title": "St Nicholas' Fortress",
@@ -284,10 +156,6 @@
   "location": {
     "title": "Where are we located?"
   },
-  "contactPage": {
-    "dontHesitate": "Don't Hesitate To",
-    "contactUs": "Contact Us"
-  },
   "contact": {
     "headline": "We're looking forward to hearing from you!",
     "subheadline": "Have questions about Villa Mandalina? Send us a message and we'll get back to you as soon as possible.",
@@ -302,9 +170,9 @@
       "wrongCaptcha": "Wrong captcha"
     },
     "info": {
-      "callUs": "CALL US",
-      "location": "LOCATION",
-      "checkInOut": "CHECK IN / CHECK OUT",
+      "callUs": "Call or WhatsApp",
+      "location": "Address",
+      "checkInOut": "Check-in / check-out",
       "checkIn": "Check In: from 16:00",
       "checkOut": "Check Out: until 10:00",
       "copyAddress": "Copy address",
@@ -336,12 +204,6 @@
     "remove": "Remove",
     "perNight": "/night"
   },
-  "gallery": {
-    "livingroom": "Livingroom",
-    "bedrooms": "Bedrooms",
-    "bathrooms": "Bathrooms",
-    "surroundings": "Surroundings"
-  },
   "login": {
     "title": "Login",
     "emailPlaceholder": "E-mail Address",
@@ -351,7 +213,7 @@
   "popup": {
     "cancel": "Cancel",
     "remove": "Remove",
-    "removeBlockMessage": "Remove block from {{startDate}} to {{endDate}}?"
+    "removeBlockMessage": "Remove block from {startDate} to {endDate}?"
   },
   "toast": {
     "loggedOut": "Logged out",
@@ -361,7 +223,7 @@
     "emailPending": "Email is being sent please wait...",
     "emailSent": "Email sent",
     "emailError": "There was an issue with sending of the email, please try again later",
-    "blockAdded": "Block for dates between {{startDate}} and {{endDate}} added",
+    "blockAdded": "Block for dates between {startDate} and {endDate} added",
     "blockError": "Not possible to block these dates, try again",
     "blockRemoved": "Block removed successfully",
     "blockRemoveError": "Not possible to remove this block, try again",
@@ -372,11 +234,257 @@
     "fetchDatesError": "Something went wrong fetching calendar booked dates",
     "fetchPricesError": "Something went wrong fetching prices"
   },
-  "language": {
-    "en": "EN",
-    "hr": "HR"
+  "nav": {
+    "home": "Home",
+    "villa": "The villa",
+    "gallery": "Gallery",
+    "guide": "Šibenik & Dalmatia",
+    "rates": "Rates & availability",
+    "contact": "Contact",
+    "login": "Owner login",
+    "logout": "Log out",
+    "checkAvailability": "Check availability",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "main": "Main",
+    "footer": "Footer"
   },
   "footer": {
+    "tagline": "Holiday villa with a private heated pool in Šibenik, Dalmatia.",
+    "country": "Croatia",
     "allRightsReserved": "All rights reserved"
+  },
+  "home": {
+    "eyebrow": "Šibenik · Dalmatia · Croatia",
+    "title": "A pool villa facing <em>Šibenik's</em> old town",
+    "heroAlt": "Heated private pool at Villa Mandalina at dusk, with Šibenik's waterfront across the bay",
+    "booking": {
+      "checkIn": "Check in",
+      "checkOut": "Check out",
+      "guests": "Guests",
+      "guestsOption": "{count, plural, one {# guest} other {# guests}}",
+      "submit": "See rates & availability"
+    },
+    "facts": {
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "guests": "Guests",
+      "livingSpace": "Living space",
+      "poolValue": "Heated",
+      "pool": "Private pool",
+      "oldTown": "To the old town"
+    },
+    "welcome": {
+      "eyebrow": "Welcome",
+      "title1": "Dobrodošli.",
+      "title2": "Make yourself at home.",
+      "p1": "Villa Mandalina was built in 2019 in the quiet Mandalina neighbourhood, across the bay from Šibenik's old town. Shops, a café and a restaurant are 300 m away; the cathedral and the waterfront are a few minutes' drive.",
+      "p2": "It's a family house, and we'd like it to feel like yours for a week or two. We're always close by if you need anything, from restaurant tips to a boat to the islands."
+    },
+    "day": {
+      "title": "A day at the villa",
+      "allPhotos": "See all 65 photos",
+      "morning": {
+        "label": "Morning",
+        "title": "Breakfast in the garden",
+        "text": "Coffee on the lawn with the whole bay in front of you, before anyone else is up.",
+        "alt": "Breakfast table on the lawn by the pool"
+      },
+      "afternoon": {
+        "label": "Afternoon",
+        "title": "The pool is only yours",
+        "text": "A heated 19 m² pool, sunbeds and an outdoor shower in a fully fenced garden, never shared.",
+        "alt": "Pool and sunbeds with a view over the sea to Šibenik"
+      },
+      "evening": {
+        "label": "Evening",
+        "title": "Dinner by the barbecue",
+        "text": "Grill Dalmatian-style over firewood and eat outside, at a table for twelve.",
+        "alt": "Outdoor dining table set by the stone firewood barbecue"
+      }
+    },
+    "inside": {
+      "eyebrow": "Inside",
+      "title": "Space for everyone, and a quiet corner too",
+      "text": "Three king bedrooms with their own bathrooms, a twin room, an open kitchen and a big living room. Air conditioning and satellite TV throughout.",
+      "cta": "Everything in the villa",
+      "altLiving": "Living room with corner sofa and staircase",
+      "altKitchen": "Kitchen with breakfast on the counter",
+      "altBedroom": "King bedroom with fresh linen",
+      "altBedroom2": "Second bedroom",
+      "altFacade": "The villa and its pool from the garden"
+    },
+    "reviews": {
+      "eyebrow": "From our guests",
+      "featured": "Holiday for body and soul, beautiful ambience, dear and kind hosts.",
+      "guestReview": "Guest review",
+      "items": [
+        {
+          "text": "Everything were perfect, owners were very kind. House has everything you need for your holidays. I recommend it.",
+          "source": "Guest review"
+        },
+        {
+          "text": "A super holiday, I can only recommend it. Great hosts, always there when we needed something. Very beautiful view.",
+          "source": "Guest review · translated from German"
+        }
+      ]
+    },
+    "explore": {
+      "eyebrow": "Šibenik & Dalmatia",
+      "title": "Your base for a Dalmatian holiday",
+      "text": "Šibenik sits in the middle of Croatia's coast: two UNESCO sites in town, national parks close by and islands a short boat ride away.",
+      "cta": "Read our guide to Šibenik and the Dalmatian coast",
+      "items": {
+        "oldTown": {
+          "title": "Šibenik old town",
+          "text": "Stone lanes and the UNESCO-listed Cathedral of St James, 2 km away."
+        },
+        "krka": {
+          "title": "Krka National Park",
+          "text": "Waterfalls, river boats and walking trails upriver from Šibenik."
+        },
+        "kornati": {
+          "title": "Kornati islands",
+          "text": "A day on the boat through an archipelago of more than a hundred islands."
+        },
+        "fortress": {
+          "title": "St Nicholas Fortress",
+          "text": "A Venetian sea fortress, also UNESCO-listed, at the entrance to the bay."
+        }
+      }
+    },
+    "location": {
+      "eyebrow": "Location",
+      "title": "Quiet street, close to everything",
+      "mapTitle": "Map of Villa Mandalina in Šibenik",
+      "openMap": "Open in Google Maps",
+      "items": [
+        {
+          "label": "Shop, café, restaurant",
+          "value": "300 m"
+        },
+        {
+          "label": "Šibenik old town",
+          "value": "2 km"
+        },
+        {
+          "label": "Nearest beach",
+          "value": "4 km"
+        },
+        {
+          "label": "Pharmacy",
+          "value": "1 km"
+        },
+        {
+          "label": "Hospital",
+          "value": "2 km"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Good to know before you book",
+      "items": [
+        {
+          "q": "Is the pool heated and private?",
+          "a": "Yes. The 19 m² pool is heated and only for villa guests, with sunbeds and an outdoor shower beside it."
+        },
+        {
+          "q": "How far is the beach and the old town?",
+          "a": "Šibenik's old town is 2 km from the villa and the nearest beach is 4 km away. A shop, a café and a restaurant are 300 m from the door."
+        },
+        {
+          "q": "How many people can stay?",
+          "a": "Up to 10: three bedrooms with king-size beds, a twin room and a sofa bed in the living room. A cot is available on request."
+        },
+        {
+          "q": "Is the villa good for families with small children?",
+          "a": "Yes. The yard is fully fenced, there is private parking at the house, and a cot and an extra bed are available on request."
+        },
+        {
+          "q": "What are check-in and check-out times?",
+          "a": "Check-in is from 16:00 and check-out is until 10:00."
+        },
+        {
+          "q": "Are pets allowed?",
+          "a": "No, pets are not permitted at the villa."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Plan your stay in Šibenik",
+      "text": "Send us your dates and we'll answer personally.",
+      "availability": "Check availability",
+      "whatsapp": "WhatsApp us",
+      "alt": "The villa and pool lit up at night"
+    }
+  },
+  "guide": {
+    "metaTitle": "Šibenik & Dalmatia Travel Guide",
+    "metaDescription": "Plan a Dalmatia holiday from Šibenik: the UNESCO cathedral and fortress, Krka waterfalls, the Kornati islands and nearby beaches. Tips from Villa Mandalina.",
+    "eyebrow": "Travel guide",
+    "title": "Šibenik and the Dalmatian coast",
+    "intro": "Šibenik is one of the oldest towns on the Croatian coast and sits right in the middle of Dalmatia. From Villa Mandalina you can walk the old town's stone lanes in the morning, swim under waterfalls in the afternoon and be back at the pool for sunset.",
+    "inTown": "In town",
+    "dayTrips": "Day trips",
+    "beaches": {
+      "title": "Beaches",
+      "text": "The nearest beach is 4 km from the villa, and there are pebble beaches and swimming spots all along the coast around Šibenik. Many families like to split the day: a morning at the sea, an afternoon at the villa's heated pool."
+    },
+    "base": {
+      "title": "Why stay in Šibenik?",
+      "text": "Šibenik is quieter than Split or Dubrovnik but just as rich in history, and it puts two national parks within easy reach. It's an easy base for a Croatian holiday by car, with the old town, shops and restaurants close by."
+    },
+    "cta": {
+      "title": "Stay at Villa Mandalina",
+      "text": "A heated private pool, four bedrooms and sea views, 2 km from Šibenik's old town.",
+      "button": "Check availability"
+    },
+    "faq": {
+      "title": "Šibenik travel questions",
+      "items": [
+        {
+          "q": "Is Šibenik good for a family holiday?",
+          "a": "Yes. Šibenik is calmer than the bigger Dalmatian cities, with beaches, national parks and a compact old town that is easy to explore with children."
+        },
+        {
+          "q": "How far is Krka National Park from Šibenik?",
+          "a": "Krka National Park is a short drive inland from Šibenik, which makes it an easy half-day or day trip from Villa Mandalina."
+        },
+        {
+          "q": "Can you visit the Kornati islands from Šibenik?",
+          "a": "Yes. Boat excursions to the Kornati National Park run from Šibenik and the nearby coast during the season."
+        },
+        {
+          "q": "What UNESCO sites are in Šibenik?",
+          "a": "The Cathedral of St James and St Nicholas Fortress are both on the UNESCO World Heritage List."
+        }
+      ]
+    }
+  },
+  "galleryPage": {
+    "eyebrow": "Gallery",
+    "title": "Villa Mandalina in pictures",
+    "intro": "Inside and out: the pool and garden, the living spaces, all four bedrooms and the Šibenik coast around the villa.",
+    "photoAlt": "Villa Mandalina, {category}, photo {n}",
+    "categories": {
+      "outdoor": "Pool & garden",
+      "living": "Living room & kitchen",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "surroundings": "Šibenik & surroundings"
+    }
+  },
+  "detailsPage": {
+    "eyebrow": "The villa",
+    "title": "A holiday home with a private pool in Šibenik"
+  },
+  "calendarPage": {
+    "eyebrow": "Rates & availability",
+    "title": "Check dates and request your stay",
+    "intro": "Prices shown are per night. Choose your dates in the calendar, then send us a request and we'll confirm by email.",
+    "guestsPrefill": "Guests: {count}"
+  },
+  "contactPage": {
+    "eyebrow": "Contact"
   }
 }

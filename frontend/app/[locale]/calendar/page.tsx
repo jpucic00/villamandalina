@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import PageHeader from "@/components/PageHeader";
 import CalendarPage from "@/components/CalendarPage";
 import Layout from "@/components/Layout";
 
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   setRequestLocale(locale);
   const isHr = locale === "hr";
-  const title = isHr ? "Provjeri dostupnost" : "Check Availability";
+  const title = isHr ? "Cijene i dostupnost" : "Rates & Availability";
   const description = isHr
     ? "Provjerite slobodne termine i pošaljite zahtjev za rezervaciju Ville Mandalina u Šibeniku, Hrvatska."
     : "Check available dates and submit a reservation request for Villa Mandalina in Šibenik, Croatia.";
@@ -44,10 +45,12 @@ export async function generateMetadata({
   };
 }
 
-export default function Calendar({ params: { locale } }: { params: { locale: string } }) {
+export default async function Calendar({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
+  const t = await getTranslations("calendarPage");
   return (
     <Layout>
+      <PageHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <CalendarPage />
     </Layout>
   );

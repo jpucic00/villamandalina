@@ -1,171 +1,107 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/navigation";
-import { motion } from "framer-motion";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
-
-const highlights = [
-  { icon: "🏠", title: "170m²", subtitleKey: "livingSpace" },
-  { icon: "🛏️", title: "4", subtitleKey: "bedrooms" },
-  { icon: "🚿", title: "4", subtitleKey: "bathrooms" },
-  { icon: "🏊", title: "19m²", subtitleKey: "heatedPool" },
-  { icon: "👥", title: "10", subtitleKey: "maxGuests" },
-  { icon: "🚗", titleKey: "free", subtitleKey: "parking" },
-];
+import { galleryImage } from "@/constants/galleryImages";
+import Facts from "./Facts";
+import PageHeader from "./PageHeader";
 
 const sections = [
-  {
-    titleKey: "interior",
-    items: [
-      { categoryKey: "bedrooms", detailsKey: "bedrooms" },
-      { categoryKey: "livingRoom", detailsKey: "livingRoom" },
-      { categoryKey: "kitchen", detailsKey: "kitchen" },
-      { categoryKey: "bathrooms", detailsKey: "bathrooms" },
-    ],
-  },
-  {
-    titleKey: "exteriorPool",
-    items: [
-      { categoryKey: "poolArea", detailsKey: "poolArea" },
-      { categoryKey: "outdoorSpace", detailsKey: "outdoorSpace" },
-    ],
-  },
-  {
-    titleKey: "locationDistances",
-    items: [
-      { categoryKey: "nearbyAmenities", detailsKey: "nearbyAmenities" },
-      { categoryKey: "travelDistances", detailsKey: "travelDistances" },
-    ],
-  },
-  {
-    titleKey: "activitiesExperiences",
-    items: [
-      { categoryKey: "atTheVilla", detailsKey: "atTheVilla" },
-      { categoryKey: "inTheArea", detailsKey: "inTheArea" },
-    ],
-  },
-];
+  { titleKey: "interior", items: ["bedrooms", "livingRoom", "kitchen", "bathrooms"], image: 114 },
+  { titleKey: "exteriorPool", items: ["poolArea", "outdoorSpace"], image: 139 },
+  { titleKey: "locationDistances", items: ["nearbyAmenities", "travelDistances"], image: 120 },
+  { titleKey: "activitiesExperiences", items: ["atTheVilla", "inTheArea"], image: 124 },
+] as const;
 
-export default function VillaDetailsPage() {
-  const { width } = useWindowDimensions();
-  const device = deviceCheck(width);
-  const t = useTranslations();
+export default async function VillaDetailsPage() {
+  const t = await getTranslations("villaDetails");
+  const tPage = await getTranslations("detailsPage");
 
   return (
-    <div className={`villaDetailsPage ${device}`}>
-      <h1 className={`villaDetailsH1 ${device}`} style={{ display: "none" }}>
-        Villa Mandalina
-      </h1>
+    <>
+      <PageHeader eyebrow={tPage("eyebrow")} title={tPage("title")} intro={t("introText")} />
+      <div className="container factsWrap factsWrap--flush">
+        <Facts />
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className={`villaDetailsIntro ${device}`}
-      >
-        <p className={`villaDetailsIntroText ${device}`}>{t("villaDetails.introText")}</p>
-      </motion.div>
+      <section className="section container grid12 about">
+        <div className="about__image">
+          <Image
+            src={galleryImage(125)}
+            alt="Villa Mandalina with its private pool"
+            placeholder="blur"
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="cover"
+          />
+        </div>
+        <div className="about__text">
+          <h2 className="h2">{t("aboutTitle")}</h2>
+          {t("description")
+            .split("\n\n")
+            .map((p) => (
+              <p key={p} className="muted">
+                {p}
+              </p>
+            ))}
+        </div>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className={`villaDetailsHighlights ${device}`}
-      >
-        {highlights.map((highlight, index) => (
-          <div key={index} className={`villaDetailsHighlightItem ${device}`}>
-            <span className={`villaDetailsHighlightIcon ${device}`}>{highlight.icon}</span>
-            <span className={`villaDetailsHighlightTitle ${device}`}>
-              {highlight.titleKey
-                ? t(`villaDetails.highlights.${highlight.titleKey}` as any)
-                : highlight.title}
-            </span>
-            <span className={`villaDetailsHighlightSubtitle ${device}`}>
-              {t(`villaDetails.highlights.${highlight.subtitleKey}` as any)}
-            </span>
-          </div>
-        ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className={`villaDetailsDescription ${device}`}
-      >
-        <h2 className={`villaDetailsSectionTitle ${device}`}>{t("villaDetails.aboutTitle")}</h2>
-        <p className={`villaDetailsDescriptionText ${device}`}>{t("villaDetails.description")}</p>
-      </motion.div>
-
-      {sections.map((section, sectionIndex) => (
-        <motion.div
-          key={sectionIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 + sectionIndex * 0.1 }}
-          className={`villaDetailsSection ${device}`}
-        >
-          <h2 className={`villaDetailsSectionTitle ${device}`}>
-            {t(`villaDetails.sections.${section.titleKey}` as any)}
-          </h2>
-          <div className={`villaDetailsCategoriesGrid ${device}`}>
-            {section.items.map((item, itemIndex) => {
-              const details = t.raw(`villaDetails.details.${item.detailsKey}` as any) as string[];
-              return (
-                <div key={itemIndex} className={`villaDetailsCategoryCard ${device}`}>
-                  <h3 className={`villaDetailsCategoryTitle ${device}`}>
-                    {t(`villaDetails.categories.${item.categoryKey}` as any)}
-                  </h3>
-                  <ul className={`villaDetailsList ${device}`}>
-                    {details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className={`villaDetailsListItem ${device}`}>
-                        {detail}
-                      </li>
+      {sections.map((section, i) => (
+        <section key={section.titleKey} className={`section ${i % 2 === 0 ? "band band--paper" : ""}`}>
+          <div className="container grid12 detailBlock">
+            <div className="detailBlock__head">
+              <h2 className="h2">{t(`sections.${section.titleKey}`)}</h2>
+              <div className="detailBlock__image">
+                <Image
+                  src={galleryImage(section.image)}
+                  alt={t(`sections.${section.titleKey}`)}
+                  placeholder="blur"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="cover"
+                />
+              </div>
+            </div>
+            <div className="detailBlock__lists">
+              {section.items.map((key) => (
+                <div key={key} className="detailList">
+                  <h3 className="h3">{t(`categories.${key}`)}</h3>
+                  <ul>
+                    {(t.raw(`details.${key}`) as string[]).map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </motion.div>
+        </section>
       ))}
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className={`villaDetailsSection villaDetailsRulesSection ${device}`}
-      >
-        <h2 className={`villaDetailsSectionTitle ${device}`}>{t("villaDetails.houseRules.title")}</h2>
-        <div className={`villaDetailsRulesGrid ${device}`}>
-          {(t.raw("villaDetails.houseRules.rules") as string[]).map((rule, index) => (
-            <div key={index} className={`villaDetailsRuleItem ${device}`}>
-              <span className="villaDetailsRuleIcon">&#10003;</span>
-              {rule}
-            </div>
+      <section className="section container grid12 detailBlock">
+        <h2 className="h2 detailBlock__head">{t("houseRules.title")}</h2>
+        <ul className="rules detailBlock__lists">
+          {(t.raw("houseRules.rules") as string[]).map((rule) => (
+            <li key={rule}>{rule}</li>
           ))}
-        </div>
-      </motion.div>
+        </ul>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.9 }}
-        className={`villaDetailsCTA ${device}`}
-      >
-        <h2 className={`villaDetailsCTATitle ${device}`}>{t("villaDetails.cta.title")}</h2>
-        <p className={`villaDetailsCTAText ${device}`}>{t("villaDetails.cta.text")}</p>
-        <div className={`villaDetailsCTAButtons ${device}`}>
-          <Link href="/calendar" className={`villaDetailsCTAButton primary ${device}`}>
-            {t("villaDetails.cta.checkAvailability")}
-          </Link>
-          <Link href="/contact" className={`villaDetailsCTAButton secondary ${device}`}>
-            {t("villaDetails.cta.contactUs")}
-          </Link>
+      <section className="section band band--ink">
+        <div className="container ctaBand">
+          <div>
+            <h2 className="h2">{t("cta.title")}</h2>
+            <p>{t("cta.text")}</p>
+          </div>
+          <div className="btnRow">
+            <Link href="/calendar" className="btn btn--accent">
+              {t("cta.checkAvailability")}
+            </Link>
+            <Link href="/contact" className="btn btn--outlineLight">
+              {t("cta.contactUs")}
+            </Link>
+          </div>
         </div>
-      </motion.div>
-    </div>
+      </section>
+    </>
   );
 }

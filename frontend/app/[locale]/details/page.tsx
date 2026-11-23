@@ -10,7 +10,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   setRequestLocale(locale);
   const isHr = locale === "hr";
-  const title = isHr ? "Detalji vile" : "Villa Details";
+  const title = isHr
+    ? "Vila s bazenom u Šibeniku – 4 spavaće sobe, do 10 gostiju"
+    : "Villa with Pool in Šibenik – 4 Bedrooms, Sleeps 10";
   const description = isHr
     ? "Villa Mandalina — 170m², 4 spavaće sobe, 4 kupaonice, privatni grijani bazen 19m², do 10 gostiju. Smještena 2 km od centra Šibenika s pogledom na more."
     : "Villa Mandalina — 170m², 4 bedrooms, 4 bathrooms, private heated pool 19m², up to 10 guests. Located 2 km from Šibenik city centre with sea views.";

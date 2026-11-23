@@ -79,3 +79,13 @@ const galleryImages: Record<string, StaticImageData> = {
 };
 
 export default galleryImages;
+
+export const galleryCategories = [
+  { key: "outdoor", images: [138, 122, 125, 119, 124, 126, 139, 127, 136, 134, 140, 144, 123, 128, 141, 142, 137] },
+  { key: "living", images: [106, 114, 108, 107, 112, 113, 115, 116, 117, 118, 105, 109, 111] },
+  { key: "bedrooms", images: [101, 146, 100, 104, 103, 149, 148, 150, 151, 155, 147, 159, 160, 162, 163, 161] },
+  { key: "bathrooms", images: [145, 153, 102, 156, 157, 158] },
+  { key: "surroundings", images: [120, 135, 130, 129, 132, 133, 110, 121, 131, 143, 152, 154, 164] },
+] as const;
+
+export const galleryImage = (n: number): StaticImageData => galleryImages[`image${n}`];

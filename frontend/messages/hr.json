@@ -1,132 +1,4 @@
 {
-  "nav": {
-    "home": "Početna",
-    "details": "Detalji",
-    "gallery": "Galerija",
-    "calendar": "Kalendar",
-    "contact": "Kontakt",
-    "login": "Prijava",
-    "logout": "Odjava"
-  },
-  "header": {
-    "title": "Luksuzna vila s pogledom koji oduzima dah, nadomak centra Šibenika",
-    "makeReservation": "Rezervirajte",
-    "contactUs": "Kontaktirajte nas",
-    "scroll": "SCROLL"
-  },
-  "highlights": {
-    "firewoodBarbecue": {
-      "title": "Roštilj na drva",
-      "description": "Gosti mogu doživjeti atmosferu dalmatinske ljetne noći pripremajući tradicionalna jela s roštilja na terasi dok gledaju obalu Šibenika noću i slušaju zvuk valova."
-    },
-    "midnightSwim": {
-      "title": "Kupanje pod zvijezdama",
-      "description": "Grijani vanjski bazen s nevjerojatnim pogledom na grad nalazi se u dvorištu. Uz bazen su dostupne ležaljke i vanjski tuš, idealni za vruće ljetne dane."
-    },
-    "warmAndComfortable": {
-      "title": "Toplo i udobno",
-      "description": "Villa Mandalina ima četiri prekrasne klimatizirane spavaće sobe, potpuno opremljenu kuhinju i dnevni boravak. Sve spavaće sobe imaju SAT TV, tri od njih imaju vlastitu kupaonicu, a dječji krevetić je dostupan na zahtjev."
-    },
-    "galleryButton": "Galerija"
-  },
-  "reviews": {
-    "title": "Što naši gosti kažu o svom boravku"
-  },
-  "moreDetails": {
-    "title": "Više detalja o",
-    "villaName": "Villi Mandalina",
-    "viewFullDetails": "Pogledaj sve detalje",
-    "categories": {
-      "typeAndSize": {
-        "title": "Tip i veličina",
-        "items": [
-          "Površina kuće 170m2",
-          "Privatni bazen 19m2",
-          "4 spavaće sobe",
-          "4 kupaonice"
-        ]
-      },
-      "distance": {
-        "title": "Udaljenost",
-        "items": [
-          "Plaža: 4km",
-          "Trgovina: 300m",
-          "Zračna luka: 30km",
-          "Centar grada: 2km",
-          "Restoran: 300m",
-          "Kafić: 300m",
-          "Ljekarna: 1km",
-          "Bolnica: 2km"
-        ]
-      },
-      "exterior": {
-        "title": "Vanjski prostor",
-        "items": [
-          "Potpuno ograđeno dvorište",
-          "Privatni parking",
-          "Vanjski tuš",
-          "Grijani bazen",
-          "Roštilj na drva",
-          "Oprema za sunčanje"
-        ]
-      },
-      "activities": {
-        "title": "Aktivnosti",
-        "items": [
-          "Plivanje",
-          "Planinarenje",
-          "Vožnja biciklom",
-          "Ribolov",
-          "Sunčanje",
-          "Razgledavanje"
-        ]
-      },
-      "bathrooms": {
-        "title": "Kupaonice",
-        "items": [
-          "Tuš ili walk-in tuš",
-          "Sušilo za kosu",
-          "Perilica rublja",
-          "Ručnici",
-          "Toaletni papir"
-        ]
-      },
-      "kitchen": {
-        "title": "Kuhinja",
-        "items": [
-          "Aparat za kavu",
-          "Pećnica",
-          "Blender",
-          "Perilica posuđa",
-          "Hladnjak i zamrzivač",
-          "Mikrovalna",
-          "Štednjak",
-          "Unutarnji i vanjski prostor za jelo"
-        ]
-      },
-      "bedrooms": {
-        "title": "Spavaće sobe",
-        "items": [
-          "Tri spavaće sobe s king size krevetima",
-          "Jedna spavaća soba s dva odvojena kreveta",
-          "Televizori i klima u svakoj sobi",
-          "Kolijevka i dodatni krevet na zahtjev",
-          "Posteljina",
-          "Mreža protiv komaraca na prozorima"
-        ]
-      },
-      "livingRoom": {
-        "title": "Dnevni boravak",
-        "items": [
-          "Televizor",
-          "Satelitska TV",
-          "Rasklopivi kauč",
-          "Klima uređaj",
-          "Stolić za kavu"
-        ]
-      }
-    }
-  },
   "attractions": {
     "title": "Obližnje atrakcije",
     "items": {
@@ -284,10 +156,6 @@
   "location": {
     "title": "Gdje se nalazimo?"
   },
-  "contactPage": {
-    "dontHesitate": "Ne ustručavajte se",
-    "contactUs": "Kontaktirajte nas"
-  },
   "contact": {
     "headline": "Radujemo se vašoj poruci!",
     "subheadline": "Imate pitanja o Villi Mandalina? Pošaljite nam poruku i javit ćemo vam se što je prije moguće.",
@@ -302,9 +170,9 @@
       "wrongCaptcha": "Pogrešna captcha"
     },
     "info": {
-      "callUs": "NAZOVITE NAS",
-      "location": "LOKACIJA",
-      "checkInOut": "PRIJAVA / ODJAVA",
+      "callUs": "Nazovite ili pišite na WhatsApp",
+      "location": "Adresa",
+      "checkInOut": "Prijava / odjava",
       "checkIn": "Prijava: od 16:00",
       "checkOut": "Odjava: do 10:00",
       "copyAddress": "Kopiraj adresu",
@@ -336,12 +204,6 @@
     "remove": "Ukloni",
     "perNight": "/noć"
   },
-  "gallery": {
-    "livingroom": "Dnevni boravak",
-    "bedrooms": "Spavaće sobe",
-    "bathrooms": "Kupaonice",
-    "surroundings": "Okoliš"
-  },
   "login": {
     "title": "Prijava",
     "emailPlaceholder": "E-mail adresa",
@@ -351,7 +213,7 @@
   "popup": {
     "cancel": "Odustani",
     "remove": "Ukloni",
-    "removeBlockMessage": "Ukloniti blokadu od {{startDate}} do {{endDate}}?"
+    "removeBlockMessage": "Ukloniti blokadu od {startDate} do {endDate}?"
   },
   "toast": {
     "loggedOut": "Odjavljeni ste",
@@ -361,7 +223,7 @@
     "emailPending": "E-mail se šalje, molimo pričekajte...",
     "emailSent": "E-mail poslan",
     "emailError": "Došlo je do problema pri slanju e-maila, pokušajte ponovo kasnije",
-    "blockAdded": "Blokada za datume između {{startDate}} i {{endDate}} dodana",
+    "blockAdded": "Blokada za datume između {startDate} i {endDate} dodana",
     "blockError": "Nije moguće blokirati ove datume, pokušajte ponovo",
     "blockRemoved": "Blokada uspješno uklonjena",
     "blockRemoveError": "Nije moguće ukloniti ovu blokadu, pokušajte ponovo",
@@ -372,11 +234,257 @@
     "fetchDatesError": "Nešto je pošlo po zlu pri dohvaćanju zauzetih datuma",
     "fetchPricesError": "Nešto je pošlo po zlu pri dohvaćanju cijena"
   },
-  "language": {
-    "en": "EN",
-    "hr": "HR"
+  "nav": {
+    "home": "Početna",
+    "villa": "Vila",
+    "gallery": "Galerija",
+    "guide": "Šibenik i Dalmacija",
+    "rates": "Cijene i dostupnost",
+    "contact": "Kontakt",
+    "login": "Prijava vlasnika",
+    "logout": "Odjava",
+    "checkAvailability": "Provjeri dostupnost",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "main": "Glavna navigacija",
+    "footer": "Podnožje"
   },
   "footer": {
+    "tagline": "Kuća za odmor s privatnim grijanim bazenom u Šibeniku, Dalmacija.",
+    "country": "Hrvatska",
     "allRightsReserved": "Sva prava pridržana"
+  },
+  "home": {
+    "eyebrow": "Šibenik · Dalmacija · Hrvatska",
+    "title": "Vila s bazenom i pogledom na <em>šibensku</em> staru jezgru",
+    "heroAlt": "Grijani privatni bazen Ville Mandalina u sumrak, s pogledom na šibensku rivu preko zaljeva",
+    "booking": {
+      "checkIn": "Dolazak",
+      "checkOut": "Odlazak",
+      "guests": "Gosti",
+      "guestsOption": "{count, plural, one {# gost} few {# gosta} other {# gostiju}}",
+      "submit": "Pogledaj cijene i termine"
+    },
+    "facts": {
+      "bedrooms": "Spavaće sobe",
+      "bathrooms": "Kupaonice",
+      "guests": "Gostiju",
+      "livingSpace": "Stambeni prostor",
+      "poolValue": "Grijani",
+      "pool": "Privatni bazen",
+      "oldTown": "Do stare jezgre"
+    },
+    "welcome": {
+      "eyebrow": "Dobrodošli",
+      "title1": "Dobrodošli.",
+      "title2": "Osjećajte se kao kod kuće.",
+      "p1": "Villa Mandalina izgrađena je 2019. u mirnom kvartu Mandalina, preko zaljeva od šibenske stare jezgre. Trgovina, kafić i restoran udaljeni su 300 m, a katedrala i riva nekoliko minuta vožnje.",
+      "p2": "Ovo je obiteljska kuća i želimo da se u njoj osjećate kao u svojoj, bilo tjedan ili dva. Uvijek smo u blizini ako vam nešto zatreba, od preporuke za restoran do broda za otoke."
+    },
+    "day": {
+      "title": "Dan u vili",
+      "allPhotos": "Pogledajte svih 65 fotografija",
+      "morning": {
+        "label": "Jutro",
+        "title": "Doručak u vrtu",
+        "text": "Kava na travnjaku s cijelim zaljevom pred vama, dok svi ostali još spavaju.",
+        "alt": "Stol za doručak na travnjaku pored bazena"
+      },
+      "afternoon": {
+        "label": "Popodne",
+        "title": "Bazen je samo vaš",
+        "text": "Grijani bazen od 19 m², ležaljke i vanjski tuš u potpuno ograđenom vrtu, bez dijeljenja s drugima.",
+        "alt": "Bazen i ležaljke s pogledom preko mora na Šibenik"
+      },
+      "evening": {
+        "label": "Večer",
+        "title": "Večera uz roštilj",
+        "text": "Pecite na drva, na dalmatinski način, i večerajte vani za stolom za dvanaestero.",
+        "alt": "Postavljen stol uz kameni roštilj na drva"
+      }
+    },
+    "inside": {
+      "eyebrow": "Unutra",
+      "title": "Mjesta za sve, i kutak za mir",
+      "text": "Tri spavaće sobe s king-size krevetima i vlastitim kupaonicama, soba s dva kreveta, otvorena kuhinja i veliki dnevni boravak. Klima uređaj i satelitska TV u cijeloj kući.",
+      "cta": "Sve o vili",
+      "altLiving": "Dnevni boravak s kutnom garniturom i stubištem",
+      "altKitchen": "Kuhinja s doručkom na pultu",
+      "altBedroom": "Spavaća soba s king-size krevetom",
+      "altBedroom2": "Druga spavaća soba",
+      "altFacade": "Vila i bazen iz vrta"
+    },
+    "reviews": {
+      "eyebrow": "Naši gosti kažu",
+      "featured": "Odmor za tijelo i dušu, prekrasan ambijent, dragi i ljubazni domaćini.",
+      "guestReview": "Recenzija gosta",
+      "items": [
+        {
+          "text": "Sve je bilo savršeno, vlasnici su bili vrlo ljubazni. Kuća ima sve što vam treba za odmor. Preporučujem.",
+          "source": "Recenzija gosta · prevedeno s engleskog"
+        },
+        {
+          "text": "Odličan odmor, mogu ga samo preporučiti. Super domaćini, uvijek su bili tu kad nam je nešto trebalo. Jako lijep pogled.",
+          "source": "Recenzija gosta · prevedeno s njemačkog"
+        }
+      ]
+    },
+    "explore": {
+      "eyebrow": "Šibenik i Dalmacija",
+      "title": "Polazna točka za odmor u Dalmaciji",
+      "text": "Šibenik je u samom srcu hrvatske obale: dva UNESCO-va lokaliteta u gradu, nacionalni parkovi u blizini i otoci na kratkoj vožnji brodom.",
+      "cta": "Pročitajte naš vodič kroz Šibenik i dalmatinsku obalu",
+      "items": {
+        "oldTown": {
+          "title": "Stara jezgra Šibenika",
+          "text": "Kamene uličice i katedrala sv. Jakova pod zaštitom UNESCO-a, 2 km od vile."
+        },
+        "krka": {
+          "title": "Nacionalni park Krka",
+          "text": "Slapovi, izleti brodom i staze uz rijeku, uzvodno od Šibenika."
+        },
+        "kornati": {
+          "title": "Kornati",
+          "text": "Dan na brodu kroz arhipelag od više od stotinu otoka."
+        },
+        "fortress": {
+          "title": "Tvrđava sv. Nikole",
+          "text": "Mletačka tvrđava na moru, također pod zaštitom UNESCO-a, na ulazu u zaljev."
+        }
+      }
+    },
+    "location": {
+      "eyebrow": "Lokacija",
+      "title": "Mirna ulica, a sve je blizu",
+      "mapTitle": "Karta s lokacijom Ville Mandalina u Šibeniku",
+      "openMap": "Otvori u Google kartama",
+      "items": [
+        {
+          "label": "Trgovina, kafić, restoran",
+          "value": "300 m"
+        },
+        {
+          "label": "Stara jezgra Šibenika",
+          "value": "2 km"
+        },
+        {
+          "label": "Najbliža plaža",
+          "value": "4 km"
+        },
+        {
+          "label": "Ljekarna",
+          "value": "1 km"
+        },
+        {
+          "label": "Bolnica",
+          "value": "2 km"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Dobro je znati prije rezervacije",
+      "items": [
+        {
+          "q": "Je li bazen grijan i privatan?",
+          "a": "Da. Bazen od 19 m² je grijan i samo za goste vile, a uz njega su ležaljke i vanjski tuš."
+        },
+        {
+          "q": "Koliko su udaljeni plaža i stara jezgra?",
+          "a": "Stara jezgra Šibenika udaljena je 2 km, a najbliža plaža 4 km. Trgovina, kafić i restoran su na 300 m od kuće."
+        },
+        {
+          "q": "Koliko osoba može boraviti u vili?",
+          "a": "Do 10 osoba: tri spavaće sobe s king-size krevetima, soba s dva kreveta i rasklopivi kauč u dnevnom boravku. Dječji krevetić dostupan je na zahtjev."
+        },
+        {
+          "q": "Je li vila prikladna za obitelji s malom djecom?",
+          "a": "Da. Dvorište je potpuno ograđeno, uz kuću je privatni parking, a dječji krevetić i pomoćni ležaj dostupni su na zahtjev."
+        },
+        {
+          "q": "Kada je prijava, a kada odjava?",
+          "a": "Prijava je od 16:00, a odjava do 10:00."
+        },
+        {
+          "q": "Jesu li kućni ljubimci dopušteni?",
+          "a": "Ne, kućni ljubimci nisu dopušteni u vili."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Isplanirajte boravak u Šibeniku",
+      "text": "Pošaljite nam željene datume i odgovorit ćemo vam osobno.",
+      "availability": "Provjeri dostupnost",
+      "whatsapp": "Pišite nam na WhatsApp",
+      "alt": "Vila i bazen osvijetljeni noću"
+    }
+  },
+  "guide": {
+    "metaTitle": "Vodič kroz Šibenik i Dalmaciju",
+    "metaDescription": "Isplanirajte odmor u Dalmaciji iz Šibenika: UNESCO-va katedrala i tvrđava, slapovi Krke, Kornati i obližnje plaže. Savjeti Ville Mandalina.",
+    "eyebrow": "Vodič",
+    "title": "Šibenik i dalmatinska obala",
+    "intro": "Šibenik je jedan od najstarijih gradova na hrvatskoj obali i nalazi se u samom srcu Dalmacije. Iz Ville Mandalina ujutro možete šetati kamenim uličicama stare jezgre, popodne se kupati ispod slapova, a za zalazak sunca biti natrag uz bazen.",
+    "inTown": "U gradu",
+    "dayTrips": "Jednodnevni izleti",
+    "beaches": {
+      "title": "Plaže",
+      "text": "Najbliža plaža udaljena je 4 km od vile, a šljunčanih plaža i mjesta za kupanje ima duž cijele obale oko Šibenika. Mnoge obitelji dan podijele: jutro na moru, popodne uz grijani bazen vile."
+    },
+    "base": {
+      "title": "Zašto odsjesti u Šibeniku?",
+      "text": "Šibenik je mirniji od Splita ili Dubrovnika, a jednako bogat poviješću, i od njega su dva nacionalna parka na dohvat ruke. Odlična je polazna točka za odmor u Hrvatskoj automobilom, sa starom jezgrom, trgovinama i restoranima u blizini."
+    },
+    "cta": {
+      "title": "Odsjednite u Villi Mandalina",
+      "text": "Grijani privatni bazen, četiri spavaće sobe i pogled na more, 2 km od stare jezgre Šibenika.",
+      "button": "Provjeri dostupnost"
+    },
+    "faq": {
+      "title": "Pitanja o putovanju u Šibenik",
+      "items": [
+        {
+          "q": "Je li Šibenik dobar za obiteljski odmor?",
+          "a": "Da. Šibenik je mirniji od većih dalmatinskih gradova, s plažama, nacionalnim parkovima i kompaktnom starom jezgrom koju je lako obići s djecom."
+        },
+        {
+          "q": "Koliko je NP Krka udaljen od Šibenika?",
+          "a": "Nacionalni park Krka kratka je vožnja u unutrašnjost od Šibenika, pa je lak poludnevni ili jednodnevni izlet iz Ville Mandalina."
+        },
+        {
+          "q": "Mogu li se iz Šibenika posjetiti Kornati?",
+          "a": "Da. Izleti brodom u Nacionalni park Kornati tijekom sezone polaze iz Šibenika i s obližnje obale."
+        },
+        {
+          "q": "Koji su UNESCO-vi lokaliteti u Šibeniku?",
+          "a": "Katedrala sv. Jakova i Tvrđava sv. Nikole nalaze se na UNESCO-vu popisu svjetske baštine."
+        }
+      ]
+    }
+  },
+  "galleryPage": {
+    "eyebrow": "Galerija",
+    "title": "Villa Mandalina u slikama",
+    "intro": "Izvana i iznutra: bazen i vrt, dnevni prostori, sve četiri spavaće sobe i šibenska obala oko vile.",
+    "photoAlt": "Villa Mandalina, {category}, fotografija {n}",
+    "categories": {
+      "outdoor": "Bazen i vrt",
+      "living": "Dnevni boravak i kuhinja",
+      "bedrooms": "Spavaće sobe",
+      "bathrooms": "Kupaonice",
+      "surroundings": "Šibenik i okolica"
+    }
+  },
+  "detailsPage": {
+    "eyebrow": "Vila",
+    "title": "Kuća za odmor s privatnim bazenom u Šibeniku"
+  },
+  "calendarPage": {
+    "eyebrow": "Cijene i dostupnost",
+    "title": "Provjerite termine i zatražite boravak",
+    "intro": "Prikazane cijene su po noćenju. Odaberite datume u kalendaru, pošaljite nam upit i potvrdu ćemo vam poslati e-mailom.",
+    "guestsPrefill": "Broj gostiju: {count}"
+  },
+  "contactPage": {
+    "eyebrow": "Kontakt"
   }
 }

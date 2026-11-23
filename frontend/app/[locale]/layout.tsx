@@ -5,43 +5,38 @@ import { notFound } from "next/navigation";
 import { locales } from "@/navigation";
 import Providers from "@/components/Providers";
 import Analytics from "@/components/Analytics";
+import { Newsreader, Manrope } from "next/font/google";
 
-// Global styles — imported here so they apply to all pages
-import "@/assets/style/landingPage.css";
-import "@/assets/style/heading.css";
-import "@/assets/style/navigationBar.css";
-import "@/assets/style/highlighted.css";
-import "@/assets/style/reviews.css";
-import "@/assets/style/moreAttractions.css";
-import "@/assets/style/moreDetails.css";
-import "@/assets/style/gallery.css";
-import "@/assets/style/galleryComps.css";
-import "@/assets/style/contact.css";
-import "@/assets/style/location.css";
-import "@/assets/style/CalendarElement.css";
-import "@/assets/style/reactCalendar.css";
-import "@/assets/style/login.css";
-import "@/assets/style/footer.css";
-import "@/assets/style/languageSelector.css";
-import "@/assets/style/villaDetails.css";
-import "@/assets/style/confirmPopup.css";
-import "@/assets/style/slick-custom.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "photoswipe/dist/photoswipe.css";
 import "react-toastify/dist/ReactToastify.css";
+import "@/assets/style/site.css";
+import "@/assets/style/calendar.css";
+
+const serif = Newsreader({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = Manrope({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://villamandalina.hr"),
   title: {
-    default: "Villa Mandalina | Luxury Holiday Villa in Šibenik, Croatia",
+    default: "Villa Mandalina | Pool Villa Accommodation in Šibenik, Croatia",
     template: "%s | Villa Mandalina Šibenik",
   },
   description:
-    "Experience the perfect Mediterranean getaway at Villa Mandalina. A stunning holiday villa with private pool, modern amenities, and breathtaking views in Šibenik, Croatia.",
+    "Holiday villa with a heated private pool and sea views in Šibenik, Dalmatia. 4 bedrooms, up to 10 guests, 2 km from the old town.",
   openGraph: {
     siteName: "Villa Mandalina",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
@@ -64,7 +59,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>{children}</Providers>

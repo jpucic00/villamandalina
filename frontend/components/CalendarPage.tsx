@@ -14,8 +14,6 @@ import {
   deletePrice,
 } from "@/api";
 import ConfirmPopup from "./ConfirmPopup";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
 import { trackEvent } from "@/lib/analytics";
 
 interface BookedDate {
@@ -32,7 +30,6 @@ interface Price {
 }
 
 export default function CalendarPage() {
-  const { width } = useWindowDimensions();
   const { user, loading } = useAuth();
   const t = useTranslations();
   const locale = useLocale();
@@ -47,11 +44,32 @@ export default function CalendarPage() {
   const [priceStartDate, setPriceStartDate] = useState("");
   const [priceEndDate, setPriceEndDate] = useState("");
   const [priceAmount, setPriceAmount] = useState("");
+  const [messagePrefill, setMessagePrefill] = useState("");
 
   useEffect(() => {
     fetchDisabledDates();
     fetchPrices();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Pre-fill from the homepage booking bar (?checkin=&checkout=&guests=)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+    const today = formatDate(new Date());
+    const qIn = params.get("checkin");
+    const qOut = params.get("checkout");
+    const validIn = qIn && isoDate.test(qIn) && qIn >= today ? qIn : undefined;
+    const validOut = qOut && isoDate.test(qOut) && (!validIn || qOut > validIn) ? qOut : undefined;
+    if (validIn) setCheckIn(validIn);
+    if (validOut) setCheckOut(validOut);
+    if (validIn && validOut) {
+      setCalendarValue([new Date(validIn + "T00:00:00"), new Date(validOut + "T00:00:00")]);
+    }
+    const guests = Number(params.get("guests"));
+    if (Number.isInteger(guests) && guests >= 1 && guests <= 10) {
+      setMessagePrefill(t("calendarPage.guestsPrefill", { count: guests }));
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (blockToRemove) {
@@ -289,7 +307,7 @@ export default function CalendarPage() {
 
   return (
     <>
-      <div className={`CalendarElement__MainWrapper ${user ? "loggedIn" : ""} ${deviceCheck(width)}`}>
+      <div className={`container CalendarElement__MainWrapper ${user ? "loggedIn" : ""}`}>
         <form
           id="reservationForm"
           onSubmit={user ? submitBlock : submitReservation}
@@ -297,7 +315,7 @@ export default function CalendarPage() {
         >
           {!loading && !user ? (
             <>
-              <h1 className="calendarFormTitle">{t("calendar.title")}</h1>
+              <h2 className="calendarFormTitle">{t("calendar.title")}</h2>
               <p className="calendarFormDescription">{t("calendar.description")}</p>
               <label htmlFor="Check-In" className="TopMinusFive">{t("calendar.checkInDate")}</label>
               <input required onChange={onCheckInSelect} type="date" id="Check-In"
@@ -318,6 +336,7 @@ export default function CalendarPage() {
                 placeholder={t("calendar.phonePlaceholder")} />
               <label htmlFor="ContactTextArea" className="TopMinusFive">{t("calendar.message")}</label>
               <textarea required id="ContactTextArea" placeholder={t("calendar.messagePlaceholder")}
+                key={messagePrefill} defaultValue={messagePrefill}
                 className="calendarTextField" />
               <button type="submit" className="CalendarElement__MakeReservationButton calendarButton">
                 {t("calendar.makeReservation")}
@@ -388,13 +407,13 @@ export default function CalendarPage() {
                 return false;
               }
             });
-            return <p className="calendarPrice">{matchingPrice?.price || "-"}€</p>;
+            return <p className="calendarPrice">{matchingPrice?.price ? `${matchingPrice.price}€` : "\u00a0"}</p>;
           }}
         />
       </div>
 
       {!loading && user && (
-        <div className="priceManagementContainer">
+        <div className="container priceManagementContainer">
           <h2 className="priceManagementTitle">{t("calendar.managePrices")}</h2>
           <form onSubmit={submitPrice} className="priceForm">
             <div className="priceFormRow">

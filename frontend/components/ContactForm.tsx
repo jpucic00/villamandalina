@@ -9,12 +9,9 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { toast } from "react-toastify";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ContactForm() {
-  const { width } = useWindowDimensions();
   const t = useTranslations();
 
   useEffect(() => {
@@ -78,39 +75,45 @@ export default function ContactForm() {
       onSubmit={onSubmit}
     >
       {({ errors, isSubmitting }) => (
-        <Form className={`contactForm ${deviceCheck(width)}`}>
+        <Form className="contactForm" noValidate>
           <Field
             type="text"
             name="name"
+            aria-label={t("contact.form.namePlaceholder")}
             placeholder={t("contact.form.namePlaceholder")}
-            className={`contactInput ${deviceCheck(width)}`}
+            className="field"
           />
           <div className="formErrorMessage">{errors.name}</div>
           <Field
             type="email"
             name="email"
+            aria-label={t("contact.form.emailPlaceholder")}
             placeholder={t("contact.form.emailPlaceholder")}
-            className={`contactInput ${deviceCheck(width)}`}
+            className="field"
           />
           <div className="formErrorMessage">{errors.email}</div>
           <Field
             as="textarea"
             name="message"
+            aria-label={t("contact.form.messagePlaceholder")}
             placeholder={t("contact.form.messagePlaceholder")}
-            className={`contactText ${deviceCheck(width)}`}
+            className="field field--textarea"
           />
           <div className="formErrorMessage">{errors.message}</div>
-          <LoadCanvasTemplate reloadColor="white" />
+          <div className="captcha">
+            <LoadCanvasTemplate reloadColor="#1D2A30" />
+          </div>
           <Field
             placeholder={t("contact.form.captchaPlaceholder")}
             id="user_captcha_input"
             name="userCaptchaInput"
             type="text"
-            className={`contactInput ${deviceCheck(width)}`}
+            aria-label={t("contact.form.captchaPlaceholder")}
+            className="field"
           />
           <div className="formErrorMessage">{errors.userCaptchaInput}</div>
           <button
-            className={`contactSubmit ${deviceCheck(width)}`}
+            className="btn btn--accent"
             type="submit"
             disabled={isSubmitting}
           >

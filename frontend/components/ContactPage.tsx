@@ -1,28 +1,30 @@
-"use client";
-
+import { getTranslations } from "next-intl/server";
+import { MAPS_EMBED_URL } from "@/constants/site";
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
-import Location from "./Location";
-import ContactHeadline from "./ContactHeadline";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
+import PageHeader from "./PageHeader";
 
-export default function ContactPage() {
-  const { width } = useWindowDimensions();
-  const device = deviceCheck(width);
+export default async function ContactPage() {
+  const t = await getTranslations();
 
   return (
-    <div>
-      <div className={`contactPageWrapper ${device}`}>
-        <div className={`contactLeftColumn ${device}`}>
-          <ContactHeadline />
+    <>
+      <PageHeader
+        eyebrow={t("contactPage.eyebrow")}
+        title={t("contact.headline")}
+        intro={t("contact.subheadline")}
+      />
+      <section className="section section--tight container grid12 contactLayout">
+        <div className="contactLayout__form">
           <ContactForm />
         </div>
-        <div className={`contactRightColumn ${device}`}>
+        <div className="contactLayout__info">
           <ContactInfo />
-          <Location />
         </div>
-      </div>
-    </div>
+      </section>
+      <section className="container mapBlock">
+        <iframe title={t("home.location.mapTitle")} src={MAPS_EMBED_URL} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+      </section>
+    </>
   );
 }

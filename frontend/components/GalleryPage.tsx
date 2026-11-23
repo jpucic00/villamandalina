@@ -1,69 +1,56 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Gallery as PhotoGallery } from "react-photoswipe-gallery";
-import galleryImages from "@/constants/galleryImages";
-import GalleryElementComp5 from "./GalleryElementComp5";
-import GalleryElementComp6 from "./GalleryElementComp6";
-import GalleryElementComp7 from "./GalleryElementComp7";
-import useWindowDimensions from "@/util/useWindowDimensions";
-import deviceCheck from "@/util/deviceCheck";
+import { Gallery as PhotoGallery, Item } from "react-photoswipe-gallery";
+import { galleryCategories, galleryImage } from "@/constants/galleryImages";
 
 export default function GalleryPage() {
-  const { width } = useWindowDimensions();
-  const t = useTranslations();
+  const t = useTranslations("galleryPage");
 
   return (
-    <>
-      <div className={`blueBackgroundSurroundings ${deviceCheck(width)}`} />
-      <div className={`blueBackgroundBedrooms ${deviceCheck(width)}`} />
-      <PhotoGallery>
-        <div className={`galleryContainer ${deviceCheck(width)}`}>
-          <GalleryElementComp5
-            device={deviceCheck(width)}
-            title={t("gallery.livingroom")}
-            image1={galleryImages.image112}
-            image2={galleryImages.image114}
-            image3={galleryImages.image108}
-            image4={galleryImages.image107}
-            image5={galleryImages.image106}
-            sectionLabel="living room"
-          />
-          <GalleryElementComp6
-            device={deviceCheck(width)}
-            title={t("gallery.bedrooms")}
-            image1={galleryImages.image100}
-            image2={galleryImages.image101}
-            image3={galleryImages.image104}
-            image4={galleryImages.image146}
-            image5={galleryImages.image149}
-            image6={galleryImages.image103}
-            sectionLabel="bedroom"
-          />
-          <GalleryElementComp5
-            device={deviceCheck(width)}
-            title={t("gallery.bathrooms")}
-            image1={galleryImages.image145}
-            image2={galleryImages.image153}
-            image3={galleryImages.image156}
-            image4={galleryImages.image157}
-            image5={galleryImages.image158}
-            sectionLabel="bathroom"
-          />
-          <GalleryElementComp7
-            device={deviceCheck(width)}
-            title={t("gallery.surroundings")}
-            image1={galleryImages.image125}
-            image2={galleryImages.image124}
-            image3={galleryImages.image123}
-            image4={galleryImages.image126}
-            image5={galleryImages.image127}
-            image6={galleryImages.image144}
-            image7={galleryImages.image138}
-            sectionLabel="surroundings"
-          />
-        </div>
-      </PhotoGallery>
-    </>
+    <PhotoGallery>
+      <nav className="container chips" aria-label={t("eyebrow")}>
+        {galleryCategories.map((c) => (
+          <a key={c.key} href={`#${c.key}`} className="chip">
+            {t(`categories.${c.key}`)}
+          </a>
+        ))}
+      </nav>
+      {galleryCategories.map((category) => {
+        const label = t(`categories.${category.key}`);
+        return (
+          <section key={category.key} id={category.key} className="section section--tight container">
+            <h2 className="h2 gallerySection__title">{label}</h2>
+            <div className="galleryGrid">
+              {category.images.map((n, i) => {
+                const img = galleryImage(n);
+                const alt = t("photoAlt", { category: label, n: i + 1 });
+                return (
+                  <Item key={n} original={img.src} thumbnail={img.src} width={img.width} height={img.height} alt={alt}>
+                    {({ ref, open }) => (
+                      <button
+                        type="button"
+                        ref={ref as React.Ref<HTMLButtonElement>}
+                        onClick={open}
+                        className={`galleryGrid__item ${i === 0 ? "galleryGrid__item--big" : ""}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={alt}
+                          placeholder="blur"
+                          sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+                          className="cover"
+                        />
+                      </button>
+                    )}
+                  </Item>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
+    </PhotoGallery>
   );
 }
