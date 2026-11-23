@@ -1227,6 +1227,36 @@ dd {
   }
 }
 
+/* Credit line for photos taken from the web */
+.photoCredit {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 1;
+  max-width: calc(100% - 16px);
+  padding: 3px 8px;
+  background: rgba(10, 22, 36, 0.55);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+  line-height: 1.4;
+  border-radius: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.photoCredit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* In the closing CTA the panel sits bottom-left, so the credit goes top-right */
+.closingCta > .photoCredit {
+  top: 8px;
+  bottom: auto;
+}
+
 /* ---------- Details ---------- */
 
 .about {

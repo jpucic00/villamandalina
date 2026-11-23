@@ -487,5 +487,8 @@
   },
   "contactPage": {
     "eyebrow": "Kontakt"
+  },
+  "credits": {
+    "photo": "Foto"
   }
 }

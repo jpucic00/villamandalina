@@ -5,10 +5,8 @@ import { galleryImage } from "@/constants/galleryImages";
 import { MAPS_EMBED_URL, MAPS_URL, PHONES, whatsappUrl } from "@/constants/site";
 import Facts from "@/components/Facts";
 import Faq, { type FaqItem } from "@/components/Faq";
-import krka from "@/assets/images/krka.jpg";
-import kornati from "@/assets/images/kornati.jpg";
-import fortress from "@/assets/images/svnikola.jpeg";
-import sibenikAerial from "@/assets/images/sibenik-aerial-sunset.jpg";
+import { webPhotos } from "@/constants/photoCredits";
+import PhotoCredit from "@/components/PhotoCredit";
 
 export async function Hero() {
   const t = await getTranslations("home");
@@ -188,12 +186,13 @@ export async function Reviews() {
 
 export async function Explore() {
   const t = await getTranslations("home.explore");
+  const tCredit = await getTranslations("credits");
   const items = [
-    { key: "oldTown", image: galleryImage(135), hash: "cathedral" },
-    { key: "krka", image: krka, hash: "krka" },
-    { key: "kornati", image: kornati, hash: "kornati" },
-    { key: "fortress", image: fortress, hash: "stNicholas" },
-  ] as const;
+    { key: "oldTown", image: galleryImage(135), credit: undefined, position: undefined, hash: "cathedral" },
+    { key: "krka", ...webPhotos.krka, hash: "krka" },
+    { key: "kornati", ...webPhotos.kornati, hash: "kornati" },
+    { key: "fortress", ...webPhotos.stNicholas, hash: "stNicholas" },
+  ];
 
   return (
     <section className="section band band--ink">
@@ -211,11 +210,13 @@ export async function Explore() {
               <div className="place__image">
                 <Image
                   src={item.image}
+                  style={{ objectPosition: item.position }}
                   alt={t(`items.${item.key}.title`)}
                   placeholder="blur"
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="cover"
                 />
+                {item.credit && <PhotoCredit credit={item.credit} label={tCredit("photo")} linked={false} />}
               </div>
               <h3 className="h3">{t(`items.${item.key}.title`)}</h3>
               <p>{t(`items.${item.key}.text`)}</p>
@@ -271,15 +272,17 @@ export async function HomeFaq() {
 
 export async function ClosingCta() {
   const t = await getTranslations("home.cta");
+  const tCredit = await getTranslations("credits");
   return (
     <section className="closingCta">
       <Image
-        src={sibenikAerial}
+        src={webPhotos.sibenikAerial.image}
         alt={t("alt")}
         placeholder="blur"
         sizes="(max-width: 768px) 100vw, 1360px"
         className="cover"
       />
+      <PhotoCredit credit={webPhotos.sibenikAerial.credit} label={tCredit("photo")} />
       <div className="closingCta__panel">
         <h2 className="h2">{t("title")}</h2>
         <p className="muted">{t("text")}</p>
